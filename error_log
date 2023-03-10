@@ -1,0 +1,108 @@
+[24-Nov-2020 00:37:00 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[24-Nov-2020 01:11:25 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[07-Feb-2021 22:42:04 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[08-Feb-2021 00:56:10 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[08-Feb-2021 20:13:13 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[08-Feb-2021 22:12:11 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[09-Feb-2021 23:20:55 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[10-Feb-2021 20:53:44 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[11-Feb-2021 22:26:12 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[12-Feb-2021 20:38:52 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[13-Feb-2021 23:56:53 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[15-Feb-2021 02:32:11 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[15-Feb-2021 04:38:25 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[06-Nov-2021 03:54:11 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php on line 7
+[06-Nov-2021 03:54:11 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[06-Nov-2021 03:54:11 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function bloginfo() in /home/ludlit30/public_html/wp-content/themes/newlit/header.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/header.php on line 10
+[22-Nov-2021 18:22:04 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php on line 7
+[22-Nov-2021 18:22:04 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[22-Nov-2021 18:22:04 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function bloginfo() in /home/ludlit30/public_html/wp-content/themes/newlit/header.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/header.php on line 10
+[26-Nov-2021 07:22:29 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[26-Nov-2021 07:22:29 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function bloginfo() in /home/ludlit30/public_html/wp-content/themes/newlit/header.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/header.php on line 10
+[26-Nov-2021 07:22:29 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php on line 7
+[29-Nov-2021 06:33:03 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function bloginfo() in /home/ludlit30/public_html/wp-content/themes/newlit/header.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/header.php on line 10
+[29-Nov-2021 06:33:03 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/archive.php on line 7
+[29-Nov-2021 06:33:03 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[10-Dec-2021 20:22:22 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1
+[15-Dec-2021 14:50:50 Europe/Ljubljana] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/ludlit30/public_html/wp-content/themes/newlit/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/ludlit30/public_html/wp-content/themes/newlit/index.php on line 1

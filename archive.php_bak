@@ -1,0 +1,80 @@
+<?php
+/*
+Template Name: Stran za arhive
+ */
+?>
+
+<?php get_header('home'); ?>
+
+<!-- archive.php -->
+<!-- LOOP -->
+<?php
+global $post, $wpdb, $my_query, $paged; // brez tega ne dela get_post_meta
+
+add_filter('posts_join', 'myJoint');
+add_filter('posts_where', 'myWhere');
+add_filter('posts_orderby', 'myNewOrder');
+
+$my_loop_args = array('posts_per_page' => 12, 'posts_per_archive_page' => 12, 'paged' => get_query_var('paged'));
+$my_query = new WP_Query($my_loop_args);
+
+remove_filter('posts_join', 'myJoint');
+remove_filter('posts_where', 'myWhere');
+remove_filter('posts_orderby', 'myNewOrder');
+
+?>
+<!-- LOOP -->
+
+<div id="main" class="clearfix">
+<?php
+	$myIterator = 0; 
+	$margin = "";
+?>
+<div class="row clearfix">
+<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+<?php
+
+if (($myIterator % 3) > 0) {	// 2., 3.
+	$margin = "hasLeftMargin";
+} else {
+	$margin = "";
+	if ($myIterator == 0) {
+
+	} else {
+		echo "</div>";
+		echo "<div class=\"row clearfix\">";
+	}
+}
+
+$myIterator++;
+?>
+	<div class="hoverBox content clearfix fourCol float <?php echo $margin; ?>">
+		<h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>&nbsp;</h4>
+		<h5><?php echo get_post_meta($post->ID, 'mysubtitle', true) ?></h5>
+		<div class="postExcerpt">
+			<?php the_excerpt(); ?>
+		</div>
+	</div>
+<?php endwhile; ?>
+
+</div> <!-- close last row clearfix -->
+
+<?php
+$args = wp_parse_args( $args, $defaults );
+
+$max_num_pages = $my_query->max_num_pages;
+$paged = get_query_var('paged');
+
+?>
+
+<?php //wp_pagenavi( array( 'type' => 'multipart' ) ); ?>
+<?php
+$big = 999999999; // need an unlikely integer
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $my_query->max_num_pages
+) );
+?>
+<?php get_footer(); ?>

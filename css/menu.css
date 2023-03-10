@@ -1,0 +1,61 @@
+.menu-menu-ena-container {
+	width: 900px;
+	/*margin: 100px auto;*/
+	background-color: #829BB5;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+
+	/* vse naenkrat */
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+
+	border: 1px solid #343435;
+	overflow: hidden; /* sicer se na hover prekrijejo zaobljeni robovi! */
+}
+ul#menu-menu-ena {
+	list-style: none;
+	background-color: transparent;
+}
+
+ul#menu-menu-ena > li:hover {
+	background-color: #121C27;
+}
+
+ul.sub-menu {
+	display: none;
+	list-style: none;
+	background-color: transparent;
+	width: 200px;
+	position: absolute;
+	background-color: #121C27;
+}
+
+ul.sub-menu li {
+	float: left;
+	width: 100%;
+}
+li.menu-item {
+	float: left;
+	background-color: transparent;
+}
+li.menu-item a {
+	padding: 10px 20px;
+	color: #F0F1F4;
+	display: block;
+	border-right: 1px solid #F0F1F4;
+	text-shadow: 0px 1px 1px #666;
+	text-decoration: none;
+	border: none;				
+}
+li.menu-item a:hover {
+}
+
+ul#menu-menu-ena li.menu-item:hover > ul.sub-menu {
+	visibility: visible;
+	display: block;
+}
+
+/* * { background: black !important; color: red !important; } */

@@ -1,0 +1,203 @@
+@import url("https://use.typekit.net/vrv8wwi.css");
+
+* {
+	font-family: supria-sans;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+.urnik {
+	display: grid;
+	margin: 2rem 0;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+}
+
+.dan {
+	padding: 1em;
+}
+.dan > p:first-of-type {
+font-size: 1.5rem;
+}
+
+.dan > p {
+	margin-bottom: 1em;
+}
+
+.dan .ura {
+	font-weight: bold;
+	border-bottom: 1px solid;
+	margin-top: 3em;
+}
+
+.dan h4 {
+		font-size: 2rem;
+		line-height: 1;
+		margin-bottom: 1rem;
+
+}
+
+.hero {
+	width: 90%;
+	margin: auto;
+	height: 60vh;
+	background-image: url('https://www.ludliteratura.si/wp-content/uploads/2022/10/FB-event.png');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-bottom: 10vh;
+}
+
+h1, h2, h3 {
+	margin-bottom: 1rem;
+	margin-top: 2rem;
+}
+
+h1 {
+	font-size: 8rem;
+	font-weight: normal;
+}
+
+p {
+	margin-bottom: 1em;
+	text-indent: 0;
+
+	max-width: 40em;
+}
+
+body {
+	width: 95vw;
+	margin: auto;
+}
+
+.intro {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.green-background {
+	background-color: rgb(127, 196, 92);
+}
+.blue-background {
+	background-color: rgb(110, 207, 246);
+}
+.orange-background {
+	background-color: rgb(251, 171, 25);
+}
+.yellow-background {
+	background-color: rgb(230, 197, 7)
+}
+
+.red-background {
+		background-color: rgb(242, 101, 35);
+}
+
+.brown-background {
+
+	background-color: rgb(212, 203, 153);
+	
+}
+
+.about {
+	display: flex;
+	gap: 2rem;
+	justify-content: start;
+}
+
+.about .main {
+	font-size: 1.75rem;
+	padding: 1rem;
+}
+
+.about .side {
+	padding: 1rem;
+}
+
+.opisi {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	margin: 2rem 0;
+	/*display: flex;
+	flex-wrap: wrap;*/
+}
+
+.opisi > div {
+	padding: 1em;
+	box-sizing: border-box;
+	
+	/*flex: 0 0 calc(25% - 1rem);*/
+	background-color: rgb(249, 199, 221);
+
+}
+
+img.cover {
+	width: 100%;
+	max-width: 1300px;
+	height: auto;
+}
+
+
+
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: inherit;
+	border-bottom: 2px solid;
+}
+
+a.button {
+	display: inline-block;
+	background-color: black;
+	color: white;
+	padding: 1em 2em;
+	border-radius: 10px;
+	border: none;
+}
+
+/*
+responsive
+*/
+
+
+@media (max-width: 900px) {
+	h1 {
+		font-size: 4rem;
+	}
+	.about .main {
+		font-size: 1.5rem;
+	}
+	.urnik, .opisi {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.about {
+		flex-direction: column;
+	}
+	.about > .main, .about > .side {
+		background-color: white;
+		padding: 0;
+	}
+
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 3rem;
+	}
+	.dan h4 {
+		font-size: 1.5rem;
+	}
+	.about .main {
+		font-size: 1rem;
+	}
+	.urnik, .opisi {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.about {
+		flex-direction: column;
+	}
+
+}
+

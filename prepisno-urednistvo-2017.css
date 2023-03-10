@@ -1,0 +1,735 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	/*height: 100%;*/
+	font-family: "ff-tisa-web-pro", serif;
+	line-height: 1.5;
+	font-size: 18px;
+	font-weight: 400;
+}
+body {
+	padding-bottom: 3.665em;
+}
+
+.skewed {
+	transform: rotate(-11deg) skew(-3deg);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+}
+
+.sc {
+	font-variant-caps: small-caps;
+	-moz-font-feature-settings: "smcp";
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";	
+}
+
+.fake-sc {
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	font-weight: bold;
+}
+
+.font-size-0 {
+	font-size: 0.865em;
+}
+.font-size-2 {
+	font-size: 1.5em;
+}
+.font-size-3 {
+	font-size: 1.618em;
+}
+.font-size-4 {
+	font-size: 2.265em;
+}
+
+.font-size-5 {
+	font-size: 3.665em;
+}
+.font-size-6 {
+	font-size: 5.930em;
+}
+.font-size-7 {
+	font-size: 9.595em;
+}
+
+.full-height {
+	min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, .sans {
+	font-family: "brandon-grotesque", sans-serif;
+}
+
+h1 {
+	font-size: 2.265em;
+}
+
+.fat {
+	font-weight: 900 !important
+}
+
+.italic {
+	font-style: italic;
+}
+
+.caps {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.underlined,
+.skewed h3, .skewed h4 {
+	display: inline;
+	border-bottom: 0.3em solid rgb(227, 137, 89);
+	border-bottom: 0.3em solid #FF9C4D;
+	line-height: 2;
+}
+
+
+.skewed h3, .skewed h4 {
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-style: italic;
+}
+
+.skewed + p {
+	margin-top: 5em;
+}
+
+.orange {
+	color: rgb(227, 137, 89);
+	color: #FF9C4D;
+}
+.purple {
+	color: rgb(155, 89, 227);
+	color: #B78FE3;
+}
+
+/*
+h1 + h2 {
+	margin-top: -5.930rem;
+	margin-bottom: 5.930rem;
+	font-size: 1.618rem;
+	font-weight: 500;
+}
+*/
+
+h4 {
+	margin-bottom: 1.618em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.small-margin-bottom {	margin-bottom: 1.618rem; }
+.medium-margin-bottom {	margin-bottom: 2.265rem; }
+.large-margin-bottom {	margin-bottom: 3.665rem; }
+
+.waves:after {
+	display: block;
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 1em;
+	background:
+		radial-gradient(circle at 50% 100%, transparent 20%, rgba(255,255,255,1) 21%, rgba(255,255,255,1) 34%, transparent 35%, transparent),
+		radial-gradient(circle at 50% 0%, transparent 20%, rgba(255,255,255,1) 21%, rgba(255,255,255,1) 34%, transparent 35%, transparent) 0.5em -0px;
+	background-color: black;
+	background-size:1em 0.75em;
+}
+
+.backgroundimg {
+	/*
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 215, 7, 0.6)),color-stop(50%, rgba(255, 215, 7, 0.6)), to(rgba(43, 219, 181, 0.75))), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -webkit-linear-gradient(top, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 50%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -moz-linear-gradient(top, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 50%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -o-linear-gradient(top, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 50%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: linear-gradient(to bottom, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 50%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+
+
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 215, 7, 0.6)),  to(rgba(43, 219, 181, 0.75))), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -webkit-linear-gradient(top, rgba(255, 215, 7, 0.6),  rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -moz-linear-gradient(top, rgba(255, 215, 7, 0.6),  rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -o-linear-gradient(top, rgba(255, 215, 7, 0.6),  rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: linear-gradient(to bottom, rgba(255, 215, 7, 0.6),  rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+*/
+
+/*background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 215, 7, 0.6)),color-stop(33%, rgba(255, 215, 7, 0.6)), to(rgba(43, 219, 181, 0.75))), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -webkit-linear-gradient(top, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 33%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -moz-linear-gradient(top, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 33%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -o-linear-gradient(top, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 33%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: linear-gradient(to bottom, rgba(255, 215, 7, 0.6) 0%,rgba(255, 215, 7, 0.6) 33%, rgba(43, 219, 181, 0.75) 100%), url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);*/
+
+background-image: linear-gradient(to bottom, rgba(255, 156, 77, 0.9) 0%, rgba(255, 156, 77, 0.7) 60%, rgba(183, 143, 227, 0.75) 100%), url(xhttp://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+
+
+
+/*
+	background-image: 
+		linear-gradient(rgba(255, 215, 7, 0.5), rgba(43, 219, 181, 0.5)), 
+		url(http://www.ludliteratura.si/wp-content/uploads/2015/04/prepisno2.jpg);
+		*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+/*
+
+
+background: rgba(255,214,8,1);
+
+background-image: -moz-linear-gradient(top, rgba(255,214,8,1) 0%, rgba(255,214,8,0.8) 50%, rgba(43,217,179,0.6) 100%)url(http://jezr/andrej/newlit/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,214,8,1)), color-stop(50%, rgba(255,214,8,0.8)), color-stop(100%, rgba(43,217,179,0.6)))url(http://jezr/andrej/newlit/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -webkit-linear-gradient(top, rgba(255,214,8,1) 0%, rgba(255,214,8,0.8) 50%, rgba(43,217,179,0.6) 100%)url(http://jezr/andrej/newlit/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -o-linear-gradient(top, rgba(255,214,8,1) 0%, rgba(255,214,8,0.8) 50%, rgba(43,217,179,0.6) 100%)url(http://jezr/andrej/newlit/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: -ms-linear-gradient(top, rgba(255,214,8,1) 0%, rgba(255,214,8,0.8) 50%, rgba(43,217,179,0.6) 100%)url(http://jezr/andrej/newlit/wp-content/uploads/2015/04/prepisno2.jpg);
+background-image: linear-gradient(to bottom, rgba(255,214,8,1) 0%, rgba(255,214,8,0.8) 50%, rgba(43,217,179,0.6) 100%)url(http://jezr/andrej/newlit/wp-content/uploads/2015/04/prepisno2.jpg);
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd608', endColorstr='#2bd9b3', GradientType=0 );
+
+
+ */
+
+#program h4 {
+	font-size: 1em;
+	margin: 0;
+	margin-bottom: 1em;
+	font-style: normal;
+	font-weight: bold;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	border-bottom: 1px solid;
+	color: inherit;
+}
+
+a:hover {
+	border-bottom: 0px solid #ABA896;
+	background-color: rgb(255,215,7);
+	/*color: #F8F7F2 !important;*/
+}
+
+a.bare-link:link,
+a.bare-link:visited,
+a.bare-link:hover,
+a.bare-link:active {
+	text-decoration: none !important;
+	border: none !important;
+	color: inherit !important;
+	background-color: inherit !important;
+}
+
+.addthis_toolbox > a {
+	display: inline-block !important;
+	float: none !important;
+}
+
+#program a {
+	color: inherit;
+}
+
+.column {
+	width: 33.33%;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 2.265em;
+	text-align: left;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+img.round {
+	border-radius: 100%;
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+}
+
+
+h5 {
+	font-weight: bold;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 2.265em;
+	line-height: 1.2;
+	/*margin-top: 2.265em;*/
+	color: rgb(43,219,181);
+	color: rgb(227, 137, 89);
+	color: #FF9C4D;
+}
+
+h6 {
+	font-style: italic;
+	margin: 0 0 5.930rem 0;
+}
+
+ul {
+	list-style-type: none;
+}
+ul.inline-list {
+	/*list-style-type: disc;*/
+	list-style-position: inside;
+	display: inline-block;
+}
+ul.inline-list li:first-child {
+	list-style: none;
+}
+
+ul.inline-list li {
+	float: left;
+	margin-left: 1em;
+}
+.section-intro {
+	background-color: #F8F7F2;
+}
+.fake-sc {
+	font-size: 0.8em;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+.text.rationale {
+	padding-top: 3.665em;
+}
+.inverse {
+	/*background-color: #ABA896;*/
+	background-color: black;
+	color: rgb(251,243,219);
+	padding: 0 5px;
+}
+
+.black {
+	background-color: black;
+	color: rgb(251,243,219);
+	padding: 2px;
+}
+
+.white-text {
+	color: rgb(251,243,219);
+}
+
+.light-background {
+	background-color: #F8F7F2;
+}
+
+.background-color-1 {
+	background-color: rgb(227, 137, 89);
+	background-color: #FF9C4D;
+}
+.color-1 {
+	color: rgb(227, 137, 89);
+	color: #FF9C4D;
+}
+.color-2 {
+	color: rgb(155, 89, 227);
+	color: #B78FE3;
+}
+.background-color-2 {
+	background-color: rgb(155, 89, 227);
+	background-color: #B78FE3;
+}
+.background-color-3 {
+	background-color: #C5ADBF;
+}
+.background-color-4 {
+	background-color: rgb(251,243,219);
+}
+.text {
+	/*
+	width: 50%;
+	max-width: 600px;
+	margin: auto;
+	*/
+	padding: 3.665em 25%;
+}
+
+
+.background-color-2 .white-text, .background-color-2.white-text {
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#details .text {
+	border-bottom: 1px solid #F8F7F2;
+	border-bottom: 1px solid #ABA896;
+}
+
+.center {
+	text-align: center;
+}
+.padded {
+	padding: 1em;
+}
+p {
+	margin-top: 1em;
+}
+/* CLEARFIX */
+.clearFix:before, .clearFix:after, .clearfix:before, .clearfix:after { content:""; display: table; overflow: hidden; }
+.clearFix:after, .clearfix:after { clear: both; } 
+.clearFix, .clearfix { zoom: 1; }
+/* CLEARFIX */
+.col-outer {
+	margin: -10px;
+}
+.col-inner {
+}
+.float {
+	float: left;
+}
+.block {
+	display: block;
+}
+.contained {
+	margin: 10px;
+	overflow: hidden;
+}
+.one-five {
+	width: 20%;
+}
+.row {
+	display: table;
+}
+.cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+#program ul li {
+	margin-bottom: 0.618em;
+}
+#program ul {
+	/*border-left: 1px solid black;*/
+	padding-left: 0.618em;
+}
+#program {
+	/*
+	padding-top: 5.930em;
+	padding-bottom: 5.930em;
+	*/
+	padding: 5.930em 12.5%;
+}
+
+.natecaj {
+	padding: 5.930rem 5%;
+}
+
+.section-intro .banner {
+	display: inline-block;
+	text-align: left;
+}
+
+.bang {
+	background-color: rgb(255, 215, 7);
+	color: black;
+}
+
+#program .column h4,
+#program .column ul {
+	padding: 0 1em;
+}
+#details {
+	padding-bottom: 5.930em;
+}
+/*
+ * poskusi
+ */
+
+.authorDetailsArticle img.roundBorders,
+.circle img.roundBorders, 
+img.circle, img.circle.roundBorders, .circle {
+	border: 0.33em solid white;
+	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
+	-webkit-box-shadow: 0 1px 2px #CCC;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #CCC;
+	box-sizing: border-box; /* kadar je notranji oz. hkrati določena širina */
+	overflow: hidden; /* če je to zunanji element */
+}
+
+.center-margins {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center {
+	text-align: center;
+}
+
+
+.cover {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.relative {
+	position: relative;
+}
+.ratio-1-1 {
+	padding-top: 100%;
+	width: 100%;
+}
+
+.one-two {
+	width: 50%;
+}
+.one-three {
+	width: 33.33%;
+}
+.two-three {
+	width: 66.67%;
+}
+.three-four {
+	width: 75%;
+}
+.one-four {
+	width: 25%;
+}
+.one-five {
+	width: 20%;
+}
+.one-six {
+	width: 16.667%;
+}
+.one-seven {
+	width: 14.29%;
+}
+.one-eight {
+	width: 12.5%;
+}
+.one-nine {
+	width: 11.11%;
+}
+.one-ten {
+	width: 10%;
+}
+.onesten {
+	width: 10%;
+}
+.one-one {
+	width: 100%;
+}
+
+.soft-border {
+	border: 0.33em solid white;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px #CCC;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #CCC;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.border-box {
+	box-sizing: border-box;
+}
+
+.minimal-padding {
+	padding: 5px;
+}
+/* ************************************************************ */
+
+@media only screen and (min-width: 1024px) {
+	html, body {
+		zoom: 1;
+		font-size: 18px;
+	}
+	.text {
+		padding: 3.665em 25%;
+	}
+	#program {
+		padding: 5.930em 12.5%;
+	}
+	.natecaj {
+		padding: 5.930rem 5%;
+	}
+	.column {
+		width: 33.33%;
+		display: inline-block;
+	}
+	h1 {
+		font-size: 2.265em;
+	}
+	/*
+	h1 + h2 {
+		margin-top: -5.930rem;
+		margin-bottom: 5.930rem;
+		font-size: 1.618rem;
+		font-weight: 500;
+	}*/
+	.font-size-3 {
+		font-size: 1.618em;
+		font-weight: normal;
+	}
+	.font-size-2 {
+		font-size: 1.5em;
+		font-weight: normal;
+	}
+}
+/*@media only screen and (min-width: 721px) and (max-width: 1023px) and (min-device-width: 721px) {*/
+@media	only screen 
+		and (min-width: 721px) 
+		and (max-width: 1024px) {
+	html, body {
+		zoom: 1;
+		font-size: 18px;
+	}
+	.text {
+		padding: 3.665em 15%;
+	}
+	#program, .natecaj {
+		padding: 5.930em 2%;
+	}
+	.column, .one-three {
+		width: 50%;
+		display: inline-block;
+	}
+	.natecaj {
+		text-align: center;
+	}
+	.float {
+		float: none;
+		text-align: center;
+	}
+	.float * {
+		text-align: initial;
+	}
+	h1 {
+		font-size: 5.930em;
+	}
+	/*
+	h1 + h2 {
+		margin-top: -5.930rem;
+		margin-bottom: 5.930rem;
+		font-size: 1.618rem;
+		font-weight: 500;
+	}*/
+	/*
+	.font-size-3, .font-size-2 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	*/
+}
+
+@media	only screen 
+		and (min-width: 481px) 
+		and (max-width: 720px)
+		/*and (min-device-width: 481px)
+		and (orientation: landscape)*/ {
+	.column, .one-three {
+		width: 100%;
+		display: inline-block;
+	}
+	.text {
+		padding: 3.665em 5%;
+	}
+	#program, .natecaj {
+		padding: 5.930em 5%;
+	}
+	h1 {
+		font-size: 3.665em;
+	}
+	/*
+	h1 + h2 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 1rem;
+		font-weight: 400;
+	}*/
+	html, body {
+		zoom: 1;
+		font-size: 18px;
+	}
+	.font-size-3, .font-size-2 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+}
+
+/*@media	only screen and (max-device-width: 480px),
+		only screen and (max-width: 480px), 
+		only screen and (max-width: 800px)
+		and (orientation: portrait) {*/
+@media	only screen
+		and (max-width: 480px) {
+	.text {
+		padding: 3.665em 4%;
+	}
+	#program, .natecaj {
+		padding: 5.930em 4%;
+	}
+	.section-intro .banner {
+	}
+	.column, .one-three, .deadline {
+		width: 100%;
+		display: block;
+	}
+	.float {
+		float: none;
+	}
+	h1 {
+		font-size: 2.265em;
+		margin-bottom: 1.618rem;
+	}
+	/*
+	h1 + h2 {
+		margin-top: 0rem;
+		margin-bottom: 0rem;
+		font-size: 1rem;
+		font-weight: 400;
+	}*/
+	
+	.section-intro .banner .date {
+		font-size: 1em;
+	}
+	.section-intro .banner .font-size-5 {
+		font-size: 1.618em;
+	}
+
+	#natecaj .two-three {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	h6 {
+		margin-bottom: 0;
+		font-weight: 400;
+	}
+	.font-size-3, .font-size-2 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	html, body {
+		/*zoom: 1.5;*/
+		/*font-size: 24px;*/
+	}
+}
+
