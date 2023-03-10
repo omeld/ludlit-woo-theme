@@ -1,0 +1,92 @@
+<?php
+
+//global $wp_query;
+
+if (isset($wp_query->query_vars['myissue'])) {
+	$thisIssue = get_query_var('myissue');
+	$myMax = $thisIssue;
+
+	$query = "
+	select $wpdb->posts.*, meta_value
+		from wp_posts, $wpdb->postmeta
+			where ID in (
+				select post_id
+					from $wpdb->postmeta
+						where meta_key = 'myissue'
+						and meta_value = $thisIssue
+				)
+			and ID = post_id
+			and meta_key = 'myorder'
+			order by meta_value + 0
+			";
+
+} else {
+
+
+
+
+$querystr = "
+	SELECT max($wpdb->postmeta.meta_value + 0)
+	FROM $wpdb->postmeta
+	WHERE meta_key = 'myissue'
+";
+
+$myMax = $wpdb->get_var($querystr);
+
+
+		/*
+		get only articles from the latest issue, ordered by page
+		TODO:
+		ne upošteva, ali so članki dejansko objavljeni!!!
+		 */
+$query = "
+	select $wpdb->posts.*, meta_value
+		from wp_posts, $wpdb->postmeta
+			where ID in (
+				select post_id
+					from $wpdb->postmeta
+						where meta_key = 'myissue'
+						and meta_value = (
+							select max(meta_value + 0)
+								from $wpdb->postmeta
+									where meta_key = 'myissue'
+							)
+				)
+			and ID = post_id
+			and meta_key = 'myorder'
+			order by meta_value + 0
+			";
+}
+
+?>
+<?php $pageposts = $wpdb->get_results($query, OBJECT); ?>
+<?php $previousCategory = ""; ?>
+<?php if ($pageposts): ?>
+	<div id="issueNum">št. <?php echo $myMax ?></div>
+<?php foreach ($pageposts as $post): ?>
+<?php setup_postdata($post); ?>
+
+<?php $categories = get_the_category(); ?>
+
+<?php if ($categories[0]->cat_name != $previousCategory): ?>
+<?php $previousCategory = $categories[0]->cat_name; ?>
+	<div class="catTitle">
+		<h3 class="twoColMargin eightCol"><a href="<?php echo esc_url(get_category_link($categories[0]->cat_ID)); ?>/"><?php echo $categories[0]->cat_name ?></a></h3>
+	</div>
+<?php endif; ?>
+
+<?php 
+if ( has_post_thumbnail() ) {
+  //the_post_thumbnail('myIssueThumbnail');
+} 
+?>
+		<div class="content threeColMargin sixCol">
+			<h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>&nbsp;</h4>
+			<h5><?php echo get_post_meta($post->ID, 'mysubtitle', true) ?></h5>
+			<div class="postExcerpt">
+				<?php the_excerpt(); ?>
+			</div>
+		</div>
+<?php endforeach; ?>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>

@@ -1,0 +1,640 @@
+<?php
+
+require_once('functions-meta.php');
+
+
+
+function myRecentPosts($off, $num, $el="h4") {
+	global $post;
+	global $thisPostID;
+	global $wp_query;
+
+	//$excludeID = $post->ID;
+	$excludeID = $thisPostID;
+
+	$args = array(
+		'offset' => $off,
+		'posts_per_page' => $num,
+		'post__not_in' => array($excludeID)
+	);
+
+	$myPosts = get_posts($args);
+?>
+	<ul class="recentArticles">
+<?php foreach($myPosts as $post) : setup_postdata($post);?>
+		<li>
+			<<?php echo $el; ?>>
+				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</<?php echo $el; ?>>
+		</li>
+<?php endforeach;?>
+	</ul>
+<?php
+	
+}
+
+/* ------------------------- */
+
+add_action( 'init', 'register_my_menus' );
+function register_my_menus() {
+	register_nav_menu('menu_one', 'osnovni meni');
+}
+
+if ( function_exists('register_sidebars') )
+    register_sidebars(5);
+
+function custom_excerpt_length($length) {
+
+	global $newlitTempCustomLength;
+		echo "<!-- CUSTOM::: $newlitTempCustomLength; -->";
+
+	if ($newlitTempCustomLength > 0) {
+		return $newlitTempCustomLength;
+	}
+
+	else if (is_category() || is_tag() || is_archive() || is_page('arhiv')) {
+		return 100;
+	} else if (is_singular('knjiga')) {
+		return 25;
+	} else if (is_single()) {
+		return 100;
+	} else {
+		return 25;
+	}
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length');
+
+function new_excerpt_more($more) {
+	global $post, $wpdb;
+	if (is_page("newsletter")) {
+	//	return ' ... <a style="color: #8C281F; text-decoration: none" href="'. get_permalink($post->ID) . '">Več&nbsp;&rarr;</a>';
+	} elseif (is_single()) {
+		return ' ... <a class="readMoreLink" href="'. get_permalink($post->ID) . '">Več&nbsp;&rarr;</a>';
+	}
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+if (function_exists('add_theme_support')) { 
+	add_theme_support( 'post-thumbnails' );
+	//add_theme_support('post-thumbnails', array('obvescevalnik', 'post'));
+	add_theme_support('post-formats', array('status', 'aside', 'quote'));
+}
+
+if (function_exists('add_image_size')) {
+	//add_image_size('myIssueThumbnail', 340, 140, true);
+	//add_image_size('myIssueThumbnail', 200, 140, true);
+	//add_image_size('myIssueThumbnail', 140, 140, true);
+	//add_image_size('myEmailThumbnail', 340, 140, true);
+}
+
+if (function_exists('add_post_type_support')) {
+	add_post_type_support('obvescevalnik', 'post-formats' );
+	add_post_type_support('post', 'post-formats' );
+}
+
+
+add_filter('query_vars', 'myissue_queryvars' );
+function myissue_queryvars($qvars) {
+	$qvars[] = 'myissue';
+	return $qvars;
+}
+
+function filter_ptags_on_images($content){
+	if (is_page("newsletter")) {
+		return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+	}
+}
+
+add_filter('the_post_thumbnail', 'filter_ptags_on_images');
+
+function myTitlesList($z=0) {
+	global $wp_query, $post;
+
+	if (!$z) {
+		$args = array_merge(
+			//$wp_query->query,
+			array(
+				'post_status' => 'publish',
+				'posts_per_page' => -1,
+				'post_type' => 'knjiga',
+				'orderby' => 'title',
+				'order' => 'ASC'
+			)
+		);
+	} else {
+		$args = array_merge(
+			//$wp_query->query,
+			array(
+				'post_status' => 'publish',
+				'posts_per_page' => -1,
+				'post_type' => 'knjiga',
+				'orderby' => 'title',
+				'order' => 'ASC',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'zbirka',
+						'field' => 'slug',
+						'terms' => $z
+					)
+				)
+			)
+		);
+	}
+
+	$myBookTitles = get_posts($args);
+?>
+<select name="myTitleSelect" id="myTitleSelect">
+	<option class="truncateThis" value="">Izberi naslov</option>
+<?php foreach($myBookTitles as $post) : setup_postdata($post); ?>
+	<option class="truncateThis" value="<?php the_permalink() ?>"><?php echo get_the_title(); ?></option>
+<?php endforeach; ?>
+</select>
+<script type="text/javascript">
+		var dropdown_title = document.getElementById("myTitleSelect");
+		function onTitleChange() {
+			if (dropdown_title.options[dropdown_title.selectedIndex].value != '') {
+				location.href = dropdown_title.options[dropdown_title.selectedIndex].value;		
+			}	
+		}	
+		dropdown_title.onchange = onTitleChange;
+</script>
+<?php
+}	
+function myAuthorsList() {
+	global $wp_query, $post;
+
+	$args = array_merge(
+		//$wp_query->query,
+		array(
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+			'post_type' => 'Avtor',
+			'meta_key' => 'Priimek',
+			'orderby' => 'meta_value',
+			'order' => 'ASC',
+			'meta_query' => array(
+				array(
+					'key' => 'sodelovanje',
+					'value' => 'avtor knjig'
+				)
+			)
+
+		)
+	);
+
+	$myAuthorNames = get_posts($args);
+?>
+<select name="myAuthorSelect" id="myAuthorSelect">
+	<option class="truncateThis" value="">Izberi avtorja</option>
+<?php foreach($myAuthorNames as $post) : setup_postdata($post); ?>
+	<option class="truncateThis" value="<?php the_permalink() ?>"><?php echo get_post_meta($post->ID, 'Priimek', 'true'); ?>, <?php echo get_post_meta($post->ID, 'Ime', 'true'); ?></option>
+<?php endforeach; ?>
+</select>
+<script type="text/javascript">
+		var dropdown_author = document.getElementById("myAuthorSelect");
+		function onAuthorChange() {
+			if (dropdown_author.options[dropdown_author.selectedIndex].value != '') {
+				location.href = dropdown_author.options[dropdown_author.selectedIndex].value;		
+			}	
+		}	
+		dropdown_author.onchange = onAuthorChange;
+</script>
+<?php
+}	
+function myRandomQuote($limitToSeries=false) {
+	global $wp_query, $post;
+	global $myRandomQuote;
+
+	if ($limitToSeries == false) {
+		$limitToSeries = "";
+	}
+	$args = array(
+		'post_status' => 'publish',
+		'post_type' => 'knjiga',
+		'posts_per_page' => 3,
+		'posts_per_archive_page' => 3,
+		'orderby' => 'rand',
+		'paged' => get_query_var('paged'),
+		'meta_query' => array(
+			array(
+				'key' => 'citat',
+				'value' => '',
+				'compare' => '!='
+			),
+			array(
+				'key' => 'zbirka',
+				'value' => $limitToSeries,
+				'compare' => 'LIKE'
+			)
+		)
+	);
+
+	//$myRandomQuote = get_posts($args);
+	$myRandomQuote = new WP_Query($args);
+
+	if ($myRandomQuote) {
+?>
+<?php
+		foreach ($myRandomQuote as $post) : setup_postdata($post);
+		$myQ = array(get_post_meta($post->ID, 'citat', true), get_post_meta($post->ID, 'Ime', true), get_post_meta($post->ID, 'Priimek', true), get_the_title($post->ID));
+		endforeach;
+?>
+<?php //wp_pagenavi( array( 'query' => $myRandomQuote ) ); ?>
+<!-- paginate_links -->
+<?php
+/*$big = 999999999; // need an unlikely integer
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $myRandomQuote->max_num_pages
+) );*/
+?>
+
+<?php
+	}
+
+	return $myQ;
+	
+}
+	
+function thisAuthorsInterview($nameSlug) {
+	global $wp_query, $post;
+
+	$args = array(
+		'post_status' => 'publish',
+		'post_type' => 'post', 
+		'posts_per_page' => -1,
+		'category_name' => 'intervju',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'drugo_ime',
+				'field' => 'slug',
+				'terms' => $nameSlug
+			)
+		)
+	);
+
+	$thisAuthorsWorks = get_posts($args);
+	if ($thisAuthorsWorks) :
+?>
+<h4>Intervju</h4>
+<ul id="titlesByAuthor">
+<?php foreach ($thisAuthorsWorks as $post) : setup_postdata($post); ?>
+		<li class="">
+			<h5><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo get_the_title(); ?></a></h5>
+		</li>
+<?php
+	endforeach;
+?>
+</ul>
+<?php
+endif;
+}
+
+function thisAuthorsWorks($heading, $type, $num, $nameSlug, $showThumbnail) {
+	global $thisPostID;
+	global $wp_query, $post;
+	$myIterator = 0;
+
+	$args = array(
+		'post_status' => 'publish',
+		'post_type' => $type, 
+		'posts_per_page' => $num,
+		'post__not_in' => array($thisPostID),
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'ime_avtorja',
+				'field' => 'slug',
+				'terms' => $nameSlug
+			)
+		)
+	);
+
+	$thisAuthorsWorks = get_posts($args);
+	if ($thisAuthorsWorks) :
+?>
+<h4><?php echo $heading; ?></h4>
+<ul id="titlesByAuthor">
+<?php
+	foreach ($thisAuthorsWorks as $post) : setup_postdata($post); $myIterator++; 
+?>
+	<?php if (($myIterator != 0) and !($myIterator % 2)) { ?>
+	<?php $myPostMargin = ""; ?>
+	<?php } else { ?>
+	<?php $myPostMargin = " hasRightMargin"; ?>
+	<?php } ?>
+		<li class="twoCol float <?php echo $myPostMargin; ?>">
+<?php if ($showThumbnail) : ?>
+<?php
+	$img_id = get_post_thumbnail_id($post->ID);
+	$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
+?>
+
+<?php	 if (has_post_thumbnail()) : ?>
+			<a class="bare" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+<?php			the_post_thumbnail('myTwoColImage', array('class' => $myAddClass, 'alt' => $alt_text)); ?>
+			</a>
+<?php 	endif; ?>
+<?php endif; ?>
+
+			<h5><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo get_the_title(); ?></a></h5>
+</li>
+<?php if (($myIterator != 0) and !($myIterator % 2)) : ?>
+<li style="clear: both; height: 0px"></li>
+<?php endif; ?>
+<?php
+	endforeach;
+?>
+<li style="clear: both; height: 0px"></li>
+</ul>
+<?php
+	endif;
+}
+
+function newlit_save_author($post_id) {
+	if (isset($_REQUEST['ime'], $_REQUEST['priimek'])) {
+		$myCombinedName = "$_REQUEST[ime] $_REQUEST[priimek]";
+
+	} elseif (isset($_REQUEST['ime'])) {
+		$myCombinedName = $_REQUEST['ime'];
+
+	} elseif (isset($_REQUEST['priimek'])) {
+		$myCombinedName = $_REQUEST['priimek'];
+
+	} elseif ((get_post_meta($post_id, 'ime', true) != "") and (get_post_meta($post_id, 'priimek', true) != "")) {
+		$myCombinedName = get_post_meta($post_id, 'ime', true) . " " . get_post_meta($post_id, 'priimek', true);
+
+	} elseif (($myName = get_post_meta($post_id, 'ime', true)) != "") {
+		$myCombinedName = $myName;
+
+	} elseif (($mySurname = get_post_meta($post_id, 'priimek', true) != "")) {
+		$myCombinedName = $mySurname;
+
+	}
+
+	if (isset($myCombinedName)) {
+		wp_set_post_terms($post_id, $myCombinedName, 'ime_avtorja', false);
+	}
+}
+
+function my_save_hook($post_id) {
+	/*
+		TODO:
+		upoštevaj razlike glede na vrsto prispevka!!!
+	 */
+	if ($_POST['post_type'] == "avtor") {
+		newlit_save_author($post_id);
+		
+	} elseif ($_POST['post_type'] == "knjiga") {
+	} elseif ($_POST['post_type'] == "revija") {
+	} else {
+		return;
+	}
+
+}
+
+add_action('save_post', 'my_save_hook');
+
+add_filter('query_vars', 'myBookSeriesVar' );
+
+function myBookSeriesVar($qvars) {
+	$qvars[] = 'series';
+	return $qvars;
+}
+
+function newlit_tiny_mce_before_init($init_array) {
+	$init_array['theme_advanced_styles'] = "UPPERCASE=uppercase; blockquote_inside=inside; Intervju vprašanje=interviewQuestion; Intervju odgovor=interviewAnswer; sans=sans; razmik nad odstavkom=spaceAbove";
+	//$init_array['theme_advanced_blockformats'] = "p,h3,h4,h5,a,blockquote"; // filter formats
+	return $init_array;
+}
+add_filter('tiny_mce_before_init', 'newlit_tiny_mce_before_init');
+
+
+function newlit_show_tags() {
+	$posttags = get_the_tags();
+	if ($posttags) {
+?>
+<p><b>Ključne besede:</b></p>
+<ul class="theTags clearfix">
+<?php
+	foreach($posttags as $tag) {
+?>
+	<li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name; ?></a></li>
+<?php
+	}
+?>
+</ul>
+<?php
+	}
+}
+
+function newlit_related_posts($id) {
+	$myIterator = 0;
+	$origPost = $post;
+	global $post;
+	global $wpdb;
+	//global $relatedPosts;
+	$tags = wp_get_post_tags($id);
+	//echo "<!-- $id -->";
+
+	$noneToShow = 0;
+	if ($tags) {
+		//echo "<!-- has tags -->";
+		$tag_ids = array();
+		
+		foreach ($tags as $oneTag) {
+			$tag_ids[] = $oneTag->term_id;
+		}
+
+		$separated_tags = implode(',', $tag_ids);
+
+		$querystr = "
+SELECT SQL_CALC_FOUND_ROWS  
+	wp_2_posts.*
+FROM
+	wp_2_posts
+	INNER JOIN wp_2_term_relationships ON (wp_2_posts.ID = wp_2_term_relationships.object_id)
+WHERE 1=1
+	AND wp_2_posts.ID NOT IN ($id)
+	AND (wp_2_term_relationships.term_taxonomy_id IN ($separated_tags))
+	AND wp_2_posts.post_type = 'post'
+	AND (wp_2_posts.post_status = 'publish')
+GROUP BY
+	wp_2_posts.ID
+ORDER BY
+	count(*) DESC,
+	wp_2_posts.post_date DESC
+LIMIT
+	0, 6
+";			
+		
+		$args = array(
+			'paged' => get_query_var('paged'),
+			'post_status' => 'publish',
+			'tag__in' => $tag_ids,
+			'post__not_in' => array($id),
+			'posts_per_page' => 6,
+		);
+
+		$relatedPosts = new WP_Query($args);
+		$relatedPosts = $wpdb->get_results($querystr, OBJECT);
+
+	
+	//echo "<!-- "; print_r($relatedPosts); echo " -->";
+	echo "<!-- QUERYSTR ::: $querystr -->";
+	echo "<!-- RELATEDPOSTSQUERY :::\n"; print_r($relatedPosts->query); echo "\n-->";
+	echo "<!-- RELATEDPOSTSQUERY :::\n$relatedPosts->request \n-->";
+
+	if ($relatedPosts) {
+		echo "<!-- YES -->";
+		echo "<!-- $relatedPosts->num_rows\n$wpdb->num_rows -->";
+	}
+
+	global $relatedPosts;
+		//if ($relatedPosts) {
+		//if ($relatedPosts->found_posts > 0) {
+		if ($wpdb->num_rows > 0) {
+			echo "<!-- has related 1 [TAGS] -->";
+?>
+<h4>Sorodni prispevki</h4>
+<ul class="clearfix relatedArticlesList">
+<?php while ($relatedPosts->have_posts()) : $relatedPosts->the_post(); $myIterator++; ?>
+<?php if (($myIterator != 0) and !($myIterator % 2)) { ?>
+<?php $myPostMargin = ""; ?>
+<?php } else { ?>
+<?php $myPostMargin = " hasRightMargin"; ?>
+<?php } ?>
+<li class="myPostItem sixCol float <?php echo $myPostMargin; ?>" style="padding-bottom: 4px">
+<div class="paddedText">
+<?php if (has_post_thumbnail()) : ?>
+<?php
+$img_id = get_post_thumbnail_id($post->ID);
+$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
+?>
+	<div class="postExcerpt twoCol float hasRightMargin relatedArticleThumb">
+			<a class="bare" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+<?php		the_post_thumbnail('myAuthorThumbnail',
+				array(
+					'class'	=> $myAddClass,
+					'alt'	=> $alt_text
+				)); ?>
+			</a>
+	</div>
+<?php endif; ?>
+	<h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>&nbsp;</h4>
+	<h5><?php echo get_post_meta($post->ID, 'mysubtitle', true) ?></h5>
+<?php	$contributor = wp_get_post_terms($post->ID, "ime_avtorja", array("count" => 1));
+$contributorName = $contributor[0]->name;
+if (isset($contributorName) and !(empty($contributorName))) :
+?>
+		<p class="contributorName"><?php echo $contributorName; ?></p>
+<?php
+endif;
+?>
+<?php	$newlitTempCustomLength = 5; the_excerpt(); $newlitTempCustomLength = 0;?>
+	</div>
+</li>
+<?php if (($myIterator != 0) and !($myIterator % 2)) { ?>
+<li style="clear: both; height: 0px"></li>
+<?php } ?>
+
+<?php endwhile; ?>
+</ul>
+<?php
+		} else {
+			$noneToShow = 1;
+		}
+		$post = $origPost;
+		wp_reset_query();
+	}
+
+	if ($noneToShow) {
+		$categories = get_the_category($id);
+		if ($categories) {
+			echo "<!-- has categories -->";
+			$categoryIds = array();
+			foreach ($categories as $oneCategory) {
+				$categoryIds[] = $oneCategory->term_id;
+			}
+			$args = array (
+				'paged' => get_query_var('paged'),
+				'post_status' => 'publish',
+				'category__in' => $categoryIds,
+				'category__not_in' => array(3848, 3849),
+				'post__not_in' => array($id),
+				'posts_per_page'=> 6
+			);
+
+			$relatedPosts = new WP_Query($args);
+
+			//if ($relatedPosts) {
+			if ($relatedPosts->found_posts > 0) {
+				echo "<!-- has related 2 -->";
+
+?>
+<h4>Sorodni prispevki</h4>
+<ul class="clearfix relatedArticlesList">
+<?php while ($relatedPosts->have_posts()) : $relatedPosts->the_post(); $myIterator++; ?>
+<?php if (($myIterator != 0) and !($myIterator % 2)) { ?>
+<?php $myPostMargin = ""; ?>
+<?php } else { ?>
+<?php $myPostMargin = " hasRightMargin"; ?>
+<?php } ?>
+<li class="myPostItem sixCol float <?php echo $myPostMargin; ?>" style="padding-bottom: 4px;">
+<div class="paddedText">
+<?php if (has_post_thumbnail()) : ?>
+<?php
+$img_id = get_post_thumbnail_id($post->ID);
+$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
+?>
+	<div class="postExcerpt twoCol float hasRightMargin relatedArticleThumb">
+			<a class="bare" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+<?php		the_post_thumbnail('myAuthorThumbnail',
+				array(
+					'class'	=> $myAddClass,
+					'alt'	=> $alt_text
+				)); ?>
+			</a>
+	</div>
+<?php endif; ?>
+	<h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>&nbsp;</h4>
+	<h5><?php echo get_post_meta($post->ID, 'mysubtitle', true) ?></h5>
+<?php	$contributor = wp_get_post_terms($post->ID, "ime_avtorja", array("count" => 1));
+$contributorName = $contributor[0]->name;
+if (isset($contributorName) and !(empty($contributorName))) :
+?>
+		<p class="contributorName"><?php echo $contributorName; ?></p>
+<?php
+endif;
+?>
+<?php	$newlitTempCustomLength = 5; the_excerpt(); $newlitTempCustomLength = 0;?>
+	</div>
+</li>
+<?php if (($myIterator != 0) and !($myIterator % 2)) { ?>
+<div style="clear: both; height: 0px"></div>
+<?php } ?>
+
+<?php endwhile; ?>
+</ul>
+<?php
+				$post = $origPost;
+				wp_reset_query();
+			}
+		}
+	}
+}
+
+function my_wp_antispambot_shortcode_function($atts){
+	return '<a href="'.antispambot("mailto:" . $atts[address]).'">' . $atts[name] . '</a>';
+}
+add_shortcode('sendemail', 'my_wp_antispambot_shortcode_function');
+
+function my_wp_antispambot_2_shortcode_function($atts){
+	return antispambot($atts[address]);
+}
+add_shortcode('printemail', 'my_wp_antispambot_2_shortcode_function');
+
+
+?>

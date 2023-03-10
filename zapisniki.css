@@ -1,0 +1,426 @@
+* {
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+/* CLEARFIX */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+/* CLEARFIX */
+body {
+	/*
+	font-family: "Source Sans Pro";
+	font-family: "Exo 2";
+	font-family: "Titillium Web";
+	font-family: "Open Sans";
+	*/
+	font-family: "Alegreya Sans";
+	font-size: 18px;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body.single h1 {
+	font-size: 5em;
+	line-height: 1;
+	font-weight: 100;
+	margin: 0.25em 0 0.5em 0;
+}
+
+body.single h2 {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0.25em 0 10em 0;
+	border-bottom: 1px solid black;
+}
+
+h6 a {
+	color: #E3E9EB;
+	color: #6BBBDA;
+}
+
+h6 {
+	font-size: 1em;
+	font-weight: 100;
+}
+
+body.archive h6 {
+	font-size: 1.5em;
+}
+
+
+.container {
+	margin: -0.25em;
+	overflow-x: hidden;
+}
+
+.contained {
+	margin: 0.25em;
+}
+
+.bluish {
+	color: #6BBBDA;
+}
+.bluish-background {
+	background-color: #6BBBDA;
+}
+.really-dark {
+	color: #171B1F;
+}
+.really-dark-background {
+	background-color: #171B1F;
+}
+.darkest {
+	color: #2F363D;
+}
+.darkest-background {
+	background-color: #2F363D;
+}
+.darker {
+	color: #434C57;
+}
+.darker-background {
+	background-color: #434C57;
+}
+.dark {
+	color: #39414A;
+}
+.dark-background {
+	background-color: #586573;
+}
+.gray {
+	color: #B2B8BF;
+}
+.gray-background {
+	background-color: #B2B8BF;
+}
+.light {
+	color: #93A8BF;
+}
+.light-background {
+	background-color: #93A8BF;
+}
+.lightest {
+	color: #E3E9EB;
+}
+.lightest-background {
+	background-color: #E3E9EB;
+}
+
+.white-background {
+	background-color: white;
+}
+
+.my-login-form {
+	width: 50%;
+	font-size: 1em;
+	margin: auto;
+	margin-top: 10%;
+	background-color: #2F363D;
+	color: #B2BABF;
+}
+
+.my-login-form form p {
+	margin: 0.5em 0;
+}
+.my-login-form form {
+	padding: 3em 2em;
+	margin: 0;
+}
+.my-login-form form input.input {
+	width: 100%;
+	border: none;
+	background-color: #bcbcbc;
+	margin: 0.5em 0;
+	/*padding: 0.25em;*/
+	border-radius: 5px;
+}
+.my-login-form form p.login-submit {
+}
+
+.my-login-form form input[type="submit"] {
+	background-color: #93A8BF;
+	display: block;
+	width: 100%;
+	border: none;
+	margin: 0;
+	line-height: 2;
+	border-radius: 5px;
+	color: white;
+}
+body.single #list-of-proceedings {
+	width: 25%;
+	position: absolute;
+	min-height: 100%;
+	z-index: 10;
+	overflow: hidden;
+	overflow-y: scroll;
+	text-align: left;
+	color: inherit;
+}
+
+body.archive #list-of-proceedings {
+	width: 66.67%;
+	margin: auto;
+}
+
+#list-of-proceedings ul li:hover h6 a {
+	color: #6BBBDA;
+	color: white;
+}
+#list-of-proceedings ul li:hover {
+	background-color: #434C57;
+}
+
+.padding {
+	padding: 1em;
+}
+
+#proceedings-container {
+	/*
+	margin-left: 25%;
+	min-height: 100%;
+	*/
+	width: 80%;
+	margin: auto;
+}
+#controls {
+	/*max-width: 20%;*/
+}
+
+#proceedings-item {
+	/*max-width: 40em;*/
+	width: 100%;
+}
+#proceedings-item .padding {
+	padding: 3em 5em;
+}
+
+#proceedings-item .text-container {
+	max-width: 35em;
+	margin: auto;
+}
+
+#list-of-proceedings ul {
+	margin: 0;
+	list-style-type: none;
+}
+#list-of-proceedings ul li {
+	padding: 0.5em 1em;
+	border-bottom: 1px solid;
+}
+#list-of-proceedings ul li p {
+	margin: 0;
+}
+.thin {
+	font-weight: 100;
+}
+
+.post_date {
+	font-size: 0.8em;
+}
+
+.float {
+	float: left;
+}
+
+.relative {
+	position: relative;
+}
+
+#main-container {
+	z-index: 100;
+	overflow: hidden;
+}
+
+.button {
+	padding: 0.5em 1em;
+	/*margin: 1em 0 0 0;*/ /* container/contained! */
+	color: black;
+	display: inline-block;
+	text-align: left;
+	border: none;
+}
+.button:hover {
+	cursor: pointer;
+}
+
+.button-container {
+	max-width: 50%;
+}
+
+.no-overflow {
+	overflow: hidden;
+}
+
+.equalize-height {
+	padding-bottom: 999em;
+	margin-bottom: -999em;
+}
+
+body:after {
+	display: none;
+	/*content: attr(datacontent) ' default';*/
+	content: 'default';
+}
+
+/*
+ *
+ *--------------------------------------------------------------------
+ * 
+ * responsive layout
+ *
+ *--------------------------------------------------------------------
+ *
+ */
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media (min-width: 800px) { /* and (max-width: 1024px) { */
+	.float {
+		float: left;
+	}
+
+	body.single #list-of-proceedings {
+		width: 25%;
+		position: absolute;
+		min-height: 100%;
+		z-index: 10;
+		overflow: hidden;
+		overflow-y: scroll;
+		display: block !important; /* jquery doda v style da je hidden če smo ravnokar stisnili */
+		text-align: left;
+		color: inherit;
+	}
+	#proceedings-item .text-container {
+		max-width: 35em;
+		margin: auto;
+	}
+	#proceedings-item .padding {
+		padding: 3em 5em;
+	}
+	body.single #proceedings-container {
+		margin: auto;
+		width: 80%;
+	}
+	body:after {
+		/*content: attr(datacontent) ' 720';*/
+		content: 'default';
+	}
+	.button {
+		padding: 0.5em 1em;
+		/*margin: 1em 0 0 0;*/
+		color: black;
+		display: inline-block;
+		text-align: left;
+		border: none;
+		background-color: white;
+	}
+	.button-container {
+		max-width: 50%;
+	}
+	.container {
+		margin: -0.25em;
+	}
+
+	.contained {
+		margin: 0.25em;
+	}
+	.my-login-form {
+		width: 50%;
+		margin-top: 10%;
+	}
+
+}
+
+@media (max-width: 799px) {
+	.float {
+		float: none;
+	}
+
+	body.single #list-of-proceedings {
+		z-index: 10;
+		width: 100%;
+		position: static;
+		min-height: 0;
+		display: none;
+		text-align: center;
+		color: white;
+	}
+	#proceedings-item .text-container {
+		max-width: 90%;
+	}
+	#proceedings-item .padding {
+		padding: 1em;
+	}
+	body:after {
+		/*content: attr(datacontent) ' 720';*/
+		content: '720';
+	}
+	/*
+	body.single #proceedings-container,
+   	body.single #controls	{
+	*/
+	body.single #proceedings-container {
+		width: 100%;
+		max-width: 100%;
+	}
+	#main-container {
+		margin-left: 0; /* FIXME: to overrida jquery, ki zapiše v style */
+	}
+	.button {
+		display: block;
+		text-align: center;
+		border-bottom: 1px solid white;
+		background-color: #93A8BF;
+	}
+	.button-container {
+		max-width: 100%;
+		width: 100%;
+	}
+	.container, .contained {
+		margin: 0;
+	}
+	.my-login-form {
+		width: 100%;
+		margin-top: 0%;
+	}
+	
+}
+
+@media (max-width: 480px) {
+}
+
+@media (min-width: 1280px) {
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
+

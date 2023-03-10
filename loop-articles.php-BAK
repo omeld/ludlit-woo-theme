@@ -1,0 +1,136 @@
+<?php
+/*
+to je glavna zanka za mnoge prikaze seznamov prispevkov (domača stran, arhivi po datumih, po kategorijah …)
+ */
+?>
+<?php if ($myCurrentLoop->have_posts()) : ?>
+<?php 
+	$myIterator = 0; 
+	$myListSwitch = 0;
+?>
+<div class="myMainPosts  clearfix ">
+	<ul class="newlit-stories-outer-wrapper">
+<?php if (($paged < 2)  && (0 < $myCoverStoriesNum)) : ?>
+		<li>
+			<ul class="newlit-stories-inner-wrapper true-liquid-block-outer newlit-newest-stories-wrapper"><!--
+<?php else : ?>
+		<li class="medium-top-padding stretch-full-width gray-background">
+			<ul class="newlit-stories-inner-wrapper true-liquid-block-outer newlit-newer-stories-wrapper"><!--
+<?php endif; ?>
+<?php while ($myCurrentLoop->have_posts()) : $myCurrentLoop->the_post(); $myIterator++; ?>
+<?php
+$contributor = wp_get_post_terms($post->ID, "ime_avtorja", array("count" => 1));
+$contributorName = $contributor[0]->name;
+$mySubtitle = get_post_meta($post->ID, 'mysubtitle', true);
+$paged = get_query_var('paged');
+?>
+<?php 
+	if ($paged < 2) :
+		$articleWidth = ($myIterator <= $myCoverStoriesNum ? 'one-one' : 'one-four');
+		$fontSize = ($myIterator <= $myCoverStoriesNum ? 'two-three center-margins font-size-5 serif center normal leading-tight' : 'font-size-2 bold serif center leading-tight');
+	else :
+		$articleWidth = 'one-four';
+		$fontSize = 'font-size-2 bold serif center leading-tight';
+	endif;
+?>
+<?php if (($paged < 2)  && ($myIterator <= $myCoverStoriesNum)) : ?>
+		--><li class="myPostListItem true-liquid-block-inner newest-items <?php echo $articleWidth; ?> myPostItem">
+			<div class="text-outer medium-top-padding x-large-bottom-padding">
+				<div class="paddedText sans-dagny thin">
+					<h4 class="article-title <?php echo $fontSize; ?>"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+					<?php if (!empty($mySubtitle)) : ?><h5 class="article-subtitle one-two center-margins gray normal center font-size-1"><?php echo $mySubtitle ?></h5><?php endif; ?>
+<?php if (!is_tax('ime_avtorja')) : ?>
+<?php if (isset($contributorName) and !(empty($contributorName)) and ($showAuthorThumb !== false)) : ?>
+<?php $authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); ?>
+					<p class="bottom-margin no-indent contributorName serif italic center font-size-2 normal"><?php echo $contributorName; ?></p>
+					<div class="this-author-photo one-eight center small-top-margin circle center-margins" style="margin-bottom: 2em">
+						<div class="cover ratio-1-1" style="background-image: url(<?php $xthumb = wp_get_attachment_image_src(get_post_thumbnail_id($authorPage->ID), 'myAuthorThumbnail'); echo $xthumb[0] ?>)"></div>
+					</div>
+<?php endif; ?>
+<?php endif; ?>
+				</div>
+				<div class="mobile-full-width one-two center-margins ">
+					<div class="theExcerpt serif font-size-1"><?php myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false)); //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?></div>
+					<div class="myPostMeta gray sans  center top-margin">
+						<p class="no-indent"><?php echo the_time('j. F Y');?> | 
+<?php $category = get_the_category(); ?>
+<?php foreach ($category as $ctg) : ?>
+<?php 
+		if (($ctg->name == "izpostavljeno") or
+			($ctg->name == "novo")) {
+				continue;
+			}
+?>
+							<a href="<?php echo esc_url(get_category_link($ctg->cat_ID)); ?>"><?php echo $ctg->cat_name; ?></a>
+<?php endforeach; ?>
+							| <a href="<?php comments_link(); ?>">Komentarji (<?php echo get_comments_number(); ?>)</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</li><!--
+<?php $myListSwitch = ($myIterator == $myCoverStoriesNum ? 1 : 0); ?>
+<?php else : ?>
+<?php if ($myListSwitch) : $myListSwitch = 0; ?>
+--></ul></li><li class="medium-top-padding stretch-full-width gray-background"><ul class="newlit-stories-inner-wrapper true-liquid-block-outer newlit-newer-stories-wrapper"><!--
+<?php endif; ?>
+		--><li class="myPostListItem other-story center one-three newer-items myPostItem true-liquid-block-inner">
+			<div class="text-outer minimal-padding white-background"><!--
+				--><div class="sans-dagny thin">
+					<h4 class="article-title serif font-size-2 bold"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+					<?php if (!empty($mySubtitle)) : ?><h5 class="article-subtitle normal three-four center-margins gray center font-size-1"><?php echo $mySubtitle ?></h5><?php endif; ?>
+<?php if (!is_tax('ime_avtorja')) : ?>
+	<?php if (isset($contributorName) and !(empty($contributorName)) and ($showAuthorThumb !== false)) : ?>
+<?php $authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); ?>
+					<p class="contributorName serif italic  font-size-1 normal"><?php echo $contributorName; ?></p>
+					<div class="this-author-photo one-four center small-top-margin circle center-margins" style="margin-bottom: 2em">
+						<div class="cover ratio-1-1" style="background-image: url(<?php $xthumb = wp_get_attachment_image_src(get_post_thumbnail_id($authorPage->ID), 'myAuthorThumbnail'); echo $xthumb[0] ?>)"></div>
+					</div>
+	<?php endif; ?>
+<?php endif; ?>
+					<!--<div class="theExcerpt   sans font-size-1"><?php $newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?></div>-->
+					<div class="myPostMeta  sans normal ">
+						<p class="gray no-margin no-indent"><?php echo the_time('j. F Y');?> | 
+<?php $category = get_the_category(); ?>
+<?php foreach ($category as $ctg) : ?>
+<?php 
+		if (($ctg->name == "izpostavljeno") or
+			($ctg->name == "novo")) {
+				continue;
+			}
+?>
+							<a href="<?php echo esc_url(get_category_link($ctg->cat_ID)); ?>"><?php echo $ctg->cat_name; ?></a>
+<?php endforeach; ?>
+							| <a href="<?php comments_link(); ?>">Komentarji (<?php echo get_comments_number(); ?>)</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</li><!--
+<?php endif; ?>
+<?php endwhile; ?>
+--></ul></li></ul>
+<?php
+
+//$max_num_pages = $wp_query->max_num_pages;
+//echo "<!-- max_num_pages ::: $wp_query->max_num_pages ||| posts_per_page ::: $wp_query->posts_per_page ||| found_posts ::: $wp_query->found_posts -->";
+$my_max_num_pages = ceil($wp_query->found_posts / $myNumberOfPosts);
+
+?>
+<div class="clearfix floatRight small-top-padding small-bottom-padding" id="myPagination">
+<?php
+$big = 999999999; // need an unlikely integer
+echo paginate_links( array(
+	'prev_text' => '&laquo; Novejše',
+	'next_text' => 'Starejše &raquo;',
+	'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+	'format' => '?paged=%#%',
+	'current' => max(1, $paged),
+	'total' => $my_max_num_pages
+) );
+?>
+</div>
+</div>
+<?php else: ?>
+<p>ništa</p>
+<?php endif; ?>

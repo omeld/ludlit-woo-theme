@@ -1,0 +1,4374 @@
+/*
+Theme Name: newLit
+Theme URI: http://wordpress.org/
+Description: my newlit theme
+Author: pikavejica
+Author URI: http://wordpress.org/
+Version: 2.0
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu (optional)
+*/
+
+/*
+ * modular scale: @ 1.333
+ */
+
+@import url("https://use.typekit.net/qtb3tea.css");
+
+
+
+
+
+body, html {
+	/* hack? */
+	/*height: 100%;
+	position: relative;*/
+	overflow-x: hidden;
+}
+
+html {
+	font-size: 14px !important;
+}
+
+body {
+	line-height: 1.55;
+	margin: 0 0 2em 0;
+	background-color: white;
+}
+
+.oneArticle {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+pre, .pre {
+	font-family: monospace;
+	border: 1px dashed #999999;
+	padding: 1em;
+	margin: 2em;
+	background-color: #f6f6f6;
+}
+
+.has-short-line-below:after {
+	display: block;
+	margin: 1em 0;
+	width: 2em;
+	border-bottom: 0.33em solid;
+	content: '';
+}
+
+.home h2 {
+	font-weight: bold;
+	margin-top: 8rem;
+	margin-bottom: 4rem;
+}
+
+.home h2:after {
+	display: block;
+	margin: 1em 0;
+	width: 2em;
+	border-bottom: 0.33em solid #2578D8;
+	content: '';
+}
+
+.font-size-00 {
+	font-size: 0.565em;
+	font-size: 0.565rem;
+}
+.font-size-0 {
+	font-size: 0.752em;
+	font-size: 0.752rem;
+}
+.font-size-1 {
+	font-size: 1em;
+	font-size: 1rem;
+}
+.font-size-2 {
+	font-size: 1.333em;
+	font-size: 1.333rem;
+}
+.font-size-3 {
+	font-size: 1.769em;
+	font-size: 1.769rem;
+}
+.font-size-4 {
+	font-size: 2.353em;
+	font-size: 2.353rem;
+}
+.font-size-5 {
+	font-size: 3.129em;
+	font-size: 3.129rem;
+}
+.font-size-6 {
+	font-size: 4.162em;
+	font-size: 4.162rem;
+}
+.font-size-7 {
+	font-size: 5.535em;
+	font-size: 5.535rem;
+}
+.font-size-8 {
+	font-size: 7.362em;
+	font-size: 7.362rem;
+}
+.font-size-9 {
+	font-size: 9.791em;
+	font-size: 9.791rem;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+}
+
+.has-short-line-above {
+	position: relative;
+}
+.has-short-line-above:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: -3em;
+	width: 3em;
+	border-top: 1em solid;
+}
+
+.introduction {
+	font-size: 1.769em;
+	font-size: 1.769rem;
+}
+
+.category-cacke-in-tuhtci .introduction {
+	color: black !important;
+}
+
+.introduction:after, .new-section:after {
+	content: '';
+	display: block;
+	margin: auto;
+	width: 2em;
+	height: 2em;
+	border-bottom: 1em solid;
+}
+
+.tiny-left-padding {
+	padding-left: 0.565em;
+}
+.small-left-padding {
+	padding-left: 1.769em;
+}
+.medium-left-padding {
+	padding-left: 2.353em;
+}
+.large-left-padding {
+	padding-left: 3.129em;
+}
+.x-large-left-padding {
+	padding-left: 7.362em;
+}
+.tiny-left-margin {
+	margin-left: 0.565em;
+}
+.small-left-margin {
+	margin-left: 1.769em;
+}
+.medium-left-margin {
+	margin-left: 2.353em;
+}
+.large-left-margin {
+	margin-left: 3.129em;
+}
+.x-large-left-margin {
+	margin-left: 7.362em;
+}
+.tiny-right-padding {
+	padding-right: 0.565em;
+}
+.small-right-padding {
+	padding-right: 1.769em;
+}
+.medium-right-padding {
+	padding-right: 2.353em;
+}
+.large-right-padding {
+	padding-right: 3.129em;
+}
+.x-large-right-padding {
+	padding-right: 7.362em;
+}
+.tiny-right-margin {
+	margin-right: 0.565em;
+}
+.small-right-margin {
+	margin-right: 1.769em;
+}
+.medium-right-margin {
+	margin-right: 2.353em;
+}
+.large-right-margin {
+	margin-right: 3.129em;
+}
+.x-large-right-margin {
+	margin-right: 7.362em;
+}
+.tiny-top-padding {
+	padding-top: 0.565em;
+}
+.small-top-padding {
+	padding-top: 1.769em;
+}
+.medium-top-padding {
+	padding-top: 2.353em;
+}
+.large-top-padding {
+	padding-top: 3.129em;
+}
+.x-large-top-padding {
+	padding-top: 7.362em;
+}
+.tiny-top-margin {
+	margin-top: 0.565em;
+}
+.small-top-margin {
+	margin-top: 1.769em;
+}
+.medium-top-margin {
+	margin-top: 2.353em;
+}
+.large-top-margin {
+	margin-top: 3.129em;
+}
+.x-large-top-margin {
+	margin-top: 7.362em;
+}
+.tiny-bottom-padding {
+	padding-bottom: 0.565em;
+}
+.small-bottom-padding {
+	padding-bottom: 1.769em;
+}
+.medium-bottom-padding {
+	padding-bottom: 2.353em;
+}
+.large-bottom-padding {
+	padding-bottom: 3.129em;
+}
+.x-large-bottom-padding {
+	padding-bottom: 7.362em;
+}
+.tiny-bottom-margin {
+	margin-bottom: 0.565em;
+}
+.small-bottom-margin {
+	margin-bottom: 1.769em;
+}
+.medium-bottom-margin {
+	margin-bottom: 2.353em;
+}
+.large-bottom-margin {
+	margin-bottom: 3.129em;
+}
+.x-large-bottom-margin {
+	margin-bottom: 7.362em;
+}
+
+.sans, .sans-dagny, .proxima-nova {
+	font-family: "faricy-new-web", "proxima-nova", sans-serif;
+}
+
+.light {
+	font-weight: 300;
+}
+.thin {
+	font-weight: 100;
+}
+.bold {
+	font-weight: bold;
+}
+.normal {
+	font-weight: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.extra-bold {
+	font-weight: 900;
+}
+
+.display-font {
+	font-family: "acta-display", serif;
+}
+
+.reverse {
+	color: #EEE;
+}
+
+.reverse .citat {
+	color: #808079;
+}
+
+.serif .set-solid {
+	line-height: 1.2;
+}
+.sans .set-solid, .sans-dagny .set-solid, .proxima-nova .set-solid {
+	line-height: 1.4;
+}
+
+.leading-display {
+	line-height: 1 !important;
+}
+
+.leading-tight {
+	line-height: 1.2 !important;
+}
+.leading-medium {
+	line-height: 1.45 !important;
+}
+
+.leading-loose {
+	line-height: 1.8 !important;
+}
+
+.leading-normal {
+	line-height: 1.55 !important;
+}
+
+.serif {
+	font-family: "ff-tisa-web-pro", serif;
+	line-height: 1.55;
+}
+
+.asterism {
+	border-top: 1em solid;
+}
+
+body.single-knjiga {
+	background-color: white;
+}
+/* TODO FIXME: samo home/inex naj ima sivo ozadje! */
+
+/* test opentype features! */
+body {
+	-moz-font-feature-settings:"calt", "liga", "clig", "kern", "onum";
+	-moz-font-feature-settings:"calt=1, liga=1, clig=1, kern=1 onum=1";
+	-ms-font-feature-settings:"calt", "liga", "clig", "kern", "onum";
+	-o-font-feature-settings:"calt", "liga", "clig", "kern", "onum";
+	-webkit-font-feature-settings:"calt", "liga", "clig", "kern", "onum";
+	font-feature-settings:"calt", "liga", "clig", "kern", "onum";
+}
+.smallcaps, .sc, .small-caps, .smallCaps {
+	-moz-font-feature-settings:"c2sc";
+	-moz-font-feature-settings:"c2sc=1";
+	-ms-font-feature-settings:"c2sc";
+	-o-font-feature-settings: "c2sc";
+	-webkit-font-feature-settings: "c2sc";
+	font-feature-settings: "c2sc";
+	text-transform: uppercase;
+	letter-spacing: 0.1em; /* bug? ne dela, če ima letter-spacing! */
+}
+/* test opentype features! */
+
+.hasPadding {
+	padding: 1em;
+}
+
+.hasMargins {
+	margin: 1em;
+}
+
+.poetry-insert-wrapper, .insert-wrapper {
+	text-align: center;
+	padding-top: 7.362em;
+	padding-bottom: 7.362em;
+	margin-top: 3.129em;
+	margin-bottom: 3.129em;
+	position: relative;
+}
+.poetry-insert-wrapper:before, .insert-wrapper:before {
+	content: '';
+	position: absolute;
+	top: 0; bottom: 0;
+	left: -500%;
+	right: -500%;
+	background-color: #f8f8f6;
+	z-index: 0;
+}
+.poetry-insert, .insert {
+	display: inline-block;
+	text-align: left;
+	z-index: 10;
+	position: relative;
+}
+
+#main-article-text .poetry-insert p {
+	max-width: 100%;
+	margin-bottom: 1.2em;
+	/*margin-left: 2em;
+	text-indent: -2em;*/
+	text-indent: 0;
+	padding-left: 0em;
+}
+
+p:first-child {
+	text-indent: 0;
+}
+
+p.book-para
+{
+	margin-bottom: 0em !important;
+	text-indent: 1em !important;
+	padding-left: 0em !important;
+}
+.book-para, .book-para p,
+p + p,
+p {
+	/*margin-bottom: 1em;*/
+	text-indent: 1em;
+	padding-left: 0em;
+}
+
+.block-para, .block-para p, 
+body.home p,
+.pre p,
+:not(p) + p
+{
+	text-indent: 0;
+	padding-left: 0em;
+}
+
+.no-indent {
+	text-indent: 0 !important;
+	padding-left: 0em !important;
+	margin-bottom: 0 !important;
+}
+.no-margin {
+	margin-bottom: 0 !important;
+	padding-left: 0em;
+}
+
+.top-margin,
+.article-data
+{
+	margin-top: 1em;
+}
+
+.bottom-margin {
+	margin-bottom: 1em;
+}
+
+.reset-vertical-space {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.articleText .content p {
+	/* text-indent??? */
+}
+
+#main-article-text {
+	padding-bottom: 2em;
+}
+
+#main-article-text p, #main-article-text ol, #main-article-text ul {
+	max-width: 33em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main-article-text ul {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#main-article-text li {
+	margin-bottom: 1em;
+}
+
+
+#main-article-text li:last-child {
+	margin-bottom: 0em;
+}
+
+
+#main-article-text .has-image {
+	max-width: calc(100% * 100 / 75);
+	margin-left: calc(-100% * 12.5 / 75) !important;
+	margin-right: calc(-100% * 12.5 / 75) !important;
+}
+#main-article-text .has-image img.big {
+	width: auto;
+	height: auto;
+}
+#main-article-text .has-image img.big {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.has-image img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* begin new gallery */
+.fotogalerija {
+	padding: 1%;
+	display: flex;
+	align-self: center;
+	justify-content: space-around;
+	flex-direction: row;
+}
+.fotogalerija.small {
+	padding: 1% 20%;
+}
+.fotogalerija.medium {
+	padding: 1% 10%;
+}
+.fotogalerija.large {
+	padding: 1%;
+}
+
+.fotogalerija.row {
+	flex-direction: row;
+}
+.fotogalerija.column {
+	flex-direction: column;
+}
+.fotogalerija img {
+	width: 100%;
+}
+/* end new gallery */
+
+/* neke opombe sidenotes */
+.note {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 1%;
+	height: 33vh;
+	/*background-color: rgb(240,240,240);*/
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+/* knjigogled */
+
+.knjigogledNaslovi {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid;
+}
+
+.knjigogledNaslovi > div > div {
+	padding: 0.25em;
+}
+
+.knjigogledNaslovi > div:first-child {
+	border-right: 1px solid;
+}
+
+.knjigogledNaslovi > div > div:first-child {
+	border-bottom: 1px solid;
+}
+
+/* end knjigogled */
+
+.note .text {
+	border-radius: 0 5px 5px 5px;
+	width: 50%;
+	overflow-y: scroll;
+	max-height: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%,0);
+	background-color: rgb(40,40,40);
+	color: rgb(225, 225, 225);
+	box-sizing: border-box;
+}
+.note .text p {
+	padding: 1em;
+	max-width: 100% !important;
+	box-sizing: border-box;
+}
+
+.note .exit {
+	background-color: black;
+	font-weight: bold;
+	color: white;
+	border-radius: 50% 50% 0 0;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	position: fixed;
+	z-index: 20;
+	/*transform: translate(-0%,-100%);*/
+	cursor: pointer;
+}
+.note.visible {
+	opacity: 1;
+	visibility: visible;
+}
+.note.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+.notelink {
+	cursor: pointer;
+	background-color: #999999;
+	border-radius: 5px;
+	padding: 0px 5px;
+}
+/* end sidenotes */
+
+/* begin čačke in tuhtci slike */
+p + .comic-strip,
+.comic-strip + p {
+	margin-top: 2em;
+}
+.comic-strip {
+	justify-content: space-around;
+	padding: 0 20%;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+}
+.comic-strip a {
+	display: block;
+	padding: 2em;
+	max-width: 300px;
+	box-sizing: border-box;
+}
+
+.comic-strip img {
+	max-width: 100%;
+}
+.comic-strip.big a {
+	max-width: 50%;
+}
+.comic-strip.small a {
+	max-width: 33%;
+}
+.comic-strip.medium a {
+	max-width: 50%;
+}
+.comic-strip.large a {
+	max-width: 75%;
+}
+.comic-strip.x-large a {
+	max-width: 100%;
+}
+/* end čačke in tuhtci slike */
+
+
+.category-cacke-in-tuhtci #main-article-text .has-image img.big,
+.category-cacke-in-tuhtci #main-article-text .has-image img {
+	width: auto !important;
+	max-width: 100% !important;
+}
+
+.has-image a img {
+	max-width: 100%;
+	height: auto;
+}
+
+.has-image img.aligncenter {
+	display: block;
+	margin: auto;
+}
+
+.citation p {
+	box-sizing: border-box;
+	padding: 0 10%;
+}
+
+.book-preview-badge {
+	background-color: red;
+	color: white;
+	font-size: 1em;
+	padding: 1em;
+	width: 8em;
+	height: 8em;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	border-radius: 50%;
+	position: absolute;
+	right: 10%;
+	top: 10%;
+	text-align: center;
+	transform: rotate(15deg);
+}
+
+/*
+.sans {
+	font-family: Helvetica, sans-serif;
+}
+
+.serif {
+	font-family: georgia, serif;
+}
+*/
+
+
+a.bare-links:link, 
+a.bare-links:visited, 
+a.bare-links:active,
+.bare-links a, 
+.bare-links a:link, 
+.bare-links a:visited, 
+.bare-links a:active, 
+a.bare:link, 
+a.bare:visited, 
+a.bare:active,
+.bare a, 
+.bare a:link, 
+.bare a:visited, 
+.bare a:active,
+.theTags a, 
+.theTags a:link, 
+.theTags a:visited, 
+.theTags a:active 
+{
+	text-decoration: none !important;
+	color: inherit !important;
+	border: none !important;
+}
+
+.bare-links a:hover,
+.theTags-links a:hover,
+a.bare-links:hover,
+.bare a:hover,
+.theTags a:hover,
+a.bare:hover
+{
+	color: #2578D8 !important;
+	border: none;
+}
+a.bare.reverse:hover,
+.bare a.reverse:hover,
+.bare.reverse a:hover,
+.bare .reverse a:hover,
+.reverse a.bare:hover,
+a.bare-links.reverse:hover,
+.bare-links a.reverse:hover,
+.bare-links.reverse a:hover,
+.bare-links .reverse a:hover,
+.reverse a.bare-links:hover
+{
+	color: inherit !important;
+	border: none;
+}
+a.plain-link:hover, a.plain-link {
+	color: inherit !important;
+	text-decoration: none !important;
+	border: none !important;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: inherit;
+	border-bottom: 0.15em solid #2578D8;
+}
+
+a:hover {
+	color: #2578D8;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+
+ul ul li, ol ol li, ol ul li, ul ol li {
+	margin-left: 2em;
+	list-style-type: square;
+}
+
+.newlit-stories-outer-wrapper li.myPostListItem {
+	margin-left: 0;
+}
+
+.light-gray-background {
+	background-color: rgb(248, 248, 248);
+}
+
+.background-stripes {
+	background-size: 6px 6px !important;
+	background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0) 46%, rgba(0, 0, 0, 0.25) 49%, rgba(0, 0, 0, 0.25) 51%, rgba(0, 0, 0, 0) 55%);
+}
+
+a.pill:link, a.pill:visited, a.pill:hover, a.pill:active {
+	text-decoration: none;
+	border: none;
+}
+a.readMoreLink:link, a.readMoreLink:visited, a.readMoreLink:hover, a.readMoreLink:active {
+	text-decoration: none;
+	border: none;
+	font-size: 0.75em;
+}
+
+a.readMoreLink:hover,
+.pill:hover {
+	background-color: #2578D8 !important;
+	border: none;
+}
+
+
+#myTopStripeContainer a {
+	border: none;
+}
+
+
+.newlit-featured-article h4 
+{
+	margin-bottom: 1em;
+}
+
+.category-na-prvo-zogo .articleText h1,
+.category-izdano .articleText h1,
+.category-intervju.has-post-thumbnail h1 {
+	/*position: absolute;
+	bottom: 0;
+	width: 100%;*/
+	width: 50%;
+	text-align: left;
+	padding: 0.2em 0.2em 0.5em 0.2em;
+	/*
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);
+	*/
+}
+.category-na-prvo-zogo .articleText .flex .myFeaturedImage,
+.category-izdano .articleText .flex .myFeaturedImage,
+.category-intervju.has-post-thumbnail .flex .myFeaturedImage {
+	width: 50%;
+}
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a {
+	border-bottom: none !important;
+}
+
+
+h1 {
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+}
+
+body.avtor h1 {
+	margin: 1.5em 0 0.5em 0;
+}
+
+h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+	background-color: inherit;
+	padding: 0;
+}
+
+h5 a:link, h5 a:visited, h5 a:active,
+h3 a:link, h3 a:visited, h3 a:hover, h3 a:active,
+h4 a:link, h4 a:visited, h4 a:hover, h4 a:active {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+	background-color: inherit;
+}
+
+h3 a:hover, h4 a:hover {
+	color: #2578D8;
+	padding: 0;
+}
+
+h5 a:hover {
+	background-color: #2578D8;
+	color: white;
+	color: #c7d2dd;
+}
+
+
+a.bare:hover {
+	text-decoration: none;
+	background-color: white;
+	border: none !important;
+}
+
+h2 {
+	font-weight: normal;
+	margin: 2em 0 1em;
+}
+h3 {
+
+}
+#title, #myHead {
+	width: 460px;
+	float: left;
+	margin-left: 480px;
+	margin-bottom: 1em;
+}
+
+
+#myHead {
+	margin-bottom: 8.5em;
+}
+
+/* CLEARFIX */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+/* CLEARFIX */
+
+.diary-entry {
+}
+.diary-entry .diary-date:before {
+	content: '';
+	display: block;
+	border-top: 1px solid;
+	left: -100%;
+	right: -100%;
+	top: 50%;
+	position: absolute;
+	z-index: 1;
+}
+.diary-entry .diary-date > :last-child {
+	z-index: 2;
+	position: relative;
+	background-color: white;
+	padding: 0 2px;
+}
+
+.diary-entry .diary-title, .diary-entry .diary-date {
+	text-align: center;
+}
+
+#container, .some-container {
+	width: 90%;
+	margin: auto;
+}
+#container {
+	background-color: white;
+}
+
+.center, .align-center {
+	text-align: center !important;
+}
+.align-left
+{
+	text-align: left !important;
+}
+.align-right
+{
+	text-align: right !important;
+}
+
+.thick-bottom-border {
+	border-bottom: 1em solid #eeeeee;
+}
+.fullw {
+	margin-left: -5.56%;
+	margin-right: -5.56%;
+}
+
+/* dont forget to hide overflow */
+.stretch-full-width {
+	margin-left: -500%;
+	margin-right: -500%;
+	padding-left: 500%;
+	padding-right: 500%;
+}
+
+#padding {
+	margin: 10px;
+}
+
+.twoCol {
+	width: 16.67% !important;
+}
+.oneCol {
+	width: 8.33% !important;
+}
+.threeCol {
+	width: 25% !important;
+}
+.fourCol {
+	width: 33.33% !important;
+}
+.fiveCol {
+	width: 41.67% !important;
+}
+.sixCol {
+	width: 50% !important; 
+}
+
+.sevenCol {
+	width: 85.33% !important;
+}
+
+.eightCol {
+	width: 66.67% !important;
+}
+
+.nineCol {
+	width: 75% !important;
+}
+
+.tenCol {
+	width: 83.33% !important;
+}
+
+.elevenCol {
+	width: 91.67% !important;
+}
+
+.twelveCol {
+	width: 100% !important;
+}
+
+.oneColMargin {
+	margin-left: 80px !important;
+}
+
+.twoColMargin {
+	margin-left: 160px !important;
+}
+
+.threeColMargin {
+	margin-left: 240px !important;
+}
+
+.fourColMargin {
+	margin-left: 320px !important;
+}
+
+.fiveColMargin {
+	margin-left: 400px !important;
+}
+
+.sixColMargin {
+	margin-left: 480px !important;
+}
+
+.one-two {
+	width: 50% !important;
+}
+.one-three {
+	width: 33.33% !important;
+}
+.two-three {
+	width: 66.67% !important;
+}
+.three-four {
+	width: 75% !important;
+}
+.one-four {
+	width: 25% !important;
+}
+.one-five {
+	width: 20% !important;
+}
+.two-five {
+	width: 40%;
+}
+.three-five {
+	width: 60%;
+}
+.four-five {
+	width: 80%;
+}
+.one-six {
+	width: 16.667% !important;
+}
+.one-seven {
+	width: 14.29% !important;
+}
+.one-eight {
+	width: 12.5% !important;
+}
+.one-nine {
+	width: 11.11% !important;
+}
+.one-ten {
+	width: 10% !important;
+}
+.onesten {
+	width: 10% !important;
+}
+.one-one {
+	width: 100% !important;
+}
+
+.fluid-height-wrapper {
+	position: relative; 
+	width: 100%;
+	overflow: hidden; /* TODO? TESTIRAJ!!! odstranil zaradi fotk ki grejo čez rob */
+}
+
+.fluid-height-golden-ratio { /* ?????? */
+	padding-top: 61.8%
+}
+.fluid-height-ratio-1-1 {
+	padding-top: 100%
+}
+
+.fluid-height-ratio-1-3 {
+	padding-top: 33.33%
+}
+.fluid-height-ratio-1-2-5 {
+	padding-top: 40%
+}
+.fluid-height-ratio-1-2 {
+	padding-top: 50%
+}
+
+.fluid-height-ratio-3-4 {
+	padding-top: 75%
+}
+
+.fluid-height-ratio-2-3 {
+	padding-top: 66.67%
+}
+
+.fluid-height-ratio-3-5 {
+	padding-top: 60%
+}
+
+/* pokončne! */
+.fluid-height-golden-portrait-ratio {
+	padding-top: 161.8%
+}
+
+.fluid-height-portrait-ratio-1-1 {
+	padding-top: 100%
+}
+.fluid-height-portrait-ratio-1-2 {
+	padding-top: 200%
+}
+
+.fluid-height-portrait-ratio-3-4 {
+	padding-top: 133.33%
+}
+
+.fluid-height-portrait-ratio-2-3 {
+	padding-top: 150%;
+}
+
+.fluid-height-portrait-ratio-3-5 {
+	padding-top: 166.67%
+}
+
+
+
+.ratio-1-1 {
+	padding-top: 100%;
+	width: 100%;
+}
+.ratio-1-2 {
+	padding-top: 50%;
+	width: 100%;
+}
+.ratio-2-3 {
+	padding-top: 66.67%;
+	width: 100%;
+}
+.ratio-3-4 {
+	padding-top: 75%;
+	width: 100%;
+}
+
+.footnotes li {
+	margin-bottom: 1em;
+}
+
+.articleText .content,
+.textOuter .textInner,
+.text-outer .text-inner {
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	/* 
+	 * nekoliko neugodno, če hočeš karkoli postaviti okoli tega!!! :-( 
+	 * float bo pač na robu conainerja, če bo tekst širši (največ kot okvir), 
+	 * bo float pač v njem, s čimer tudi ni nič narobe … 
+	 * sicer naredimo max-width: 60%; !
+	 */
+	/*max-width: 45em;*/ /* raje določimo main article container! */
+	max-width: 75%;
+}
+
+ul, ol {
+	list-style-position: outside;
+}
+
+.block-para p, 
+.pre p,
+/*body.home p,*/
+.block-para,
+.margin-after-item li {
+	margin-bottom: 1em;
+	text-indent: 0;
+	padding-left: 0;
+}
+
+p.block-para {
+	margin-bottom: 1em !important;
+	text-indent: 0 !important;
+	padding-left: 0 !important;
+}
+
+.bare-list, .bare-list ul {
+	list-style-type: none;
+}
+	
+.inline-list li {
+	display: inline;
+	margin-right: 1em;
+}
+
+#sideBarDiv ul,
+#sideBarDivRight ul,
+ul#recent-magazines
+{
+	list-style-type: none;
+}
+
+ul#sidebar, ul#sidebar ul, .sideBarLiContent li.widget_search {
+	list-style-type: none;
+}
+
+#topStripeContent li.widget_search {
+	margin-bottom: 0;
+}
+
+.sideBarLiContent > li {
+	margin-bottom: 30px;
+}
+#headerBreak .sideBarLiContent > li,
+.sideBarLiContent > li {
+	margin-bottom: 0;
+}
+
+#myRecentPosts {
+	margin-top: 2em;
+}
+
+.catTitle {
+	width: 380px;
+	margin-left: 0px;
+}
+
+
+.gray {
+	color: #8A8A83;
+	color: #5E5E59;
+	color: #999999;
+}
+
+#myRecentPostsList p {
+	margin: 0;
+}
+
+#myTopStripeContainer > .absolute {
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#myTopStripeContainer {
+	background-color: white;
+	padding-top: 0.5em;
+	padding-bottom: 0;
+	border-bottom: 2px solid #f8f8f6;
+}
+#myTopStripe {
+	background-color: white;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#topStripeContent {
+	color: #808079;
+	width: 940px;
+	margin: 0.5em auto;
+}
+#topStripeLink, .inline-block {
+	display: inline-block;
+}
+#topStripeLink > img {
+	height: 3em;
+}
+
+#searchform #searchsubmit {
+	display: none;
+}
+
+#searchform .screen-reader-text {
+	display: none;
+}
+
+#search-7 .widgettitle {
+	display: none;
+}
+
+.rounded {
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Safari, Chrome */
+	border-radius: 10px; /* CSS3 */
+}
+
+.buy-book:link, .buy-book:visited, .buy-book:hover, .buy-book:active {
+	text-decoration: none !important;
+}
+.buy-book {
+	line-height: 3em;
+	padding: 0 3em;
+	border-radius: 2em;
+	display: inline-block;
+	border: 1px solid transparent !important;
+	background-color: #2578D8;
+	color: white !important;
+	margin-top: 1em;
+}
+
+.buy-book:hover {
+	border: 1px solid #2578D8 !important;
+	background-color: transparent;
+	color: #2578D8 !important;
+}
+
+.hasLeftMargin {
+	margin-left: 20px;
+}
+
+.hasTopMargin {
+	margin-top: 1em;
+}
+.hasBottomMargin {
+	margin-top: 1em;
+}
+
+.float {
+	float: left;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+}
+
+.myPostListItem:nth-of-type(even) .author-block {
+	order: 1;
+}
+
+.triangle-outer {
+	position: relative;
+	overflow: hidden;
+}
+
+.triangle {
+	content: "";
+    position: absolute;
+    z-index: 1;
+	background-color: #eee;
+	transform-origin: top left;
+}
+
+
+.category-ospoljene-reci .unpublished {
+	filter: grayscale(1);
+}
+
+.category-ospoljene-reci .unpublished * {
+	color: #eee !important;
+}
+
+.category-ospoljene-reci .theExcerpt a.more {
+	/*display: none;*/
+}
+
+.category-ospoljene-reci .unpublished .circle:before {
+	position: absolute;
+	content: '';
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.gendered .bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	border-style: solid;
+	border-color: #eee transparent;	
+	width: 0;
+	height: 0;
+}
+.gendered > div > div:nth-of-type(1) .bubble:after {
+	left: -2em;
+	border-width: 2em 0 0 3em;
+}
+
+.gendered > div > div:nth-of-type(2) .bubble:after {
+	right: -2em;
+	border-width: 2em 3em 0 0;
+}
+
+.gendered .bubble {
+	position: relative;
+	border-radius: 0.5em;
+}
+
+.floatRight {
+	float: right;
+}
+
+.twitter-tweet {
+	margin: auto !important;
+}
+
+select#cat {
+	width: 220px;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+.outerTest {
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	position: relative;
+	z-index: 100;
+}
+
+.motto {
+	width: 50%;
+	float: right;
+}
+
+
+.hoverBox:hover {
+	background-color: white;
+	border-top: 5px solid #2578d8;
+}
+
+a.bare .hoverBox:hover {
+	color: black;
+}
+
+.hoverBox {
+	height: 300px;
+	overflow: hidden;
+	background-color: transparent;
+	font-size: 11px !important;
+	line-height: 14px !important;
+	position: relative;
+	border-top: 5px solid black;
+	color: black;
+}
+
+.actualContent {
+	padding: 5px;
+	z-index: 999;
+}
+
+.issueSpan {
+	padding: 3px 12px;
+	text-align: center;
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+	border-radius: 5px; /* CSS3 */
+}
+
+
+.floatRight {
+	float: right;
+}
+
+.hasRightMargin {
+	margin-right: 20px;
+}
+
+table.sucur {
+	width: 100%;
+	border-collapse: collapse;
+	font-variant-numeric: slashed-zero;
+	font-variant-numeric: lining-nums;
+	font-feature-settings:"zero", "lnum";
+}
+
+/*table.sucur tr:nth-child(odd) {
+	background: #B8B8B7;
+}*/
+table.sucur tbody tr:hover {
+	background: #A9BFD9;
+	background: rgba(169, 191, 217, 0.25);
+}
+
+table.sucur tr {
+	border-bottom: 1px dashed #666;
+}
+
+table.sucur td {
+	padding: 0.25em 0.5em;
+}
+
+table.sucur thead tr {
+	border-bottom: 2px solid;
+	font-weight: bold;
+}
+/* ********************************* */
+
+.myMainPosts li.myPostListItem, .myMainPosts li {
+	list-style-type: none;
+	text-align: left;
+}
+
+body.home .myPostListItem h4 {
+}
+
+.myPostListItem img,
+img.wp-post-image {
+	width: 100%;
+	height: auto;
+}
+
+/*
+.relatedArticlesList .myPostListItem .theExcerpt {
+	font-style: italic;
+}
+*/
+
+.relatedArticlesList .article-data {
+}
+
+.relatedArticlesList .article-data.article-data-author,
+.relatedArticlesList .article-data.article-data-title {
+	font-weight: bold;
+}
+
+.relatedArticlesList .article-data-metadata {
+	margin-bottom: 0.5em;
+}
+
+.relatedArticlesList {
+	list-style-position: outside;
+}
+
+.relatedArticlesList .myPostListItem {
+	list-style-type: disc !important;
+	margin-bottom: 1em;
+}
+
+
+
+.newer-items .myPostMeta {
+	border-top: none;
+}
+
+.newest-items {
+	border-bottom: 2px solid #EBEBE8;
+}
+
+.newest-items .myPostMeta {
+	border: none;
+}
+
+.myPostMeta, .myPostMeta a {
+	line-height: 1.3;
+}
+
+
+#myPostShowcase {
+	margin-bottom: 0em;
+	overflow: hidden;
+	position: relative;
+	padding-top: 50% /* fixed aspect ratio! 2:1 (width always 100%) */
+}
+
+.page-template-avtorji-php #myPostShowcase,
+.tax-zbirka #myPostShowcase,
+.single-avtor #myPostShowcase,
+.single-knjiga #myPostShowcase,
+.page-template-knjige-php #myPostShowcase {
+	width: 700px;
+	float: left;
+}
+
+#myPostShowcase h4 a {
+	color: white;
+	border-bottom: 0px solid white;
+}
+
+#myPostShowcase h4 a:hover {
+	background-color: #2578D8;
+}
+
+/*
+.mySlidePicture {
+	height: 100%;
+	background-size: cover;
+	background-position: center top;
+	background-color: #2578D8;
+}
+.mySlide {
+	height: 100%;
+	overflow: hidden;
+	min-height: 0;
+	width: 100%;
+}
+#myPostShowcase img {
+	width: 100%;
+	height: 100%;
+}
+*/
+
+.page-template-avtorji-php .mySlide,
+.tax-zbirka .mySlide,
+.single-avtor .mySlide,
+.single-knjiga .mySlide,
+.page-template-knjige-php .mySlide {
+	width: 700px;
+}
+
+.mySlideDescriptionContainer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 50%;
+	overflow: hidden;
+	min-height: 0;
+	display: none;
+	text-align: right;
+}
+
+.mySlideDescription {
+	color: white;
+}
+.mySlideDescriptionContainer .hasPadding .hilight {
+	background-color: rgba(0,0,0,0.5);
+	padding: 1px 10px;
+}
+
+.mySlideDescriptionContainer .hasPadding p.font-size-2 {
+	border-top: 2px solid white;
+	margin-top: 1em;
+}
+.mySlideDescriptionContainer .hasPadding p.font-size-2 .hilight {
+	background-color: transparent;
+	text-shadow: 1px 2px 1px rgba(0,0,0,0.75);
+}
+
+#recentIssuesContainer h4,
+.recentIssuesContainer h4 {
+	font-weight: normal;
+	color: #808079;
+	border-bottom: none !important;
+}
+
+
+
+.myBookQuote {
+	font-style: italic;
+	color: #808079;
+}
+
+#booksMenu {
+	background-color: #ccc;
+	width: 240px;
+	height: 300px;
+}
+
+body.single .oneArticle .boxShadow {
+	font-size: 14px;
+	position: relative;
+	-moz-box-shadow: 0 0 3px #B1B2B4;
+	-webkit-box-shadow: 0 0 3px #B1B2B4;
+	box-shadow: 0 0 3px #B1B2B4;
+}
+
+body.single .oneArticle {
+	background-color: white;
+}
+
+.section {
+	margin-top: 12px;
+	border-top: 3px solid #f8f8f6;
+}
+
+.continuous.section {
+	margin-top: 0;
+	border-top: none;
+}
+
+.bare-section-with-margins {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border: none;
+}
+
+.gray-background {
+	background-color: #f8f8f6;
+	background-color: #eee;
+}
+
+img.alignright {
+	float: right;
+	margin-left: 12px;
+}
+img.alignleft {
+	float: left;
+	margin-right: 12px;
+}
+
+ul#recentBooks li , ul.dynamicBookList li {
+	list-style-type: none;
+/*
+ * zdaj ko je a block in višina 2 : 1, so margine odveč; tudi največja slika ne pride čez rob
+ */
+}
+ul#recentBooks li ul.newlitPrizeList li , ul.dynamicBookList li ul.newlitPrizeList li {
+	margin: 0 0 0.5em 0;
+}
+ul#recentBooks li a.blockLink img , ul.dynamicBookList li a.blockLink img {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 66.67%;
+	-webkit-transition: width 200ms;
+	-moz-transition: width 200ms;
+	-o-transition: width 200ms;
+	-ms-transition: width 200ms;
+	transition: width 200ms;
+}
+ul#recentBooks li:hover a.blockLink img , ul.dynamicBookList li:hover a.blockLink img {
+	width: 100%;
+	box-shadow: 3px 3px 10px 0 rgba(0,0,0,.5);
+	border: 1px solid #ddd !important;
+}
+ul#recentBooks li h5 , ul.dynamicBookList li h5 {
+	border-top: 1px solid;
+	margin-top: 1em;
+	padding-top: 1em;
+}
+.has-image a.blockLink {
+	display: inline-block;
+}
+a.blockLink {
+	display: block;
+}
+
+
+ul#recentBooks li a.blockLink , ul.dynamicBookList li a.blockLink {
+	width: 100%;
+	padding-top: 175%; /* fixed ratio to accomodate all covers and align them at the bottom */
+	position: relative
+}
+ul#titlesByAuthor li {
+	list-style-type: none;
+}
+
+.citat {
+	padding: 1.33em 0;
+}
+
+.citat > p {
+	margin: 0;
+}
+
+/*
+.citat > p:before {
+	content: '»';
+}
+.citat > p:after {
+	content: '«';
+}
+*/
+
+.articleText, .textOuter, .text-outer {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.text-outer.top-padding {
+	padding-top: 5%;
+}
+.text-outer.bottom-padding {
+	padding-bottom: 5%;
+}
+
+.top-padding {
+	padding-top: 2em;
+}
+.bottom-padding {
+	padding-bottom: 2em;
+}
+
+.text-outer.minimal-padding {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.single-post #article-title {
+	text-align: center;
+	padding-bottom: 5em;
+	padding-top: 5em;
+}
+
+.show-hide:hover {
+	cursor: s-resize;
+}
+.show-hide.expanded:hover {
+	cursor: n-resize;
+}
+
+.myRandomQuoteQuote {
+	font-size: 1.414em;
+	font-style: italic;
+}
+
+.myRandomQuoteAuthor {
+	font-weight: bold;
+}
+.myRandomQuoteTitle {
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+#authorPhotoSidebar {
+	position: relative;
+	margin-bottom: 1em;
+}
+#authorPhotoDesc {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	padding: 1px;
+}
+.roundBorders + #authorPhotoDesc {
+	right: 5px;
+	bottom: 5px;
+	margin: 0px;
+	padding: 1px;
+}
+
+#oneMagazineIssue li {
+	list-style-type: none;
+}
+
+.shaded {
+	background-color: #ccc;
+}
+
+body.archive .main h4 {
+	font-size: 1em;
+	border-bottom: none;
+	margin: 0px;
+}
+
+.recentArticles li {
+	list-style-type: none;
+}
+
+
+.articleText h5.citat {
+	display: block;
+}
+
+body.single h5 {
+	text-align: center;
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+
+.footer h5 {
+	text-align: left;
+}
+
+.hanging-all p {
+	text-indent: -2em;
+	padding-left: 2em;
+	box-sizing: border-box;
+}
+.block-all p {
+	margin-bottom: 1em;
+}
+.hanging, .hanging li, .bibliography {
+	text-indent: -2em !important;
+	/*padding-left: 2em;*/
+	transform: translateX(2em);
+}
+
+img {
+	border: none;
+}
+
+#contributorName {
+}
+
+.card .contributorName {
+	font-variant: small-caps;
+	font-weight: bold;
+	text-transform: lowercase;
+	color: black;
+	letter-spacing: 0.04em;
+}
+
+
+
+.boxShadow {
+	-moz-box-shadow: 0 0 5px #808079;
+	-webkit-box-shadow: 0 0 5px #808079;
+	box-shadow: 0 0 5px #808079;
+	background-color: white;
+	min-height: 810px;
+}	
+
+
+
+#container {
+	background-color: transparent !important;
+}
+
+
+.paddedText {
+	padding: 10px;
+}
+
+.card .padded, .padded {
+	padding: 1.25em;
+}
+.card .padded-h {
+	padding-left: 1.25em;
+	padding-right: 1.25em;
+}
+
+.card .padded-v {
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+}
+
+.card-upper .padded, .button-padding {
+	padding-bottom: 0;
+}
+
+.card-upper {
+/*	background-color: #f9f9f9;
+	border-bottom: 1px solid #f9f9f9 */
+}
+
+.card h4 + h5, .card h4 + p {
+	margin-top: -1em;
+	margin-bottom: 1em;
+}
+
+.card h4 + p + h5 {
+
+}
+
+.card h4 {
+	margin-bottom: 1em;
+}
+
+.drugi-prispevki ul li h4, .branje li h4, .esej-kolumna li h4 {
+	margin-top: 0 !important;
+}
+
+
+.rubrike { border-bottom: 2px solid #999999 }
+
+.in-cat-poezija .rubrika { color: #f44336; }
+.in-cat-poezija .rubrike { border-bottom: 2px solid #f44336; }
+
+.in-cat-intervju .rubrika { color: #673ab7 }
+.in-cat-intervju .rubrike { border-bottom: 2px solid #673ab7 }
+
+.in-cat-kritika-komentar .rubrika { color: #00bcd4 }
+.in-cat-kritika-komentar .rubrike { border-bottom: 2px solid #00bcd4 }
+
+.in-cat-esej-kolumna .rubrika { color: #ffeb3b; }
+.in-cat-esej-kolumna .rubrike { border-bottom: 2px solid #ffeb3b; }
+
+.in-cat-proza .rubrike { border-bottom: 2px solid #009688 }
+.in-cat-proza .rubrika { color: #009688 }
+
+.in-cat-na-toriscu .rubrike { border-bottom: 2px solid #607d8b }
+.in-cat-na-toriscu .rubrika { color: #607d8b }
+
+.in-cat-uvodnik .rubrike { border-bottom: 2px solid #795548 }
+.in-cat-uvodnik .rubrika { color: #795548 }
+
+.rubrike { border: none !important; }
+
+/*.rubrike .rubrika { color: #999999 !important }*/
+
+.drugi-prispevki ul li .rubrike , .branje li .rubrike, .eseji-kolumne li .rubrike { border: none !important; }
+.drugi-prispevki h4:after , .eseji-kolumne h4:after, .card h4:after /*, h4:after */, .kritika .contributorName:after { content: ''; display: block; width: 2em; margin-top: 0.33em; }
+
+.in-cat-poezija h4:after		{ border-bottom: 5px solid #f44336; }
+.in-cat-intervju h4:after		{ border-bottom: 5px solid #673ab7; }
+.in-cat-kritika-komentar h4:after, .in-cat-kritika h4:after,
+.kritika .contributorName:after	{ border-bottom: 5px solid #00bcd4; }
+.in-cat-esej-kolumna h4:after	{ border-bottom: 5px solid #ffeb3b; }
+.in-cat-proza h4:after 			{ border-bottom: 5px solid #009688; }
+.in-cat-na-toriscu h4:after		{ border-bottom: 5px solid #607d8b; }
+.in-cat-uvodnik h4:after 		{ border-bottom: 5px solid #795548; }
+
+.border-bottom {
+	border-bottom: 1px solid #f2f2f2;
+}
+
+#sideBarDivRight ul.sideBarLiContent li.widget_categories,
+#sideBarDivRight ul.sideBarLiContent li.widget_collapscat {
+	padding: 4px;
+}
+#widget-collapscat-2-top li.collapsing.categories.item {
+	margin-left: 1.3em !important;
+}
+#widget-collapscat-2-top li.collapsing.categories.expandable {
+	margin-left: 0px !important;
+}
+#sideBarDivRight ul.sideBarLiContent li.widget_collapscat div ul {
+	margin-left: 1em;
+}
+
+#sideBarDivRight ul.sideBarLiContent li.widget_collapscat ul {
+	list-style-position: inside;
+}
+
+.hoverBoxHoverNew {
+	background-color: black
+}
+
+
+blockquote {
+	box-sizing: border-box;
+	border-top: 0.075em solid;
+}
+
+blockquote.citat {
+	border: none;
+	padding: 0em 0em 0em 2em;
+	color: #999999;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	/*margin-left: 10%;
+	margin-right: 20%;
+	border-left: 0.15em solid;*/
+}
+
+blockquote.citat > p {
+	max-width: 27em;
+}
+
+.page-numbers {
+	background-color: white;
+	padding: 2px 4px;
+}
+
+.page-numbers.current, .page-numbers.dots {
+	background-color: transparent;
+	padding: 2px 4px;
+}
+
+.page-numbers.next {
+	float: none;
+}
+
+.myComments h3 {
+	border-bottom: 3px solid #f8f8f6;
+}
+.commentmetadata + p {
+	border-top: 2px solid #f8f8f6;
+	padding-top: 0.25em;
+}
+
+.commentlist li, .bibliography {
+	list-style-type: none;
+}
+
+.commentlist .comment-author {
+	float: left;
+	padding-bottom: 0.25em;
+}
+
+.commentlist .comment-meta {
+	float: right;
+}
+
+.commentlist .comment-body p {
+	clear: both;
+	color: #808079;
+}
+
+.commentlist li.comment {
+	margin-top: 20px;
+}
+
+.commentlist li.comment.bypostauthor {
+	background-color: white;
+}
+
+.commentsNum {
+	margin-top: 60px;
+	font-style: italic;
+	font-size: 1.414em;
+}
+
+.comment.depth-2 {
+	margin-left: 30px;
+}
+.comment.depth-3 {
+	margin-left: 60px;
+}
+
+textarea#comment {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.addthis_toolbox a:hover {
+	background-color: transparent !important;
+}
+
+#commentform input[type="text"] {
+	border: none;
+	border-bottom: 1px dotted black;
+	background-color: transparent;
+}
+
+#commentform label {
+	width: 33%;
+	display: block;
+	float: left;
+}
+
+#articleContributor {
+	font-style: italic;
+	font-weight: normal;
+	margin: 2em 0;
+}
+
+#commentquiz {
+	color: red;
+}
+
+.single-knjiga .someMeta {
+	margin: 1em 0;
+}
+.someMeta p {
+	margin: 0;
+	padding: 0;
+}
+
+.articleText .someMeta .post_date {
+	text-align: right;
+}
+
+#categoryList {
+	list-style-type: none;
+	text-align: right;
+}
+
+#categoryList li:before {
+	content: "\00BB \0020";
+}
+#categoryList li {
+	display: inline-block;
+	margin-left: 0.5em;
+}
+
+#articleSideBar {
+	margin-bottom: 60px;
+}
+
+
+h6 > span {
+	display: inline-block;
+	margin: 3em 0 1em 0;
+	padding: 0.5em 3em;
+	padding: 0.5rem 3rem;
+}
+
+.books h6 > span {
+	margin-bottom: 0;
+}
+
+
+
+blockquote.inside {
+	float: right;
+	margin: 0 0 14px 14px;
+	width: 33%;
+	font-weight: bold;
+	font-size: 1em !important;
+	line-height: 1.2;
+	clear: right;
+}
+
+.uppercase {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#articleTags {
+	margin-top: 5em;
+	margin-bottom: 5em;
+	text-align: center;
+}
+.theTags {
+	list-style-type: none;
+	margin: 1em 0;
+}
+
+ul#bookCategories,
+ul#bookSeries {
+	display: inline-block;
+}
+
+.theTags li,
+.theTags li ul li,
+.newlitPrizeItem,
+.widget_ns_mailman form input.button,
+a.readMoreLink:link, a.readMoreLink:visited, a.readMoreLink:hover, a.readMoreLink:active,
+.pill
+{
+	margin: 0 2px 2px 0;
+	color: white;
+	line-height: 1.2;
+	display: inline;
+}
+.theTags li,
+.theTags li ul li {
+	display: inline-block;
+}
+
+.theTags li,
+.theTags li ul li,
+.newlitPrizeItem,
+.widget_ns_mailman form input.button,
+a.readMoreLink:link, a.readMoreLink:visited, a.readMoreLink:hover, a.readMoreLink:active,
+.soft-borders
+{
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 0px 5px;
+	border: initial;
+}
+
+.soft-borders-top {
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+	padding: 0px 5px;
+}
+
+.soft-borders-bottom {
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+	padding: 0px 5px;
+}
+
+.border-box {
+	box-sizing: border-box;
+}
+
+
+ul#bookCategories li, 
+ul#bookSeries li {
+	background-color: #D9ABA9;
+}
+
+/*.theTags li,*/
+a.readMoreLink:link, a.readMoreLink:visited, a.readMoreLink:hover, a.readMoreLink:active,
+.pill:link, .pill:visited, .pill:hover, .pill:active,
+.pill
+{
+	background-color: #C7D2DD;
+}
+
+.theTags li:hover {
+	background-color: #2578D8 !important;
+}
+ul#bookSeries.theTags li:hover,
+ul#bookCategories.theTags li:hover {
+	background-color: #787878 !important;
+}
+
+.theTags li:hover a, .theTags li:hover a:hover,
+.theTags li ul li:hover a, .theTags li ul li:hover a:hover {
+	color: white !important;
+}
+
+.interviewQuestion {
+	font-weight: bold;
+	margin-top: 2em;
+	margin-bottom: 0 !important;
+	margin-left: -2em;
+}
+
+
+.hoverBox a:hover {
+	color: black;
+}
+
+body.single .myPostItem {
+	
+}
+
+.relatedArticlesList .myPostItem {
+	border: none;
+}
+
+a span {
+	display: block;
+}
+
+.gallery img {
+	border: none !important;
+}
+
+.gallery dl dt a:hover {
+	border: none !important;
+}
+
+#respond {
+	font-size: 12px;
+}
+ul.commentlist li.comment div.reply {
+	text-align: right;
+	font-style: italic;
+}
+
+
+.comment-author.vcard .fn {
+	font-style: normal;
+	font-weight: bold;
+}
+
+.comment-author.vcard .says {
+	font-weight: normal;
+}
+
+.spaceAbove {
+	margin-top: 4em;
+}
+
+.newlitPrizeList, .newlitPressQuotesList {
+	list-style-type: none;
+}
+
+.newlitPrizeItemName {
+	font-weight: normal;
+}
+
+.newlitPrizeItem {
+	background-color: #D97C79;
+	box-shadow: 0.25em 0 0 #d97c79, -0.25em 0 0 #d97c79; /* multi-line hilight trick! */
+	margin-right: 0.5em !important;
+}
+
+
+
+li.newlitPressQuoteItem {
+	margin: 1em 0 1em 0;
+}
+.newlitPressQuoteItemText {
+	font-style: italic;
+}
+
+p.newlitPressQuoteItemText:before {
+	content: '\00B6'; /* pilcrow = &para; */
+	font-size: 2em;
+	position: relative;
+	line-height: 30px;
+	font-weight: bold;
+	top: 6px;
+	color: #D97C79;
+
+}
+
+ul#bookSeriesShortDesc li:before {
+	content: '\00B6';
+	color: #D97C79;
+	margin: 0 0.25em;
+
+}
+ul#bookSeriesShortDesc li {
+	display: inline;
+}
+ul#bookSeriesDesc {
+	list-style-type: none;
+}
+
+.newlitPressQuoteItemSource {
+	display: inline;
+	float: right;
+	margin-left: 1em;
+	font-weight: bold;
+	font-style: normal;
+	text-align: right;
+	color: #D97C79;
+}
+
+ul.relatedArticlesList {
+	margin-top: 0em;
+}
+
+
+.relatedArticlesList .contributorName {
+	text-align: left;
+
+}
+
+.relatedArticlesList h4 {
+	line-height: 1.1;
+	margin-bottom: 0.5em;
+}
+
+
+/* .boxShadow:before, .boxShadow:after */
+/* pri članku se vidi grde poševne robove */
+ul.relatedArticlesList myPostItem:before,
+ul.relatedArticlesList myPostItem:after
+{
+	content: "";
+	position: absolute;
+	z-index: -1;
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	max-width: 300px;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+/* .boxShadow:after */
+ul.relatedArticlesList myPostItem:after
+{
+	right: 10px;
+	left: auto;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.full-stretch {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.main-article-text-body {
+	/*font-size: 20px;*/
+	/*
+	text-align: justify;
+	-webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+	*/
+}
+
+.category-poezija .main-article-text-body {
+	/*
+	-webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+	text-align: left;
+	*/
+}
+body.single ul#titlesByAuthor li h5,
+body.single ul.recentArticles li h5 {
+	display: inline-block;	
+}
+
+
+.verticalMiddle,
+.vertical-middle {
+	vertical-align: middle !important;
+}
+.verticalTop,
+.vertical-top {
+	vertical-align: top; /*!important;*/
+}
+.verticalBottom, 
+.vertical-bottom {
+	vertical-align: bottom; /*!important;*/
+}
+
+li .relatedArticlesThumb {
+	min-width: 60px;
+	padding-right: 10px;
+}
+
+li .relatedArticlesThumb,
+li .relatedArticlesDesc {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+li .relatedArticlesDesc h4 {
+	margin: 0;
+}
+ul.recentArticles {
+	margin-top: 1em;
+}
+
+
+body.archive ul.relatedArticlesList {
+	margin-top: 0px;
+}
+
+.translator {
+}
+
+
+#myTitleSelect, #myAuthorSelect, #myAuthorSelect2 {
+	display: none;
+}
+
+
+/*
+ * -------------------------------------------
+ * menu
+ * -------------------------------------------
+ */
+
+.widget_categories > ul > li {
+	text-transform: uppercase;
+	border-bottom: 0.125em solid #dedede;
+	margin-bottom: 1em;
+	font-weight: bold;
+	padding-bottom: 1em;
+}
+
+.widget_categories ul li ul li {
+	text-transform: none;
+	font-weight: normal;
+}
+
+.widget.widget_archive ul li {
+	border: 1px solid #dedede;
+	padding: 2px;
+	margin: 2px;
+}
+
+ul.menu > li,
+.horizontal-list li, 
+.widget_archive li,
+ul.category-list-container li ul li ul li
+{
+	list-style-type: none;
+	display: inline-block;
+}
+
+/*
+ul.menu > li:not(:first-child),
+horizontal-list li:not(:first-child), 
+ul.category-list-container li ul li ul li:not(:first-child)
+*/
+ul.menu > li,
+.horizontal-list li, 
+.widget_archive li,
+ul.category-list-container li ul li ul li
+{
+	margin-right: 0.5em;
+}
+
+ul#menu-menu-ena {
+	list-style-type: none;
+	font-weight: bold;
+}
+
+
+#headerBreak {
+	padding: 5px 0;
+}
+
+body.home #headerBreak {
+	margin-bottom: 0;
+}
+
+#headerBreak ul#menu-menu-ena li,
+ul#menu-menu-ena li {
+	font-size: 1em;
+	display: inline-block;
+
+	position: relative;
+	padding: 10px 0;
+}
+
+#headerBreak ul#menu-menu-ena li a:hover,
+ul#menu-menu-ena li a:hover
+{
+	color: #2578D8;
+}
+
+#headerBreak ul#menu-menu-ena li a,
+ul#menu-menu-ena li a {
+	color: black;
+	padding: 0 5px;
+}
+
+#headerBreak ul#menu-menu-ena li.menu-item > ul.sub-menu,
+ul#menu-menu-ena li.menu-item > ul.sub-menu {
+	visibility: hidden;
+	display: none;
+	background-color: #f8f8f6;
+	z-index: 99999;
+	position: absolute;
+	list-style-type: none;
+}
+
+
+body.revija ul#menu-menu-ena li#menu-item-48901,
+body.avtor ul#menu-menu-ena li#menu-item-9605,
+body.single-knjiga li#menu-item-9604,
+body.tax-zbirka li#menu-item-9604,
+body.tax-book_cat li#menu-item-9604,
+ul#menu-menu-ena li.current-menu-item, 
+/* +++++++++++++++++++++++++++++++++++++++ */
+body.page-template-knjige li#menu-item-9604, body.single-knjiga li#menu-item-9604, body.page-template-single-knjiga-php li#menu-item-9604,body.page-template-taxonomy-zbirka-php li#menu-item-9604, body.tax-abirka li#menu-item-9604, /* knjige */
+body.post-type-archive-revija li#menu-item-48901, body.page-template-archive-revija-php li#menu-item-48901, body.page-template-single-revija-php li#menu-item-48901, body.single-revija li#menu-item-48901, /* revija */
+	body.single-post li#menu-item-52200, body.page-template-single-php li#menu-item-52200, body.page-template-date-php li#menu-item-52200, body.page-template-category-php li#menu-item-52200, /* single article OR article archives etcbody.*/
+body.single-post li#menu-item-51407, body.page-template-single-php li#menu-item-51407, body.page-template-date-php li#menu-item-51407, body.page-template-category-php li#menu-item-51407, /* single article OR article archives etcbody.*/
+body.page-template-avtorji li#menu-item-9605, body.page-template-avtorji-php li#menu-item-9605, body.page-template-single-avtor-php li#menu-item-9605, body.single-avtor li#menu-item-9605, body.page-template-taxonomy-ime_avtorja-php li#menu-item-9605, body.tax-ime_avtorja li#menu-item-9605, /* avtorji */
+body.events-single li#menu-item-9611, body.events-archive li#menu-item-9611 /* events */
+{
+	border-bottom: 2px solid;
+	margin-bottom: -2px
+}
+
+
+/* **************************************** */
+.superscript {
+	line-height: 0;
+	font-size: 0.8em;
+	vertical-align: super;
+}
+
+/* addThis facebook counter width fix */
+div.addthis_toolbox > a.addthis_button_facebook_like > iframe {
+	width: 120px !important;
+}
+
+a > img {
+	vertical-align: top;
+}
+
+img.roundBorders, .roundBorders {
+	border: 5px solid white;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px #CCC;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #CCC;
+}
+
+
+.myComments .extra-padding {
+	margin-top: 4em;
+	padding: 0 10%;
+}
+
+.circle-wrapper {
+	max-width: 4rem;
+}
+
+.authorDetailsArticle img.roundBorders,
+.circle img.roundBorders, 
+img.circle, img.circle.roundBorders, .circle {
+	/*border: 0.33em solid white;*/
+	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
+	/*-webkit-box-shadow: 0 1px 2px #CCC;
+	-moz-box-shadow: 0 1px 2px #ccc;*/
+	box-shadow: 0px 0px 2px #CCC;*/
+	box-sizing: border-box; /* kadar je notranji oz. hkrati določena širina */
+	overflow: hidden; /* če je to zunanji element */
+}
+
+
+
+body.single #sideBarDivRight ul li h2 {
+	font-size: 1em;
+	font-weight: bold;
+	border: none;
+}
+
+#ns_widget_mailman_form-4 label {
+	display: none;
+}
+/*
+.widget_ns_mailman form input.button {
+	background-color: #c7d2dd;
+	border-radius: 3px;
+	padding: 0 5px;
+	border: 1px solid #c7d2dd;
+	box-shadow: 2px 2px 3px #808079; -webkit-box-shadow: 2px 2px 3px #808079; -moz-box-shadow:  2px 2px 3px #808079;
+}
+*/
+input[type="text"] {
+	width: 100%;
+	border: 1px solid;
+}
+
+.widget_ns_mailman form input.button:active {
+	/*
+	 * to je treba uredit z marginami: +1 -1 -1 +1 glede na izhodiščne (seštevek se mora iziti)
+	 */
+
+	/*
+	 box-shadow: 1px 1px 3px #808079; -webkit-box-shadow: 1px 1px 3px #808079; -moz-box-shadow:  1px 1px 3px #808079;
+	 */
+}
+
+
+/* addthis */
+.addthis_toolbox.addthis_pill_combo a {
+	float: left;
+}
+.addthis_toolbox.addthis_pill_combo a.addthis_button_tweet,
+.addthis_toolbox.addthis_pill_combo a.addthis_counter {
+	margin-top: -2px;
+}
+.addthis_button_compact .at15t_compact {
+	margin-right: 4px;
+	float: left;
+}
+
+.addthis_sharing_toolbox {
+	padding: 1em 1em 2em 1em;
+}
+
+/* news */
+
+#newsBulletin {
+	background-color: transparent;
+	padding-top: 1em;
+	margin-bottom: 40px;
+	border-bottom: 0px solid black;
+	overflow: hidden;
+}
+
+#newsBulletin ul {
+	list-style-type: none;
+}
+
+#newsBulletin h4 {
+	border: none;
+	font-size: 1em;
+	margin: 0.5em 0;
+}
+
+
+
+
+
+.wp-caption {
+	width: auto !important;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-bottom: 1em;
+	background-color: #FBFBFB;
+}
+
+.content .wp-caption img,
+img.fit {
+	width: 100% !important;
+	height: auto !important;
+}
+
+html body img.dont-stretch, html body img.dont-fit {
+	width: auto !important;
+	height: auto !important;
+}
+
+.content ul.basic-list li {
+	margin-bottom: 1em;
+	margin-left: 4em;
+	list-style-position: outside;
+}
+
+.wp-caption-text {
+	text-align: right;
+	font-size: 0.75em;
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+
+#postBrowser.magazine-browser {
+	margin-top: 1em;
+}
+
+#footer-colophon-info {
+	margin-top: 1.5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+.widget_archive ul li {
+	display: inline-block;
+}
+
+.colophon-column {
+	width: 33%;
+}
+
+#footer-colophon-info ul {
+	list-style-type: none;
+}
+
+#footer-colophon-info .hasRightMargin {
+	margin-right: 20%;
+}
+
+.colophon-inner-container {
+	width: 940px;
+	margin: auto;
+}
+
+.newlit_revija_rubrika {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.newlit_revija_naslov {
+	font-weight: bold;
+}
+
+ul.newlitUrednistvo h5 {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0;
+}
+
+ul.newlitUrednistvo h6 {
+	font-weight: bold;
+	font-size: 1em;
+	display: inline;
+}
+
+ul.newlitUrednistvo ul {
+	margin-left: 1em;
+}
+
+ul.newlitUrednistvo.bare-list > li {
+	margin-bottom: 1em;
+}
+
+.poetry.long-lines p {
+	margin-left: 2em;
+	margin-bottom: 0;
+	text-indent: -2em;
+}
+h5, h6 {
+	margin-bottom: 1em;
+	font-size: 1rem;
+	font-size: 1em;
+}
+#main-article-text h6 {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 2em 0 0.5em 0;
+	/*border-left: 0.5em solid;
+	margin-left: -1em;
+	padding-left: 0.5em;*/
+}
+/*
+ * tribe events
+ */
+
+#tribe-events h3 {
+	background-color: transparent;
+}
+
+#tribe-events-content h3 {
+	color: black;
+}
+
+.tribe-events-list-widget h4 {
+	border: none;
+}
+
+.tribe-events-after-html .addthis_toolbox.addthis_pill_combo a {
+	float: none;
+}
+
+/* ------------------------------- */
+
+.card > div {
+	border-radius: 2px;
+	/* border: 1px solid transparent; */
+	/*box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);*/
+
+	/*box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);*/
+	
+	/*background-color: transparent; */
+	transition: box-shadow 0.2s ease, background-color 0.2s;
+}
+
+.divider-left:after {
+	content: '';
+    /* border-left: 1px solid #cccccc; */
+    border-left: 1px solid #f2f2f2;
+    position: absolute;
+    top: -999em;
+    bottom: -999em;
+    left: 0;
+    z-index: 2;
+}
+
+.card:hover > div {
+	/*box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px rgba(0, 0, 0, 0.24);
+	background-color: white;*/
+}
+
+.liquid-container-outer {
+	margin: -20px;
+}
+.liquid-container-middle {
+	float: left;
+}
+.liquid-container-inner {
+	margin: 20px;
+}
+.true-liquid-block-outer {
+	margin-left: -1em;
+	margin-right: -1em;
+	text-align: center;
+	overflow: hidden;
+}
+.true-liquid-block-inner {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1em;
+	box-sizing: border-box;
+	text-align: left;
+	position: relative;
+}
+
+.divider .true-liquid-block-inner:after {
+	content: '';
+	/*border-left: 1px solid #cccccc;*/
+	border-right: 1px solid #f2f2f2;
+	position: absolute;
+	top: -999em;
+	bottom: -999em;
+	right: 0;
+	z-index: 2;
+}
+
+.divider .true-liquid-block-inner:last-child:after {
+	display: none;
+}
+
+
+ul#recentBooks.true-liquid-block-outer , ul.dynamicBookList.true-liquid-block-outer {
+	margin-left: -1em;
+	margin-right: -1em;
+}
+ul#recentBooks .true-liquid-block-inner , ul.dynamicBookList .true-liquid-block-inner {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+/*
+ * TODO:
+ * add responsive breakpoints! (height???)
+ */
+.columnar-text {
+	-webkit-column-width: 20em;
+	-moz-column-width: 20em;
+	column-width: 20em;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+}
+
+.four-column-list {
+	columns: 4;
+}
+
+.three-columns {
+	-webkit-columns: 3 20em;
+	-moz-columns: 3 20em;
+	columns: 3 20em;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+	-webkit-column-rule: 1px solid;
+	-moz-column-rule: 1px solid;
+	column-rule: 1px solid;
+}
+
+.two-columns {
+	-webkit-columns: 2 20em;
+	-moz-columns: 2 20em;
+	columns: 2 20em;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+	-webkit-column-rule: 1px solid;
+	-moz-column-rule: 1px solid;
+	column-rule: 1px solid;
+}
+
+.four-columns {
+	-webkit-columns: 4 20em;
+	-moz-columns: 4 20em;
+	columns: 4 20em;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+	-webkit-column-rule: 1px solid;
+	-moz-column-rule: 1px solid;
+	column-rule: 1px solid;
+}
+
+.cover {
+	background-size: cover;
+	background-position: center center;
+}
+
+.contain-background-image {
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 0;
+}
+
+.home-event-list .event-list-item {
+	white-space: initial;
+	vertical-align: bottom !important;
+}
+
+/*
+ * icons
+ */
+
+.noun-project.timer:before {
+	content: ' ';
+	background-image: url('icons/the-noun-project/icon_62332/icon_62332.png');
+	/*background-image: url('icons/the-noun-project/icon_61160/icon_61160.png');
+	background-image: url('icons/the-noun-project/icon_18387/icon_18387.png');
+	background-image: url('icons/the-noun-project/icon_2048/icon_2048.png');*/
+	background-size: cover;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+ul.relatedArticlesList .myPostMeta {
+	border: none;
+}
+ul.relatedArticlesList p {
+}
+.em-space {
+	width: 1em;
+}
+
+.transparent-background {
+	background-color: transparent !important;
+}
+
+.single-knjiga .excerpt {
+	margin-top: 3em;
+}
+
+.red-background {
+	background-color: #EED3D3 !important ;
+}
+.red {
+	color: #D97C79 !important ;
+}
+.blue {
+	color: #2578D8 !important ;
+}
+.blue-background {
+	background-color: #2578D8 !important ;
+}
+.light-red-background {
+	background-color: #D9C4C3
+}
+.light-red {
+	color: #D9ABA9 !important ;
+}
+.light-blue {
+	color: #A9BFD9 !important ;
+}
+.light-blue-background {
+	background-color: #A9BFD9 !important ;
+	background-color: #F0F4F7 !important ;
+}
+
+.dark-blue-background {
+	background-color: #151C2C;
+}
+
+.black-background {
+	background-color: black;
+}
+
+.almost-black-background {
+	background-color: #16171A;
+}
+
+
+/*
+ * shades of gray
+ */
+.gray-1 {
+   color: #EBEBE8 !important ;
+}
+.gray-2 {
+   color: #DEDEDD !important ;
+}
+.gray-3 {
+   color: #B8B8B7 !important ;
+}
+.gray-4 {
+   color: #787878 !important ;
+}
+.gray-5 {
+   color: #393938 !important ;
+}
+.gray-6 {
+	color: #cdcdcd;
+}
+
+.black {
+	color: black !important;
+}
+.gray-background-1 {
+   background-color: #DEDEDD !important ;
+}
+.gray-background-2 {
+   background-color: #EBEBE8 !important ;
+}
+.gray-background-3 {
+   background-color: #B8B8B7 !important ;
+}
+.gray-background-4 {
+   background-color: #787878 !important ;
+}
+.gray-background-5 {
+   background-color: #393938 !important ;
+}
+
+.white-background {
+	background-color: white;
+}
+.pink-background {
+	background-color: #e91e63;
+	background-color: #ffebee;
+}
+/*
+ * per page/template
+ */
+
+/*
+ * knjge
+ * =====
+ */
+
+body.page-template-knjige-php #recentBooks h3 , .dynamicBookList h3 {
+	margin-top: 0.25em;
+	border-top: 1px solid #808079;
+	padding-top: 1em;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+body.page-template-knjige-php #recentBooks h4 , .dynamicBookList h4 {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+.center-margins {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hide-overflow-x {
+	overflow-x: hidden;
+}
+
+.hide-overflow, .overflow-hidden {
+	overflow: hidden;
+}
+
+.show-on-request {
+}
+.hide {
+	opacity: 0;
+	display: none;
+}
+.show {
+	opacity: 1;
+}
+
+.myFeaturedImage, 
+#myFeaturedImage {
+	position: relative;
+}
+
+.category-kritika-komentar .myFeaturedImage {
+}
+
+.force-vertical-middle:before {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    content:'';
+}
+
+.full-page {
+	min-height: 100%;
+}
+
+.errors {
+	color: red;
+}
+
+.show-only-on-small-screen {
+	display: none;
+	visibility: hidden;
+}
+
+/*
+ * v bistvu za iphone; upoštevamo najbolj zunanjo margino 5%!!!
+ */
+.newlit-css-transition-show {
+	/*left: 0;*/
+	bottom: 0;
+	transition: bottom 0.25s;
+}
+.newlit-css-transition-hide {
+	/*left: calc(-100% * 100 / 90);*/
+	bottom: calc(100% - 3em);
+	transition: bottom 0.25s;
+}
+
+/*
+ * fade-in transitions (on load etc)
+ */
+@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@-moz-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.fade-in {
+	opacity: 0;
+	-webkit-animation: fadeIn ease-in 1;
+	-moz-animation: fadeIn ease-in 1;
+	animation: fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-delay: 0.7s;
+	-moz-animation-delay: 0.7s;
+	animation-delay: 0.7s;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.static {
+	position: static;
+}
+
+#newlit-projects li {
+	border-top: 1px solid;
+	margin-top: 1px; /* ??? */
+}
+#newlit-projects li:last-child {
+	border-bottom: 1px solid;
+}
+.category-poezija #main-article-text p,
+.category-intervju #main-article-text p,
+.category-na-prvo-zogo #main-article-text p,
+.category-izdano #main-article-text p
+{
+	margin-bottom: 1em;
+	text-indent: 0;
+}
+
+.category-poezija #main-article-text p.no-indent {
+	margin-bottom: 0;
+	text-indent: 0em;
+}
+.category-poezija #main-article-text p.book-para {
+	margin-bottom: 0;
+	text-indent: 1em;
+}
+
+.landscapeContainer a img {
+	width: 100%;
+	height: auto;
+}
+
+.portraitContainer a img {
+	height: 100%;
+	width: auto;
+}
+
+.portraitContainer a {
+	height: 100%;
+}
+
+
+.category-cacke-in-tuhtci .myFeaturedImage.full-vh {
+	height: 80vh;
+}
+
+.category-na-prvo-zogo .myFeaturedImage,
+.category-izdano .myFeaturedImage,
+.category-intervju.has-post-thumbnail .myFeaturedImage {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.full-vh {
+	height: 100vh;
+}
+
+.three-four-vh {
+	height: 75vh;
+}
+
+.one-two-vh {
+	height: 50vh;
+}
+
+.verse {
+	display: inline-block;
+	text-indent: -2em !important;
+	margin-left: 2em !important;
+}
+
+.lud-lit-info p {
+	display: inline;
+	border-right: 1px solid;
+	margin-right: 1em;
+	padding-right: 1em;
+}
+
+.lud-lit-info p:last-child {
+	border: none;
+}
+
+.button {
+	border-radius: 0.25em;
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 0.5em 1.5em;
+}
+
+.button-new {
+	border-radius: 0.15em;
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 0.5em;
+}
+
+
+.button-new:hover {
+	background-color: #eee;
+}
+
+.inline-subscribe .button:hover {
+	background-color: #F0F4F7 !important;
+	color: black;
+}
+
+.page-template-page-subscribe .inline-subscribe {
+	display: none;
+}
+
+
+#addthis-social-networks-follow .addthis_toolbox.addthis_default_style.addthis_20x20_style {
+	display: inline-block;
+}
+
+
+.stripe-container * {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+
+/* puščice levo desno */
+.stripe-container:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 25%;
+	width: 1em;
+	height: 1em;
+	border: solid rgba(255, 255, 255, 0.8);
+	border-width: 0 0px 2px 2px;
+	transform: translateY(-50%) translateX(50%) rotate(45deg);
+	top: 50%;
+	/*transform-origin: top left;*/
+	display: inline-block;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.stripe-container:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 100%;
+	bottom: 25%;
+	width: 1em;
+	height: 1em;
+	border: solid rgba(255, 255, 255, 0.8);
+	border-width: 2px 2px 0px 0px;
+	transform: translateY(-50%) translateX(-150%) rotate(45deg);
+	top: 50%;
+	/*transform-origin: top left;*/
+	display: inline-block;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.stripe-container .nav-buttons {
+	height: 0px !important;
+}
+.stripe-container .nav-buttons:before {
+	content: '';
+	display: block;
+	left: 0;
+	height: 2.5em;
+	width: 1.5em;
+	background-color: rgba(0, 0, 0, 0.33);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.stripe-container .nav-buttons:after {
+	content: '';
+	display: block;
+	right: 0;
+	height: 2.5em;
+	width: 1.5em;
+	background-color: rgba(0, 0, 0, 0.33);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.stripe-container, .full-full-width {
+	height: 100%;
+	position: relative;
+	width: 100vw;
+	left: 50%; 
+	right: 50%; 
+	margin-left: -50vw; 
+	margin-right: -50vw;
+	overflow: hidden;
+}
+.image-stripe {
+    white-space: nowrap;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow-x: auto;
+	overflow-y: hidden;
+    height: 100%;
+    font-size: 0px;
+}
+
+.horizontal-scroll {
+    width: auto;
+	padding-right: 3em; /* da je na desnem koncu sprva videno odrezano, kar spodbudi dejanje; mora pa biti nujno width auto! */
+    padding-bottom: 100%;
+    overflow-x: auto;
+	overflow-y: hidden;
+    height: 100%;
+    /*font-size: 0px;*/
+	 -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	/*column-gap: 3em;*/
+}
+
+.image-stripe .item {
+	display: inline-block; 
+	height: 100%; 
+	vertical-align: bottom;
+	background-size: contain; 
+	background-position: center bottom; 
+	background-repeat: no-repeat;
+}
+
+.image-stripe img.item, .image-stripe .item img {
+	height: 100%;
+	width: auto;
+}
+
+.image-stripe:hover, .horizontal-scroll:hover {
+	cursor: ew-resize;
+}
+	
+.okvircek .flex > div {
+	flex: 1 1 0;
+	background-color: white;
+	margin: 1em;
+}
+
+.okvircek p {
+	padding: 1em;
+}
+
+/* andrej2022 */
+
+.single-knjiga #featured-image {
+    height: 90vh;
+}
+
+.single-knjiga #featured-image img {
+    height: 100% !important;
+    width: auto !important;
+}
+
+/*
+ * ***************************************************************************************************
+ * responsive css
+ * ***************************************************************************************************
+ */
+
+/* ipads */
+@media only screen and (max-width: 768px) {
+	html {
+		font-size: 13px !important;
+	}
+}
+@media only screen
+	and (orientation: landscape)
+	and (min-device-width: 768px)
+	and (max-device-width: 1024px) {
+	/*and (min-width: 1024px) {*/
+	body, .serif, .leading-normal {
+	}
+	.articleText .content, 
+	.textOuter .textInner, 
+	.text-outer .text-inner {
+		/*max-width: 75%;*/
+	}
+	.newlit-review-description {
+		font-size: 1rem !important;
+	}
+	ul#recentBooks li a.blockLink img, 
+	ul.dynamicBookList li a.blockLink img {
+		width: 100%;
+	}
+	ul#recentBooks li:hover a.blockLink img , ul.dynamicBookList li:hover a.blockLink img {
+		box-shadow: none;
+		border: none !important;
+	}
+	ul#recentBooks li a.blockLink, 
+	ul.dynamicBookList li a.blockLink {
+	}
+	#articleTags.light {
+		font-weight: normal !important;
+	}
+	.page-template-avtorji-php #titlesByAuthor li.one-six {
+		width: 20% !important;
+	}
+	a.readMoreLink {
+		font-size: 1rem !important;
+	}
+}
+@media only screen
+/*
+	and (orientation: portrait)
+	and (min-device-width: 768px)
+	and (max-device-width: 1024px) {
+	*/
+	and (min-width: 768px)
+ 	and	(max-width: 1023px)
+	{
+	body, .serif, .leading-normal {
+	}
+	.category-na-prvo-zogo .articleText h1,
+	.category-izdano .articleText h1,
+	.category-intervju.has-post-thumbnail h1 {
+		width: 50%;
+	}
+	#main-article-text .has-image {
+		max-width: calc(100% * 100 / 90);
+		margin-left: calc(-100% * 5 / 90) !important;
+		margin-right: calc(-100% * 5 / 90) !important;
+	}
+	.category-kritika-komentar #myFeaturedImage {
+		width: 50% !important;
+		float: none !important;
+		margin: auto !important;
+	}
+	.newlit-review-description {
+		font-size: 1rem !important;
+	}
+
+	.newlit-review-issues li.one-eight {
+		width: 16.667% !important;
+	}
+
+	.other-story, .newer-items {
+		width: 50% !important;
+	}
+
+	.articleText .content, 
+	.textOuter .textInner, 
+	.text-outer .text-inner {
+		max-width: 100%;
+	}
+	ul.relatedArticlesList li p .font-size-3 {
+		font-size: 1.333rem;
+		font-weight: bold !important;
+	}
+	.relatedArticlesList .one-five {
+		width: 50% !important;
+	}
+	.single-author-photo.one-three {
+		width: 75% !important;
+	}
+	#articleTags.light {
+		font-weight: normal !important;
+	}
+	/*
+	.font-size-8 {
+		font-size: 5.535em;
+		font-size: 5.535rem;
+	}
+	*/
+	.myMainPosts ul li .article-title {
+		width: 100% !important;
+	}
+	.myMainPosts ul li .mobile-full-width.one-two {
+		width: 75% !important;
+	}
+
+	.myMainPosts .myPostListItem .theExcerpt.font-size-1 {
+		font-size: 1.333rem !important;
+	}
+
+		
+	ul#recentBooks li a.blockLink img, 
+	ul.dynamicBookList li a.blockLink img {
+		width: 100%;
+	}
+	ul#recentBooks li:hover a.blockLink img , ul.dynamicBookList li:hover a.blockLink img {
+		box-shadow: none;
+		border: none !important;
+	}
+	ul#recentBooks li a.blockLink, 
+	ul.dynamicBookList li a.blockLink {
+	}
+	.newlit-featured-article .this-excerpt {
+		width: 75% !important;
+	}
+
+	.this-author-photo {
+		width: 20% !important;
+	}
+	.other-story .this-author-photo {
+		width: 33.33% !important;
+	}
+	.page-template-avtorji-php #titlesByAuthor li.one-six {
+		width: 25% !important;
+	}
+	#recentBooks li.one-six {
+		width: 20% !important;
+	}
+	.this-book-description-text {
+		font-size: 1.333rem !important;
+	}
+	a.readMoreLink {
+		font-size: 1rem !important;
+	}
+	.gendered .flex .one-two .circle {
+		width: 15% !important;
+	}
+	.gendered .bubble {
+		width: 50% !important;
+	}
+	.comic-strip {
+		padding: 0 10%;
+	}
+
+	.gallery {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.fotogalerija {
+		flex-direction: column !important;
+		/*padding: 1% !important;*/
+	}
+
+}
+
+@media only screen and (min-width: 960px) {
+}
+
+/* večje od telefona: običajni meniji … TODO */
+@media only screen 
+	and (min-width: 601px) {
+	#headerBreak ul#menu-menu-ena li.menu-item:hover > ul.sub-menu,
+	ul#menu-menu-ena li.menu-item:hover > ul.sub-menu {
+		/*
+		visibility: visible;
+		display: block;
+		*/
+	}
+	#headerBreak ul#menu-menu-ena li.menu-item > ul.sub-menu li.menu-item,
+	ul#menu-menu-ena li.menu-item > ul.sub-menu li.menu-item {
+		display: block;
+		float: none;
+		white-space: nowrap;
+	}
+	#headerBreak ul#menu-menu-ena li.menu-item:hover,
+	ul#menu-menu-ena li.menu-item:hover {
+		background-color: #f8f8f6;
+	}
+}
+@media only screen 
+	and (min-width: 601px) 
+	and (max-width: 767px) {
+	
+	.category-na-prvo-zogo blockquote,
+	.category-izdano blockquote,
+	.category-intervju.has-post-thumbnail blockquote {
+		float: none !important;
+		width: 100% !important;
+	}
+	.category-na-prvo-zogo .articleText h1,
+	.category-izdano .articleText h1,
+	.category-intervju.has-post-thumbnail h1 {
+		width: 75%;
+	}
+	.category-na-prvo-zogo .articleText .flex h1,
+	.category-izdano .articleText .flex h1,
+	.category-intervju.has-post-thumbnail .flex h1 {
+		width: 50%;
+	}
+	#main-article-text .has-image {
+		max-width: calc(100% * 100 / 90);
+		margin-left: calc(-100% * 5 / 90) !important;
+		margin-right: calc(-100% * 5 / 90) !important;
+	}
+	.interviewQuestion {
+		margin-left: 0;
+	}
+	.articleText .content, 
+	.textOuter .textInner, 
+	.text-outer .text-inner {
+		max-width: 100%;
+	}
+	.this-author-photo {
+		width: 16.667% !important;
+	}
+	.other-story .this-author-photo {
+		width: 33.33% !important;
+	}
+	.font-size-3 {
+		font-size: 1.333em;
+		font-size: 1.333rem;
+	}
+	.font-size-5, .font-size-6, .font-size-7 {
+		font-size: 2.353em;
+		font-size: 2.353rem;
+	}
+	.font-size-8 {
+		font-size: 4.162em;
+		font-size: 4.162rem;
+	}
+	.gendered .bubble:after {
+		display: none;
+	}
+	.gendered .bubble {
+		padding-top: 3em;
+	}
+	.gendered > div:nth-of-type(1) .bubble {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.gendered > div:nth-of-type(2) .bubble {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.gendered > div:nth-of-type(1) {
+		display: flex;
+		flex-direction: column;
+	}
+	.gendered > div:nth-of-type(2) {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.gendered {
+		text-align: center;
+	}
+	.gendered p {
+		text-align: left;
+	}
+	.gendered .circle {
+		width: 20% !important;
+		display: block;
+		transform: translate(0, 50%);
+		z-index: 1;
+		box-shadow: none;
+		border: 4px solid white;
+	}
+	.myPostListItem.one-three {
+		width: 50% !important;
+	}
+	.comic-strip {
+		padding: 0 5%;
+	}
+	.fotogalerija {
+		flex-direction: column !important;
+		/*padding: 1% !important;*/
+	}
+}
+
+/* small (mobile) screens */
+@media only screen and (max-width: 600px) {
+	.flex {
+		display: block;
+	}
+	.comic-strip {
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+	.comic-strip > a {
+		margin: auto;
+		max-width: 90% !important;
+	}
+	.fotogalerija {
+		flex-direction: column !important;
+		padding: 1% !important;
+	}
+	.motto {
+		width: 100%;
+		color: #999999;
+	}
+	.category-na-prvo-zogo .articleText h1,
+	.category-izdano .articleText h1,
+	.category-intervju.has-post-thumbnail h1 {
+		width: 100%;
+	}
+	.category-na-prvo-zogo .articleText .flex .myFeaturedImage,
+	.category-izdano .articleText .flex .myFeaturedImage,
+	.category-intervju.has-post-thumbnail .flex .myFeaturedImage {
+		width: 75%;
+		margin: auto;
+	}
+	.category-na-prvo-zogo blockquote,
+	.category-izdano blockquote,
+	.category-intervju.has-post-thumbnail blockquote {
+		float: none !important;
+		width: 100% !important;
+	}
+	blockquote {
+		border-top-width: 0.2em;
+		font-weight: bold !important;
+		font-size: 1.333em !important;
+	}
+	#main-article-text .has-image {
+		/*max-width: calc(100% * 100 / 90);*/
+		max-width: calc(100% + (100% * 5 / 90) + (100% * 5 / 90));
+		margin-left: calc(-100% * 5 / 90) !important;
+		margin-right: calc(-100% * 5 / 90) !important;
+	}
+	.has-image > div {
+		width: 100% !important;
+	}
+	.interviewQuestion {
+		margin-left: 0;
+	}
+	#footer-archives .one-two, #footer-about .four-five {
+		width: 100% !important;
+	}
+	#articleTags.light {
+		font-weight: normal !important;
+	}
+	.light {
+		/*font-weight: normal;*/
+	}
+	#myTopStripeContainer {
+		font-size: 1.333em;
+		font-size: 1.333rem;
+		height: 3em;
+		padding: 0;
+		border: none;
+	}
+	#myTopStripe {
+		position: fixed;
+		/*width: calc(100 * 100% / 90);
+		margin-left: calc((-100 * 100% / 90) * 0.05);*/
+		/*margin-left: -5%;*/
+		z-index: 10;
+		top: 0; 
+		right: 0; 
+		left: 0;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		color: #eee;
+		background-color: rgba(22, 23, 26, 0.9);
+	}
+	.show-only-on-small-screen > * {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+	.show-only-on-small-screen {
+		display: block;
+		visibility: visible;
+	}
+	.menu-menu-ena-container {
+		/*width: 90%;*/
+		position: relative;
+		/*top: 1em;*/
+		overflow: hidden;
+		/*left: -120%;*/
+	}
+	#menu-menu-ena {
+		/*background-color: black;
+		color: #999999;*/
+		/*position: absolute;*/
+		z-index: 100;
+		width: 100%;
+		text-align: center;
+		display: table;
+		margin-top: 1px; /* ???? ker se vidi ozadje iz tabele??? */
+	}
+	ul#menu-menu-ena > li {
+		text-transform: uppercase;
+	}
+	ul#menu-menu-ena li {
+		padding: 0;
+	}
+	ul#menu-menu-ena li.menu-item > ul.sub-menu li {
+		font-weight: normal;
+		font-style: italic;
+		text-transform: none;
+	}
+	ul#menu-menu-ena li.menu-item > ul.sub-menu {
+		background-color: transparent;
+		margin-left: 1em;
+	}
+
+	#headerBreak ul#menu-menu-ena li a, ul#menu-menu-ena li a:hover, #headerBreak ul#menu-menu-ena li a, ul#menu-menu-ena li a:active {
+		background-color: #ebebe8;
+		color: black;
+		text-decoration: none;
+	}
+	#headerBreak ul#menu-menu-ena li a, ul#menu-menu-ena li a {
+		color: inherit;
+		/*background-color: #EBEBE8;*/
+		display: block;
+		padding: 1.5em 1em;
+		font-weight: 300;
+		border: 1px solid;
+	}
+	#myTopStripe .menu-menu-ena-container #menu-menu-ena li {
+		/*display: block*/
+		display: inline-table;
+		width: 50%;
+		margin: 0 0 1.5em 0;
+		box-sizing: border-box;
+		padding: 0 0.75em;
+		vertical-align: top;
+	}
+
+	ul#menu-menu-ena li.menu-item > ul.sub-menu {
+		visibility: visible;
+		display: none;
+		position: static;
+		z-index: auto;
+	}
+
+	/* active menu-item? */
+	#menu-menu-ena .menu-item {
+		border: none !important;
+	}
+	body.revija ul#menu-menu-ena li#menu-item-48901 a,
+	body.avtor ul#menu-menu-ena li#menu-item-9605 a,
+	body.single-knjiga li#menu-item-9604 a,
+	body.tax-zbirka li#menu-item-9604 a,
+	body.tax-book_cat li#menu-item-9604 a,
+	ul#menu-menu-ena li.current-menu-item a, 
+	/* +++++++++++++++++++++++++++++++++++++++ */
+	body.page-template-knjige li#menu-item-9604 a, body.single-knjiga li#menu-item-9604 a, body.page-template-single-knjiga-php li#menu-item-9604 a,body.page-template-taxonomy-zbirka-php li#menu-item-9604 a, body.tax-abirka li#menu-item-9604 a, /* knjige */
+	body.post-type-archive-revija li#menu-item-48901 a, body.page-template-archive-revija-php li#menu-item-48901 a, body.page-template-single-revija-php li#menu-item-48901 a, body.single-revija li#menu-item-48901 a, /* revija */
+	body.single-post li#menu-item-51407 a, body.page-template-single-php li#menu-item-51407 a, body.page-template-date-php li#menu-item-51407 a, body.page-template-category-php li#menu-item-51407 a, /* single article OR article archives etcbody.*/
+	body.single-post li#menu-item-52200 a, body.page-template-single-php li#menu-item-52200 a, body.page-template-date-php li#menu-item-52200 a, body.page-template-category-php li#menu-item-52200 a, /* single article OR article archives etcbody.*/
+	body.page-template-avtorji li#menu-item-9605 a, body.page-template-avtorji-php li#menu-item-9605 a, body.page-template-single-avtor-php li#menu-item-9605 a, body.single-avtor li#menu-item-9605 a, body.page-template-taxonomy-ime_avtorja-php li#menu-item-9605 a, body.tax-ime_avtorja li#menu-item-9605 a, /* avtorji */ 
+body.events-single li#menu-item-9611 a, body.events-archive li#menu-item-9611 a /* events */
+	{
+		color: black;
+		border: none;
+		background-color: #D9C4C3;
+	}
+
+	#articleTags {
+		width: 100% !important;
+	}
+
+	body, .serif, .leading-normal {
+	}
+	#container, .some-container {
+		width: 96%;
+	}
+	.category-kritika-komentar #myFeaturedImage {
+		width: 66.67% !important;
+		float: none !important;
+		margin: auto !important;
+	}
+
+	.articleText .content, 
+	.textOuter .textInner, 
+	.text-outer .text-inner {
+		max-width: 100%;
+	}
+	.font-size-3 {
+		font-size: 1.333em;
+		font-size: 1.333rem;
+	}
+	.font-size-5, .font-size-6, .font-size-7 {
+		font-size: 2.353em;
+		font-size: 2.353rem;
+	}
+	.font-size-8 {
+		font-size: 3.129em;
+		font-size: 3.129rem;
+	}
+	h2 {
+		font-size: 1em !important;
+		font-size: 1rem !important;
+	}
+	h2.one-two {
+		width: 100% !important;
+	}
+	.main-article-text-body {
+		font-size: 1rem !important;
+		font-size: 1em !important;
+	}
+	.content #main-article-text .main-article-text-body div.introduction-wrapper {
+		/*background-color: white !important;*/
+		/*padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;*/
+	}
+	.introduction {
+		font-weight: bold;
+		font-size: 1rem !important;
+		font-size: 1em !important;
+	}
+
+
+	.one-three, .one-four, .one-five, .one-six, .one-seven, .one-eight, .one-nine, .one-ten,
+   .authorDetailsArticle.two-three {
+		width: 100% !important;
+	}
+
+	/*
+	.image-stripe .item {
+		width: 30% !important;
+	}
+	*/
+	.home-event-list .event-list-item.one-five {
+		width: 90% !important;
+	}
+
+	.this-author-photo {
+		width: 40% !important;
+	}
+	.bottom-widgets ul, .bottom-widgets li {
+		width: 100% !important;
+	}
+	#articleTags {
+		/*
+		font-size: 0.752em !important;
+		font-size: 0.752rem !important;
+		*/
+	}
+	#article-title {
+		padding: 0 !important;
+	}
+	.relatedArticlesList li.myPostItem .theExcerpt.large-top-margin {
+		margin-top: 0;
+	}
+	.relatedArticlesList .myPostListItem {
+		margin-bottom: 0;
+	}
+	.someMeta .post_date, .someMeta #categoryList,
+	.authorDetailsArticle.font-size-1,
+	.relatedArticlesList .article-data-metadata
+   	{
+		font-size: 0.752em !important;
+		font-size: 0.752rem !important;
+	}
+	#featuredBooksContainer.fullw,
+	#basicBookDesc.fullw,
+	.mobile-override.fullw,
+	.mobile-override.stretch-full-width {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.mobile-override.stretch-full-width {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#featuredBooks .true-liquid-block-inner.one-two .true-liquid-block-inner.one-two,
+	#basicBookDesc .true-liquid-block-inner.one-two,
+	#basicBookDesc .true-liquid-block-inner.one-two .two-three,
+	.page-template-single-avtor-php .fullw h1 + .columnar-text.two-three,
+	.page-template-taxonomy-ime_avtorja-php .mobile-override.light-blue-background .one-two,
+	.page-template-taxonomy-ime_avtorja-php .myMainPosts ul li.myPostListItem .one-two
+   	{
+		width: 100% !important;
+		vertical-align: top;
+	}
+	#seriesDescriptionParagraph .font-size-2 {
+		font-size: 1rem;
+	}
+	#recentBooks li.true-liquid-block-inner.one-six {
+		width: 100% !important;
+	}
+	ul#recentBooks li a.blockLink, 
+	ul.dynamicBookList li a.blockLink {
+		width: 25%;
+		float: left;
+		box-sizing: border-box;
+		padding-top: 0;
+		padding-right: 1em;
+	}
+	ul#recentBooks li a.blockLink img, 
+	ul.dynamicBookList li a.blockLink img {
+		position: static;
+		width: 100%;
+	}
+	ul#recentBooks li:hover a.blockLink img , ul.dynamicBookList li:hover a.blockLink img {
+		box-shadow: none;
+		border: none !important;
+	}
+
+	ul#recentBooks .bookInfo,
+	ul.dynamicBookList .bookInfo {
+		float: right;
+		width: 75%;
+	}
+	.authorDetailsArticle .one-three.float {
+		width: 50% !important;
+		float: none;
+		margin: auto;
+		margin-bottom: 1em;
+	}
+
+	.authorDetailsArticle div div .hasLeftMargin {
+		margin-left: 0;
+	}
+
+	.page-template-avtorji-php #titlesByAuthor li.one-six {
+		width: 50% !important;
+	}
+	.page-template-taxonomy-ime_avtorja-php .myMainPosts ul li.myPostListItem .one-two .theExcerpt.font-size-2 {
+		font-size: 1rem;
+		font-size: 1em;
+	}
+	body.blog h4, 
+	body.blog .this-author, 
+	body.blog .this-excerpt,
+	body.blog .article-subtitle,
+	body.home h4, 
+	body.home .this-author, 
+	body.home .this-excerpt,
+	body.home .article-subtitle
+  	{
+		width: 100% !important;
+	}
+	body.blog .myMainPosts .myPostListItem .text-outer .paddedText
+   	{
+		padding: 0;
+	}
+	.mobile-full-width {
+		width: 100% !important;
+	}
+	body.blog .theExcerpt,
+	body.home .theExcerpt	
+	{
+		font-size: 1em;
+		font-size: 1rem;
+	}
+	body.blog .other-story .this-author-photo,
+	body.home .other-story .this-author-photo 
+	{
+		width: 33.33% !important;
+	}
+	ul.home-event-list,
+   .mobile-touch-scroll-horizontal	{
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		text-align: left;
+		-webkit-overflow-scrolling: touch;
+	}
+	.mobile-touch-scroll-horizontal > * {
+		white-space: initial;
+		width: 66.67% !important;
+	}
+	.home-event-list .event-list-item {
+		white-space: initial;
+	}
+	.mobile-override .series-description.font-size-2,
+	.book-genre, .top-stripe-description,
+	.mobile-base-size {
+		font-size: 1rem !important;
+		font-size: 1em !important;
+	}
+	.book-genre p.one-two, .mobile-override.top-stripe-category, .newlit-subscribe-block.one-two, .project-list-container {
+		width: 100% !important;
+	}
+	#newlit-projects a.float {
+		float: none;
+	}
+	#newlit-projects a div.small-right-margin {
+		margin-right: 0;
+	}
+	#newlit-projects .ratio-1-1 {
+		padding-top: 75%;
+	}
+	#newlit-projects .bookInfo {
+		float: none;
+		width: 100% !important;
+	}
+	#newlit-projects h2 {
+		font-size: 1.769rem !important;
+		margin-top: 1em !important;
+	}
+	a.readMoreLink {
+		font-size: 1rem !important;
+	}
+	.newlit-review-description {
+		font-size: 1rem !important;
+	}
+
+
+
+	.gendered .bubble:after {
+		display: none;
+	}
+	.gendered .bubble {
+		/*padding-top: 4em;*/
+	}
+	.gendered > div:nth-of-type(1) .bubble {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.gendered > div:nth-of-type(2) .bubble {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/*
+	.gendered > div:nth-of-type(1) {
+		display: flex;
+		flex-direction: column;
+		align-self: center !important;
+		width: 75% !important;
+	}
+	.gendered > div:nth-of-type(2) {
+		display: flex;
+		flex-direction: column-reverse;
+		align-self: center !important;
+		width: 75% !important;
+	}
+	*/
+	.gendered {
+		text-align: center;
+		display: flex !important;
+		flex-direction: column;
+	}
+	.gendered p {
+		text-align: left;
+	}
+	.gendered .circle {
+		/*
+		width: 20% !important;
+		display: block;
+		transform: translate(0, 50%);
+		z-index: 1;
+		box-shadow: none;
+		border: 4px solid white;
+		*/
+	}
+	.note {
+		height: 50vh;
+	}
+	.note .text {
+		width: 90%;
+	}
+
+
+}

@@ -1,0 +1,38 @@
+
+h4 {
+}
+
+h5 {
+}
+
+#myRecentPostsList h5 {
+	color: black;
+	font-weight: bold;
+	margin: 0;
+}
+
+#issueNum {
+	font-size: 5.6em;
+	font-size: 8em;
+	color: #666;
+	font-style: italic
+}
+
+
+#tagline {
+	font-size: 3em;
+	line-height: 1.2;
+	margin: 56px 0 28px 0;
+}
+li.myPostItem h4 {
+	border: none;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+}
+
+li.myPostItem {
+	/*
+	border-top: 5px solid black;
+	margin-bottom: 40px;
+	*/
+}

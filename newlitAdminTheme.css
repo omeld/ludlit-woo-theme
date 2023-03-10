@@ -1,0 +1,17 @@
+.newlitMetaTextarea {
+	width: 95%;
+	height: 100px;
+}
+
+.newlitMetaInput {
+	width: 95%;
+}
+
+.newlitInputWrap {
+	margin-left: 150px;
+}
+
+span.newlitLabel {
+	width: 140px;
+	float: left;
+}
