@@ -103,12 +103,15 @@ if (is_home() || is_front_page()) {
 }
 
 /* za knjige? */
+/* to itak ne dela in itak ne rabimo */
+/*
 $queryTax  = $wp_query->query_vars['taxonomy'];
 $queryTerm = $wp_query->query_vars['term'];
 
 if ($queryTax == "zbirka" and isset($queryTerm)) {
 	$series = $queryTerm;
 }
+*/
 /* za knjige? */
 ?>
 	<body <?php body_class("sans $bkg"); ?>>
