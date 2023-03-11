@@ -27,7 +27,12 @@ if ($magazine->have_posts()) :
 	while ($magazine->have_posts()) : $magazine->the_post();
 		$thisPostID = $post->ID; 
 ?>
-<div class="fullw gray-background">
+
+<?php
+	require('naroci-revije.php'); 
+?>
+
+<div class="levodesnopadding gray-background">
 	<div class="" style="overflow-x: hidden">
 		<div class="articleText top-padding bottom-padding clearfix text-outer true-liquid-block-outer sans"><!--
 <?php if (has_post_thumbnail($post->ID)) : ?>
@@ -46,7 +51,7 @@ if ($magazine->have_posts()) :
 					<div class="excerpt sans leading-medium clearfix font-size-1 block-para" style="padding-top: 3em;">
 <?php the_content(); ?>
 					</div>
-					<div id="postBrowser" class="sans postMeta clearfix magazine-browser">
+					<div id="postBrowser" class="sans postMeta clearfix magazine-browser" style="display: flex; flex-direction: column; align-items: center;">
 <?php
 	$prevMag = myMagazineNavigation('prev');
 	$nextMag = myMagazineNavigation('next');
@@ -63,6 +68,10 @@ if ($magazine->have_posts()) :
 	}
 
 ?>
+						
+						<div style="vertical-align: center;">
+							<button class="btn btn-primary" style="background-color: #648aaa; border: #648aaa; margin-left: auto; margin-right: auto; display:block; margin: 1em;">Naročite to izdajo tu!</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -82,7 +91,7 @@ if ($magazine->have_posts()) :
 		<div class="columnar-text" style="">
 			<p>Revija Literatura je osrednji slovenski mesečnik za književnost, ki kot samostojna revija izhaja od leta 1989, ko se je odcepila od revije Problemi. V skoraj 25 letnikih je doslej izšlo že skoraj tristo številk v skoraj dvesto zvezkih revije. V zadnjih letih izhaja v osmih zvezkih, po štiri enojne in dvojne številke letno.</p>
 			<p>Mesto v reviji najdejo izvirna in prevedena poezija in proza, izvirni in prevedeni eseji, tematski bloki (v zadnjem času so bili med najodmevnejšimi Slovenska literatura in film, Slavljenje hibridnosti – o postkolonializmu, Ut »musica viva« poesis – o literaturi in glasbi, Literatura in strip), intervjuji ter daljše in krajše knjižne ocene, v zadnjem času tudi strip.</p>
-			<p>Vlogo glavnega oziroma odgovornega urednika so v minulih dvajsetih letih zasedali Jani Virk, Vid Snoj, Igor Zabel, Igor Bratož, Tomo Virk, Matevž Kos, Samo Kutoš, Andrej Blatnik, Urban Vovk in Primož Čučnik.</p>
+			<p>Vlogo glavnega oziroma odgovornega urednika so v minulih dvajsetih letih zasedali Jani Virk, Vid Snoj, Igor Zabel, Igor Bratož, Tomo Virk, Matevž Kos, Samo Kutoš, Andrej Blatnik, Urban Vovk in Primož Čučnik.Matic regally neki neki bla bla bla</p>
 		</div>
 	</div>
 </div>
@@ -95,7 +104,7 @@ if (!empty($recentMagazines)) :
 <div class="oneArticle section">
 	<div class="">
 		<div class="articleText clearfix text-outer" style="padding-top: 0">
-			<h6 class="sans font-size-2 bold gray"  id="">Novejše številke revije Literatura</h6>
+			<h6 class="font-size-3 thin leading-display gray"  id="">Novejše številke revije Literatura</h6>
 			<ul id="titlesByAuthor" class="dynamicBookList true-liquid-block-outer"><!--
 <?php foreach ($recentMagazines as $post) : ?>
 <?php
@@ -123,23 +132,15 @@ if (has_post_thumbnail()) : ?>
 <?php endif; ?>
 
 
-
-
-
-
-
-
-
-
 <div class="section fullw gray-background top-padding bottom-padding">
 	<div class="">
 		<div class="articleText clearfix text-outer" style="padding-top: 0">
-			<h4 class="widgettitle">Vse številke revije Literatura</h4>
-			<?php myMagazineList(); ?>
-			<h4 class="widgettitle">Naročilo</h4>
-			<p>Na revijo se lahko <a href="<?php echo antispambot("mailto:ludliteratura@yahoo.com"); ?>">naročite po elektronski pošti</a>. Ob naročnini prejmete tudi knjigo iz programa LUD Literatura po vaši izbiri.
+			<h4 class="widgettitle font-size-4 thin center leading-display" style="padding: 10px;">Vse številke revije Literatura</h4>
+			<div class="center">
+				<?php myMagazineList(); ?>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <?php get_footer(''); ?>
