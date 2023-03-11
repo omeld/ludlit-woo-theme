@@ -2366,4 +2366,13 @@ function mytheme_add_woocommerce_support() {
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 
 
+// Shortcode to output custom PHP in Elementor
+function elementor_php_objava ($atts){
+     ob_start();
+    get_template_part('objava_prva_stran');
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('elementor_objava', 'elementor_php_objava')
+
 ?>
