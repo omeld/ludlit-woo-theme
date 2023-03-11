@@ -17,6 +17,22 @@
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/home.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+		<!-- ZA FLATICON IKONE
+		<a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by edt.im - Flaticon</a>
+		<a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Freepik - Flaticon</a>
+		-->
+		<!--MAILCHIMP-->
+		<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ec659440ad9688227c81bf275/5de604a6b886ac4f1b4c9830e.js");</script>
+
+		
+		<!--<style>
+			
+			.socialnaOmrezjaMenu {
+				float: right;
+			}
+		
+		</style>-->
+
 <!-- favicons -- >
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=jw7Kjj52yv">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=jw7Kjj52yv">
