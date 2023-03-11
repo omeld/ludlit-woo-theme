@@ -40,7 +40,7 @@ $myCurrentLoop = new WP_Query($args);
 
 if ($myCurrentLoop->have_posts()) :
 ?>
-<div class="mobile-override light-blue-background fullw">
+<div class="mobile-override light-blue-background levodesnopadding">
 	<div class="text-outer minimal-padding">
 		<div class="one-two font-size-2 serif tiny-bottom-padding"><p><?php echo "Arhiv prispevkov avtorja <i><b>$myTerm->name</b></i> ($myCurrentLoop->found_posts)"; ?></p></div>
 		<ul id="mySidebar4" class="bare-list sideBarLiContent">
