@@ -16,6 +16,21 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 add_action('after_setup_theme', 'newlit_remove_admin_bar');
 add_filter( 'wp_default_editor', create_function('', 'return "tinymce";') );
 
+//andrej2022
+//general style
+function mainStyleCss() {
+	$myMainCssHandle = 'style.css';
+	$myMainCssFilePath = __DIR__ . '/' . $myMainCssHandle;
+	$myMainCssFile = get_template_directory_uri() . "/$myMainCssHandle";
+	wp_enqueue_style(
+		'newlit-style', 
+		$myMainCssFile,
+		array(), 
+		filemtime($myMainCssFilePath), //so browsers update it automatically
+		false
+	);
+}
+add_action('wp_enqueue_scripts', 'mainStyleCss');
 
 
 function newlit_remove_admin_bar() {
