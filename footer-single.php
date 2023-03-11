@@ -5,6 +5,7 @@
 				<ul class="category-list-container true-liquid-block-outer bare-section-with-margins two-three center-margins"><!--
 					<?php dynamic_sidebar('newlit-categories-widget'); ?>
 					<?php dynamic_sidebar('newlit-monthly-archives-widget'); ?>
+					<?php dynamic_sidebar('newlit-social-widget'); ?>
 				--></ul>
 				<div class="text-outer   two-three center-margins " id="footer-colophon-info">
 					<div class="true-liquid-block-outer"><!--

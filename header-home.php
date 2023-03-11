@@ -1,6 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="sl" xml:lang="sl" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+		<!--BOOTSTRAP LINK-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
 		<script type="text/javascript" src="//use.typekit.net/rha7jnl.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<meta property="fb:admins" content="1092820016" />
@@ -13,6 +16,22 @@
 		<title><?php wp_title('&laquo;', true, 'right'); ?><?php bloginfo('name'); ?></title>
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/home.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<!-- ZA FLATICON IKONE
+		<a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by edt.im - Flaticon</a>
+		<a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Freepik - Flaticon</a>
+		-->
+		<!--MAILCHIMP-->
+		<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ec659440ad9688227c81bf275/5de604a6b886ac4f1b4c9830e.js");</script>
+
+		
+		<!--<style>
+			
+			.socialnaOmrezjaMenu {
+				float: right;
+			}
+		
+		</style>-->
 
 <!-- favicons -- >
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=jw7Kjj52yv">
@@ -84,17 +103,35 @@ if (is_home() || is_front_page()) {
 }
 
 /* za knjige? */
+/* to itak ne dela in itak ne rabimo */
+/*
 $queryTax  = $wp_query->query_vars['taxonomy'];
 $queryTerm = $wp_query->query_vars['term'];
 
 if ($queryTax == "zbirka" and isset($queryTerm)) {
 	$series = $queryTerm;
 }
+*/
 /* za knjige? */
 ?>
 	<body <?php body_class("sans $bkg"); ?>>
-		<div id="myTopStripeContainer" class="relative text-outer">
-			<div class="">
+		<div id="myTopSocialContainer" class="relative text-outer" style="background-color: #648AAA;">
+			<div class="mySocialStripeMenu" style="display: flex; justify-content: space-between; align-items: center; height: 65px;">
+				<a class="font-size-3 hide-title" href="<?php echo home_url(); ?>" style="font-weight: bold;">LUD Literatura</a>
+
+				<div style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+					<div style="list-style: none; position: sticky;">
+						<?php dynamic_sidebar('newlit-iskanjesitewide-widget'); ?>
+				 	</div>
+					<div style="display: inline-block;"> <!-- kličejo se podobne kot za true liquid block inner css class-->
+						<?php wp_nav_menu(array( 'container_class' => 'menu-social-container font-size-1', 'theme_location' => 'menu_social', 'menu_class' => 'menu za socialna omrezja social-icons' ) ); ?>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+		<div id="myTopStripeContainer" class="relative text-outer" style="background-color: white;">	
+			<div class="myTopStripeMenu">
 				<div id="myTopStripe" class="newlit-css-transition-hide show-when-touched font-size-3">
 					<div class="center center-margins show-only-on-small-screen font-size-3" style="line-height: 3em">
 						<a class="font-size-2 light" href="<?php echo home_url(); ?>">LUD Literatura</a>
@@ -104,10 +141,11 @@ if ($queryTax == "zbirka" and isset($queryTerm)) {
 				</div>
 			</div>
 		</div>
+		<hr style="height:2px; width:100%; border-width:0; color:grey;>
 		<div id="container" class="clearfix">
 <?php 
-//if (is_home()) {
-if (is_front_page() || is_home()) {
+if (is_home()) {
+//if (is_front_page() || is_home()) {
 	get_template_part('slide'); 
 }
 ?>

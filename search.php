@@ -25,7 +25,7 @@ $myCurrentLoop = new WP_Query(array_merge($wp_query->query, $my_loop_args));
 <?php if ($myCurrentLoop->have_posts()) : ?>
 <div class="mobile-override top-stripe-category gray-background-4 reverse font-size-2 fullw">
 	<div class="text-outer minimal-padding">
-		<p class="one-two">Iskanje: <?php echo get_search_query(); ?></p>
+		<p class="font-size-3 leading-display" style="padding: 1em;">Iskanje: <?php echo get_search_query(); ?></p>
 	</div>
 </div>
 <?php endif; ?>

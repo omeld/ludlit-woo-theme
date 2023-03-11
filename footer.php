@@ -1,8 +1,9 @@
 			<div class="text-outer">
-				<!--<div id="footer-subscribe" class="inline-subscribe block-para reverse almost-black-background center stretch-full-width tiny-top-padding tiny-bottom-padding font-size-1 bold"><p>Bodite obveščeni. Bodite udeleženi. Literaturin obveščevalnik v vašem e-poštnem nabiralniku.</p><p><a class="plain-link" href="http://www.ludliteratura.si/prijava-na-novice"><span class="font-size-1 bold button blue-background reverse">Naročilo</span></a></p>
+				<!--<div id="footer-subscribe" class="inline-subscribe block-para reverse almost-black-background center stretch-full-width tiny-top-padding tiny-bottom-padding font-size-1 bold"><p>Bodite obveščeni. Bodite udeleženi. Literaturin obveščevalnik v vašem e-poštnem nabiralniku.</p><p><a class="plain-link" href="<?php echo site_url('/prijava-na-novice'); ?>"><span class="font-size-1 bold button blue-background reverse">Naročilo</span></a></p>
 				</div>-->
 				<div id="footer-archives" class="gray-background-1 stretch-full-width top-padding-not footer">
 					<ul class="category-list-container true-liquid-block-outer bare-links bare-list bare-section-with-margins " style="margin-top: 0; margin-bottom: 0"><!--
+						<?php dynamic_sidebar('newlit-social-widget'); ?>
 						<?php dynamic_sidebar('newlit-categories-widget'); ?>
 						<?php dynamic_sidebar('newlit-monthly-archives-widget'); ?>
 					--></ul>
@@ -13,20 +14,14 @@
 						<?php dynamic_sidebar('newlit-about-widget'); ?>
 					--></ul>
 					<div id="addthis-social-networks-follow" class="small-top-margin medium-bottom-margin addthis_horizontal_follow_toolbox bare-links center center-margins"></div>
-					<p class=" center"><b><a href="http://www.ludliteratura.si/o-mediju-in-pogojih-sodelovanja/">O mediju in pogojih sodelovanja</a></b></p>
-					<p class=" center"><b><a href="http://www.ludliteratura.si/navodila-za-posiljanje-prispevkov/">Navodila za pošiljanje prispevkov</a></b></p>
-					<p class=" center"><b><a href="http://www.ludliteratura.si/splosna-pravila-in-pogoji-nagradnih-iger/">Splošna pravila in pogoji nagradnih iger</a></b></p>
+					<p class=" center"><b><a href="<?php echo site_url('/o-mediju-in-pogojih-sodelovanja/'); ?>">O mediju in pogojih sodelovanja</a></b></p>
+					<p class=" center"><b><a href="<?php echo site_url('/navodila-za-posiljanje-prispevkov/'); ?>">Navodila za pošiljanje prispevkov</a></b></p>
+					<p class=" center"><b><a href="<?php echo site_url('/splosna-pravila-in-pogoji-nagradnih-iger/'); ?>">Splošna pravila in pogoji nagradnih iger</a></b></p>
+					<p class=" center"><b><a href="<?php echo site_url('/pogoji-poslovanja-trgovine/'); ?>">Pogoji poslovanja trgovine</a></b></p>
 
-
-
- 
-					<div class="text-outer top-padding bottom-padding bottom-widgets">
-						<ul class="bare-list true-liquid-block-outer my-widget center-margins two-three center"><!--
-							<?php //dynamic_sidebar('newlit-mailman-widget'); ?>
-							<?php dynamic_sidebar('newlit-search-widget'); ?>
-						--></ul>
-						<p class="center block-para">© avtorji in LUD Literatura <a href="http://www.ludliteratura.si" title="LUD Literatura">www.ludliteratura.si</a></p>
-					<p class="medium-top-margin center">Elektronski medij www.ludliteratura.si podpirata Ministrstvo za kulturo RS in Javna agencija za knjigo RS.</p>
+					<div class="text-outer">
+						<p class="center block-para small-bottom-margin">© avtorji in LUD Literatura <a href="http://www.ludliteratura.si" title="LUD Literatura">www.ludliteratura.si</a></p>
+					<p class="medium-top-margin center ">Elektronski medij www.ludliteratura.si podpirata Ministrstvo za kulturo RS in Javna agencija za knjigo RS.</p>
 					</div>
 				</div>
 				<div class="white-background small-top-padding stretch-full-width">

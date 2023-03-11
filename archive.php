@@ -32,7 +32,7 @@ $myCurrentLoop = new WP_Query($args);
 
 <!-- LOOP x-->
 
-<div id="main" class="clearfix">
+<div id="main" class="clearfix levodesnopadding">
 <?php require('loop-articles.php'); ?>
 
 <?php get_footer(); ?>

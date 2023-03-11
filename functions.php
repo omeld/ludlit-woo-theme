@@ -16,6 +16,21 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 add_action('after_setup_theme', 'newlit_remove_admin_bar');
 add_filter( 'wp_default_editor', create_function('', 'return "tinymce";') );
 
+//andrej2022
+//general style
+function mainStyleCss() {
+	$myMainCssHandle = 'style.css';
+	$myMainCssFilePath = __DIR__ . '/' . $myMainCssHandle;
+	$myMainCssFile = get_template_directory_uri() . "/$myMainCssHandle";
+	wp_enqueue_style(
+		'newlit-style', 
+		$myMainCssFile,
+		array(), 
+		filemtime($myMainCssFilePath), //so browsers update it automatically
+		false
+	);
+}
+add_action('wp_enqueue_scripts', 'mainStyleCss');
 
 
 function newlit_remove_admin_bar() {
@@ -808,7 +823,43 @@ function register_my_menus() {
 }
 
 if ( function_exists('register_sidebars') )
-    register_sidebars(8);
+    register_sidebars(10);
+
+	/*function register_some_widget___narociVseRevije() {
+		register_sidebar(array(
+			'id' => 'newlit-narociVseRevije-widget',
+			'name' => 'naroci vse revije',
+			'before_title' => '<h5 class="font-size-1 align-right reset-vertical-space">',
+			'after_title' => '</h5>',
+			)
+		);
+	}
+	add_action('widgets_init', 'register_some_widget___narociVseRevije');*/
+
+	function register_some_widget___iskanjesitewide() {
+		register_sidebar(array(
+			'id' => 'newlit-iskanjesitewide-widget',
+			'name' => 'sitewide iskanje',
+			'before_title' => '<h5 class="font-size-1 align-left reset-vertical-space">',
+			'after_title' => '</h5>'
+			)
+		);
+	}
+	add_action('widgets_init', 'register_some_widget___iskanjesitewide');
+
+
+	function register_some_widget___narociRevijo() {
+		register_sidebar(array(
+			'id' => 'newlit-narociRevijo-widget',
+			'name' => 'naroci revijo',
+			'before_title' => '<h5 class="font-size-1 align-left reset-vertical-space">',
+			'after_title' => '</h5>',
+			'before_widget' => '--><li id="%1$s" class="widget %2$s font-size-1 one-two true-liquid-block-inner">',
+			'after_widget'  => '</li><!--'
+			)
+		);
+	}
+	add_action('widgets_init', 'register_some_widget___narociRevijo');
 
 	function register_some_widget___social() {
 		register_sidebar(array(
@@ -846,6 +897,7 @@ function register_some_widget___about() {
 	);
 }
 add_action('widgets_init', 'register_some_widget___about');
+
 function register_some_widget___editors() {
 	register_sidebar(array(
 		'id' => 'newlit-editors-widget',
@@ -2308,5 +2360,13 @@ function replace_s_by_z( $rules ) {
 } */
 // --------------------------------------- 
 
+// Shortcode to output custom PHP in Elementor
+function elementor_php_objava ($atts){
+     ob_start();
+    get_template_part('objava_prva_stran');
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('elementor_objava', 'elementor_php_objava')
 
 ?>

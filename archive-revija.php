@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: stran za revije(ce zberes revijo iz arhiva)
+ */
+?>
 <?php get_header('home'); ?>
 <?php global $post; ?>
 <?php global $thisPostID; ?>
@@ -23,8 +28,11 @@ $magazineArticles = get_posts($args);
 <?php	foreach ($magazineArticles as $post) : setup_postdata($post); ?>
 <?php		$thisPostID = $post->ID; ?>
 
+<?php
+	require('naroci-revije.php'); 
+?>
 
-<div class="fullw gray-background">
+<div class="levodesnopadding gray-background">
 	<div class="" style="overflow-x: hidden">
 		<div class="articleText top-padding bottom-padding clearfix text-outer true-liquid-block-outer sans"><!--
 <?php if (has_post_thumbnail($post->ID)) : ?>
@@ -39,18 +47,23 @@ $magazineArticles = get_posts($args);
 					<div id="article-title">
 						<h1 class="font-size-5 thin leading-display">Literatura št. <?php the_title(); ?></h1>
 						<h2 class="font-size-1 bold " id=""><?php echo get_post_meta($post->ID, 'newlit-revija-new-issue', true) ?></h2>
+
 					</div>
 					<div class="excerpt sans leading-medium clearfix font-size-1 block-para" style="padding-top: 3em;">
 <?php the_content(); ?>
+						<!--<div class="text-outer top-padding bottom-padding bottom-widgets">
+							<?php dynamic_sidebar('newlit-narociRevijo-widget'); ?>
+						</div>-->				
 					</div>
-					<div id="postBrowser" class="sans postMeta clearfix magazine-browser">
+					
+					<div id="postBrowser" class="sans postMeta clearfix magazine-browser" style="display: flex; flex-direction: column; align-items: center;>
 <?php
 	$prevMag = myMagazineNavigation('prev');
 	$nextMag = myMagazineNavigation('next');
 
 	if ($nextMag) {
 ?>
-						<a class="gray-background-3 readMoreLink page-numbers next" href="<?php echo get_permalink($nextMag); ?>" title="<?php get_the_title($nextMag); ?>">&larr; Novejša številka (<?php echo get_the_title($nextMag); ?>)</a>
+						<a class="gray-background-3 readMoreLink page-numbers next"  href="<?php echo get_permalink($nextMag); ?>" title="<?php get_the_title($nextMag); ?>">&larr; Novejša številka (<?php echo get_the_title($nextMag); ?>)</a>
 <?php
 	} 
 	if ($prevMag) {
@@ -60,6 +73,9 @@ $magazineArticles = get_posts($args);
 	}
 
 ?>
+						<div style="vertical-align: center;">
+							<button class="btn btn-primary" style="background-color: #648aaa; border: #648aaa;  display:block; margin-left: auto; margin-right:auto; margin: 1em; ">Naročite izdajo tu!</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -69,13 +85,16 @@ $magazineArticles = get_posts($args);
 <?php endforeach; else: ?>
 <?php endif; ?>
 
+<!--<div class="text-outer top-padding bottom-padding bottom-widgets">
+	<?php dynamic_sidebar('newlit-narociVseRevije-widget'); ?>
+</div>-->
 
-<div class="newlit-review-description oneArticle continuous section fullw light-blue-background font-size-3 sans">
+<div class="newlit-review-description oneArticle continuous section levodesnopadding light-blue-background font-size-3 sans">
 	<div class="articleText clearfix text-outer top-padding bottom-padding" style="">
-		<div class="columnar-text" style="">
-			<p>Revija Literatura je osrednji slovenski mesečnik za književnost, ki kot samostojna revija izhaja od leta 1989, ko se je odcepila od revije Problemi. V skoraj 25 letnikih je doslej izšlo že skoraj tristo številk v skoraj dvesto zvezkih revije. V zadnjih letih izhaja v osmih zvezkih, po štiri enojne in dvojne številke letno.</p>
-			<p>Mesto v reviji najdejo izvirna in prevedena poezija in proza, izvirni in prevedeni eseji, tematski bloki (v zadnjem času so bili med najodmevnejšimi Slovenska literatura in film, Slavljenje hibridnosti – o postkolonializmu, Ut »musica viva« poesis – o literaturi in glasbi, Literatura in strip), intervjuji ter daljše in krajše knjižne ocene, v zadnjem času tudi strip.</p>
-			<p>Vlogo glavnega oziroma odgovornega urednika so v minulih dvajsetih letih zasedali Jani Virk, Vid Snoj, Igor Zabel, Igor Bratož, Tomo Virk, Matevž Kos, Samo Kutoš, Andrej Blatnik, Urban Vovk in Primož Čučnik.</p>
+		<div class="columnar-text" style="width: 100%;">
+			<p>Revija Literatura je osrednji slovenski mesečnik za književnost, ki kot samostojna revija izhaja od leta 1989, ko se je odcepila od revije Problemi. V več kot 30 letnikih izhaja neprekinjeno; v zadnjih letih v devetih zvezkih, po šest enojnih in tri dvojne številke letno.</p>
+			<p>Prinaša izvirno in prevedeno poezijo in prozo ter izvirne in prevedene eseje, izstopajo tematski bloki (npr. Slovenska literatura in film, Slavljenje hibridnosti – o postkolonializmu, Literarni mediji jutri, Wittgenstein – sto let Traktata, Kdo je lahko slovenski_a pisatelj_ica?). Posebna pozornost gre še intervjujem in knjižnim ocenam, številke pogosto zaključi strip.</p>
+			<p>Vlogo glavnega oziroma odgovornega urednika so v minulih letih zasedali Jani Virk, Vid Snoj, Igor Zabel, Igor Bratož, Tomo Virk, Matevž Kos, Samo Kutoš, Andrej Blatnik, Urban Vovk, Primož Čučnik in Maja Šučur.</p>
 		</div>
 	</div>
 </div>
@@ -88,7 +107,7 @@ if (!empty($recentMagazines)) :
 <div class="oneArticle section">
 	<div class="">
 		<div class="articleText clearfix text-outer" style="padding-top: 0">
-			<h6 class="sans font-size-2 bold gray"  id="">Novejše številke revije Literatura</h6>
+			<h6 class="font-size-3 thin leading-display gray"  id="">Novejše številke revije Literatura</h6>
 			<ul id="titlesByAuthor" class="newlit-review-issues dynamicBookList true-liquid-block-outer"><!--
 <?php foreach ($recentMagazines as $post) : ?>
 <?php
@@ -116,22 +135,16 @@ if (has_post_thumbnail()) : ?>
 <?php endif; ?>
 
 
-
-
-
-
-
-
-
-
 <div class="section fullw gray-background top-padding bottom-padding">
 	<div class="">
 		<div class="articleText clearfix text-outer" style="padding-top: 0">
-			<h4 class="widgettitle">Vse številke revije Literatura</h4>
-			<?php myMagazineList(); ?>
-			<h4 class="widgettitle">Naročilo</h4>
-			<p>Na revijo se lahko <a href="<?php echo antispambot("mailto:ludliteratura@yahoo.com"); ?>">naročite po elektronski pošti</a>. Ob naročnini prejmete tudi knjigo iz programa LUD Literatura po vaši izbiri.
+			<h4 class="widgettitle font-size-4 thin center leading-display" style="padding: 10px;">Vse številke revije Literatura</h4>
+			<div class="center">
+				<?php myMagazineList(); ?>
 			</div>
+			<!--<h4 class="widgettitle font-size-3 thin center leading-display" style="padding: 10px;">Naročilo</h4>
+			<p class="center">Na revijo se lahko <a href="<?php echo antispambot("mailto:ludliteratura@yahoo.com"); ?>" style="text-decoration: underline;">naročite po elektronski pošti</a>. Ob naročnini prejmete tudi knjigo iz programa LUD Literatura po vaši izbiri.
+			</div>-->
 		</div>
 	</div>
 </div>
