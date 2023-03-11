@@ -12,7 +12,6 @@ Template Name: stran za revije
 
 
 
-
 <?php
 $args = array(
 	'post_status' => publish,
@@ -28,10 +27,13 @@ $magazineArticles = get_posts($args);
 <?php	foreach ($magazineArticles as $post) : setup_postdata($post); ?>
 <?php		$thisPostID = $post->ID; ?>
 
+<?php
+	require('naroci-revije.php'); 
+?>
 
-<div class="fullw gray-background">
+<div class="levodesnopadding gray-background">
 	<div class="" style="overflow-x: hidden">
-		<div class="articleText clearfix text-outer true-liquid-block-outer sans"><!--
+		<div class="articleText top-padding bottom-padding clearfix text-outer true-liquid-block-outer sans"><!--
 <?php if (has_post_thumbnail($post->ID)) : ?>
 			--><div class="true-liquid-block-inner one-two verticalMiddle" style="vertical-align: middle">
 				<div id="featured-image" class="">
@@ -39,16 +41,21 @@ $magazineArticles = get_posts($args);
 				</div>
 			</div><!--
 <?php endif; ?>
-			--><div class="true-liquid-block-inner one-two" style="vertical-align: middle">
-				<div class="two-three" style="margin: auto">
+			--><div class="true-liquid-block-inner two-three" style="vertical-align: top">
+				<div class="" style="">
 					<div id="article-title">
 						<h1 class="font-size-5 thin leading-display">Literatura št. <?php the_title(); ?></h1>
 						<h2 class="font-size-2 bold red" id=""><?php echo get_post_meta($post->ID, 'newlit-revija-new-issue', true) ?></h2>
 					</div>
-					<div class="excerpt gray sans leading-medium clearfix font-size-2">
+					<div class="excerpt sans leading-medium clearfix font-size-1 block-para" style="padding-top: 3em;">
 <?php the_content(); ?>
+						<!--<div class="text-outer top-padding bottom-padding bottom-widgets">
+							<?php dynamic_sidebar('newlit-narociRevijo-widget'); ?>
+						</div>-->	
 					</div>
-					<div id="postBrowser" class="sans postMeta clearfix magazine-browser">
+					
+					
+					<div id="postBrowser" class="sans postMeta clearfix magazine-browser" style="display: flex; flex-direction: column; align-items: center; margin-right: 30em; margin: -20em; ">
 <?php
 	$prevMag = myMagazineNavigation('prev');
 	$nextMag = myMagazineNavigation('next');
@@ -69,6 +76,9 @@ $magazineArticles = get_posts($args);
 	}
 
 ?>
+						<div style="vertical-align: center;">
+							<button class="btn btn-primary" style="background-color: #648aaa; border: #648aaa;  display:block; ">Naročite izdajo tu!</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -117,13 +127,18 @@ $magazineArticles = get_posts($args);
 
 <?php //newlit_show_tags() ?>
 
-<div>
-	<h4 class="widgettitle">Novejše številke revije Literatura</h4>
-	<?php myRecentMagazines(20) ?>
-	<h4 class="widgettitle">Vse številke revije Literatura</h4>
-	<?php myMagazineList(); ?>
-	<h4 class="widgettitle">Naročilo</h4>
-	<p>Na revijo se lahko <a href="<?php echo antispambot("mailto:ludliteratura@yahoo.com"); ?>">naročite po elektronski pošti</a>. Ob naročnini prejmete tudi knjigo iz programa LUD Literatura po vaši izbiri.
+<div class="section fullw gray-background top-padding bottom-padding">
+	<div class="">
+		<div class="articleText clearfix text-outer" style="padding-top: 0">
+			<h4 class="widgettitle font-size-4 thin center leading-display" style="padding: 10px;">Vse številke revije Literatura</h4>
+			<div class="center">
+				<?php myMagazineList(); ?>
+			</div>
+			<!--<h4 class="widgettitle font-size-3 thin center leading-display" style="padding: 10px;">Naročilo</h4>
+			<p class="center">Na revijo se lahko <a href="<?php echo antispambot("mailto:ludliteratura@yahoo.com"); ?>" style="text-decoration: underline;">naročite po elektronski pošti</a>. Ob naročnini prejmete tudi knjigo iz programa LUD Literatura po vaši izbiri.
+			</div>-->
+		</div>
+	</div>
 </div>
 </div>
 <?php get_footer(''); ?>
