@@ -2360,12 +2360,6 @@ function replace_s_by_z( $rules ) {
 } */
 // --------------------------------------- 
 
-function mytheme_add_woocommerce_support() {
-	add_theme_support( 'woocommerce' );
-}
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
-
-
 // Shortcode to output custom PHP in Elementor
 function elementor_php_objava ($atts){
      ob_start();
