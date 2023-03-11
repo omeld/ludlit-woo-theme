@@ -34,6 +34,14 @@ body {
 	margin: 0 0 2em 0;
 	background-color: white;
 }
+.mySocialStripeMenu a {
+	float: left;
+	display: inline-block; 
+	position: relative;
+}
+.myTopStripeTitles {
+	
+}
 
 .oneArticle {
 	max-width: 1200px;
@@ -67,7 +75,7 @@ pre, .pre {
 	display: block;
 	margin: 1em 0;
 	width: 2em;
-	border-bottom: 0.33em solid #2578D8;
+	border-bottom: 0.33em solid #648aaa;
 	content: '';
 }
 
@@ -456,6 +464,11 @@ body.home p,
 
 .bottom-margin {
 	margin-bottom: 1em;
+}
+
+.social-icons {
+	margin-bottom: 0 !important;
+	padding-top: 4px; 
 }
 
 .reset-vertical-space {
@@ -979,6 +992,11 @@ h3 {
 	margin-right: -5.56%;
 }
 
+.levodesnopadding {
+	padding-left: 5% !important;
+	padding-right: 5% !important;
+}
+
 /* dont forget to hide overflow */
 .stretch-full-width {
 	margin-left: -500%;
@@ -1284,13 +1302,14 @@ ul#sidebar, ul#sidebar ul, .sideBarLiContent li.widget_search {
 }
 #myTopStripeContainer {
 	background-color: white;
-	padding-top: 0.5em;
-	padding-bottom: 0;
-	border-bottom: 2px solid #f8f8f6;
+	/*background-color: #648aaa !important;*/
+	padding-top: 0em;
+	padding-bottom: 0em;
+	/*border-bottom: 2px solid #f8f8f6;*/
 }
 #myTopStripe {
 	background-color: white;
-	max-width: 1400px;
+	/*background-color: #648aaa !important;*/
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -1716,8 +1735,7 @@ body.single .oneArticle {
 }
 
 .gray-background {
-	background-color: #f8f8f6;
-	background-color: #eee;
+	background-color: #e3e3e3 !important;
 }
 
 img.alignright {
@@ -2627,13 +2645,13 @@ ul#menu-menu-ena li {
 	display: inline-block;
 
 	position: relative;
-	padding: 10px 0;
+	padding: 1em 0;
 }
 
 #headerBreak ul#menu-menu-ena li a:hover,
 ul#menu-menu-ena li a:hover
 {
-	color: #2578D8;
+	color: #000000;
 }
 
 #headerBreak ul#menu-menu-ena li a,
@@ -3893,6 +3911,9 @@ body.page-template-knjige-php #recentBooks h4 , .dynamicBookList h4 {
 
 /* small (mobile) screens */
 @media only screen and (max-width: 600px) {
+	.hide-title {
+		display: none !important;
+	}
 	.flex {
 		display: block;
 	}
@@ -3935,6 +3956,11 @@ body.page-template-knjige-php #recentBooks h4 , .dynamicBookList h4 {
 		font-weight: bold !important;
 		font-size: 1.333em !important;
 	}
+	
+	#myTopSocialContainer {
+		padding-top: 4em;
+	}
+	
 	#main-article-text .has-image {
 		/*max-width: calc(100% * 100 / 90);*/
 		max-width: calc(100% + (100% * 5 / 90) + (100% * 5 / 90));
@@ -3959,7 +3985,7 @@ body.page-template-knjige-php #recentBooks h4 , .dynamicBookList h4 {
 	#myTopStripeContainer {
 		font-size: 1.333em;
 		font-size: 1.333rem;
-		height: 3em;
+		height: 1em;
 		padding: 0;
 		border: none;
 	}
