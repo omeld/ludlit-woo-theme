@@ -4028,6 +4028,9 @@ body.page-template-knjige-php #recentBooks h4 , .dynamicBookList h4 {
 		display: table;
 		margin-top: 1px; /* ???? ker se vidi ozadje iz tabele??? */
 	}
+	#myTopStripe ul:hover {
+		color: #648aaa !important;
+	}
 	ul#menu-menu-ena > li {
 		text-transform: uppercase;
 	}
@@ -4060,8 +4063,8 @@ body.page-template-knjige-php #recentBooks h4 , .dynamicBookList h4 {
 	#myTopStripe .menu-menu-ena-container #menu-menu-ena li {
 		/*display: block*/
 		display: inline-table;
-		width: 50%;
-		margin: 0 0 1.5em 0;
+		width: 100%;
+		/*margin: 0 0 1.5em 0;*/
 		box-sizing: border-box;
 		padding: 0 0.75em;
 		vertical-align: top;
