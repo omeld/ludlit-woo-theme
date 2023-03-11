@@ -24,7 +24,7 @@ else { $paged = 1; }
 $myIterator = 0;
 global $myNumberOfPosts;
 
-$myNumberOfPosts = (!empty($overrideNumberOfPosts) ? $overrideNumberOfPosts : 20);
+$myNumberOfPosts = (!empty($overrideNumberOfPosts) ? $overrideNumberOfPosts : 10);
 
 //$myNumberOfPosts = 20;
 
@@ -53,7 +53,24 @@ $myCoverStoriesNum = 0;
 	$myIterator = 0; 
 	$myListSwitch = 0;
 ?>
-<div class="myMainPosts  clearfix ">
+
+<!-- LOOP INSTAGRAM
+<?php 
+$counterInstagram = 0;
+if ($counterinstagram == 0):
+	require('loop-instagram.php'); 
+	$counterInstagram++;
+endif 
+?> -->
+<!--TEGLE BI PRESTAVU NA KONC // NAJDU KJE PRIDE TALE ARHIV NA KONCU IN KJE GA UREJAM -->
+<!--<div>
+	<?php
+	require('loop-instagram.php'); 
+	?>
+</div>-->
+
+
+<div class="myMainPosts  clearfix levodesnopadding">
 	<ul class="newlit-stories-outer-wrapper">
 <?php if (($paged < 2)  && (0 < $myCoverStoriesNum)) : ?>
 		<li>
@@ -200,7 +217,8 @@ if (!empty($relatedContributorName)) {
 <?php endif; ?>
 	<?php endif; ?>
 <?php endif; ?>
-					<div class="theExcerpt normal align-left small-bottom-margin font-size-1"><?php myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false)); //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?></div>
+				
+					<div class="theExcerpt normal align-left small-bottom-margin font-size-1" style="display: flex; align-items: center; flex-direction: column; margin: 1em;"><?php myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false)); //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?></div>
 					<div class="myPostMeta  sans normal ">
 						<p class="gray no-margin no-indent"><?php echo the_time('j. F Y');?> | 
 <?php $category = get_the_category(); ?>
@@ -244,6 +262,11 @@ $paginateLinks = paginate_links( array(
 ) );
 if ($my_max_num_pages > 1)
 	echo "<div class='clearfix floatRight small-top-padding small-bottom-padding' id='myPagination'>$paginateLinks</div>";
+?>
+</div>
+<div>
+	<?php
+require('loop-instagram.php'); 
 ?>
 </div>
 <?php else: ?>
