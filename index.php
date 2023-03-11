@@ -1,5 +1,5 @@
 <?php get_header('home'); ?>
-<div id="main" class="clearfix">
+<div id="main" class="clearfix levodesnopadding">
 <!-- ...................................................... -->
 <?php get_template_part( 'loop', 'news' ); ?>
 <!-- ...................................................... -->
