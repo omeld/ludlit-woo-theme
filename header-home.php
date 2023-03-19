@@ -12,11 +12,11 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.truncate.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/myScripts.js?v=3.11248945"></script>
-		<!-- <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.css?v=3.311143211540831" type="text/css" media="screen" />-->
+		<!-- <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.css?v=3.31114321154083" type="text/css" media="screen" /> -->
 		<title><?php wp_title('&laquo;', true, 'right'); ?><?php bloginfo('name'); ?></title>
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/home.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
+		
 		<!-- ZA FLATICON IKONE
 		<a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by edt.im - Flaticon</a>
 		<a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Freepik - Flaticon</a>
@@ -103,15 +103,12 @@ if (is_home() || is_front_page()) {
 }
 
 /* za knjige? */
-/* to itak ne dela in itak ne rabimo */
-/*
 $queryTax  = $wp_query->query_vars['taxonomy'];
 $queryTerm = $wp_query->query_vars['term'];
 
 if ($queryTax == "zbirka" and isset($queryTerm)) {
 	$series = $queryTerm;
 }
-*/
 /* za knjige? */
 ?>
 	<body <?php body_class("sans $bkg"); ?>>
@@ -129,7 +126,7 @@ if ($queryTax == "zbirka" and isset($queryTerm)) {
 				</div>
 			</div>
 		</div>		
-
+		
 		<div id="myTopStripeContainer" class="relative text-outer" style="background-color: white;">	
 			<div class="myTopStripeMenu">
 				<div id="myTopStripe" class="newlit-css-transition-hide show-when-touched font-size-3">
