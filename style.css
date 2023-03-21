@@ -789,7 +789,7 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  }
  
  a:hover {
-	 /*color: #2578D8;*/
+	 color: #2578D8;
  }
  
  a:active {
@@ -814,8 +814,12 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 
 .menu li a:link,
 .menu li a:visited,
-.menu li a:hover,
-.menu li a:active {
+/*.menu li a:hover,*/
+.menu li a:active,
+nav a:link,
+nav a:visited,
+nav a:active
+{
 	border: none !important;
 	text-decoration: none !important;
 	color: inherit !important;
