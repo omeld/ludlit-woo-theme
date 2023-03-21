@@ -785,15 +785,14 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  a:link, a:visited, a:hover, a:active {
 	 text-decoration: none;
 	 color: inherit;
-	 border-bottom: 0.15em solid #2578D8;
  }
  
  a:hover {
-	 color: #2578D8;
+	 /*color: #2578D8;*/
  }
  
  a:active {
-	 text-decoration: underline;
+	 /*text-decoration: underline;*/
  }
  
  
@@ -1303,13 +1302,13 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  }
  #myTopStripeContainer {
 	 background-color: white;
-	 padding-top: 0.5em;
+	 padding-top: 0;
 	 padding-bottom: 0;
-	 border-bottom: 2px solid #f8f8f6;
+	 /*border-bottom: 2px solid #f8f8f6;*/
  }
  #myTopStripe {
 	 background-color: white;
-	 max-width: 1400px;
+	 /*max-width: 1400px;*/
 	 margin-left: auto;
 	 margin-right: auto;
  }
@@ -2642,17 +2641,16 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  
  #headerBreak ul#menu-menu-ena li,
  ul#menu-menu-ena li {
-	 font-size: 1em;
+	 font-size: 1.3em;
 	 display: inline-block;
- 
 	 position: relative;
-	 padding: 10px 0;
+	 padding: 1em !important;
  }
  
  #headerBreak ul#menu-menu-ena li a:hover,
  ul#menu-menu-ena li a:hover
  {
-	 color: #2578D8;
+	 color: #000000;
  }
  
  #headerBreak ul#menu-menu-ena li a,
@@ -4388,6 +4386,10 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 	 .note .text {
 		 width: 90%;
 	 }
+
+	 #slika-background.slika-back {
+		opacity: 0.5;
+	  }
  
  
  }
