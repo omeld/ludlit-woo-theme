@@ -785,17 +785,43 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  a:link, a:visited, a:hover, a:active {
 	 text-decoration: none;
 	 color: inherit;
-	 border-bottom: 0.15em solid #2578D8;
+	 /*border-bottom: 0.15em solid #2578D8;*/ /* začasno? */
  }
  
  a:hover {
-	 color: #2578D8;
+	 /*color: #2578D8;*/
  }
  
  a:active {
 	 text-decoration: underline;
  }
- 
+
+
+ /*
+  * začasni? popravki linkov
+  */
+
+  #main-article-text p a:link,
+  #main-article-text p a:visited,
+  #main-article-text p a:hover,
+  #main-article-text p a:active {
+	 border-bottom: 0.15em solid #2578D8; /* začasno? */
+  }
+  
+  #main-article-text p a:hover {
+	 color: #2578D8;
+  }
+
+.menu li a:link,
+.menu li a:visited,
+.menu li a:hover,
+.menu li a:active {
+	border: none !important;
+	text-decoration: none !important;
+	color: inherit !important;
+}
+
+ /* END začasni popravki linkov */
  
  ul ul li, ol ol li, ol ul li, ul ol li {
 	 margin-left: 2em;
