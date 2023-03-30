@@ -2632,7 +2632,6 @@ nav a:active
 	 margin: 2px;
  }
  
- ul.menu > li,
  .horizontal-list li, 
  .widget_archive li,
  ul.category-list-container li ul li ul li
@@ -2646,7 +2645,6 @@ nav a:active
  horizontal-list li:not(:first-child), 
  ul.category-list-container li ul li ul li:not(:first-child)
  */
- ul.menu > li,
  .horizontal-list li, 
  .widget_archive li,
  ul.category-list-container li ul li ul li
