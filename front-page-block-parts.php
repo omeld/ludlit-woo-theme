@@ -177,7 +177,7 @@ if (has_post_thumbnail($post->ID)) {
     </a>
     <div class="ludlit_wc ludlit_wc_product_description">
         <p class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></p>
-        <p class="ludlit_wc_book_info_title"><?php the_title(); ?></p>
+        <p class="ludlit_wc_book_info_title font-size-3 serif"><?php the_title(); ?></p>
         <p class="ludlit_wc_additional_book_info">
 <?php myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false)); //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
         </p>
