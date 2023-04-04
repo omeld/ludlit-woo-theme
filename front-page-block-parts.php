@@ -162,15 +162,15 @@ if ($latest_posts->have_posts()) {
 <?php
 if (has_post_thumbnail($post->ID)) {
 ?>
-<div><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
+<div class="ludlit_wc ludlit_wc_product_image_wrapper"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
 <?php
 } elseif (!empty($relatedContributorName) && !empty($other_author_imgs)) { 
 ?>
-<div><?php echo join('', $other_author_imgs); ?></div>
+<div class="ludlit_wc ludlit_wc_product_image_wrapper"><?php echo join('', $other_author_imgs); ?></div>
 <?php
 } elseif (!empty($contributorName) && !empty($main_author_imgs)) {
 ?>
-<div><?php echo join('', $main_author_imgs);?></div>
+<div class="ludlit_wc ludlit_wc_product_image_wrapper"><?php echo join('', $main_author_imgs);?></div>
 <?php
 }
 ?>
@@ -191,46 +191,6 @@ if (has_post_thumbnail($post->ID)) {
 </li>
 
 <?php
-
-/*
-
-        // begin post loop
-if (!empty($thumbnailURL)) : ?>
-                <a class="bare" style="display: block" href="<?php the_permalink() ?>">
-                <div class="fluid-height-ratio-2-3 cover" style="background-image: url(<?php echo $thumbnailURL; ?>);">
-			    </div></a>
-<?php endif; ?>
-<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-<?php if (!empty($mySubtitle)) : ?>
-    <h5 class="article-subtitle normal three-four center-margins gray center font-size-1"><?php echo $mySubtitle ?></h5>
-<?php endif; ?>
-<?php if (!is_tax('ime_avtorja')) : ?>
-        <?php if (isset($contributorName) and !(empty($contributorName)) and ($showAuthorThumb !== false)) : ?>
-    <?php $authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); ?>
-        <p class="contributorName serif italic small-bottom-margin font-size-1 normal"><?php echo $contributorName; ?></p>
-    <?php if (empty($thumbnailURL)) : ?>
-    <div class="this-author-photo one-four center circle center-margins" style="margin-bottom: 2em">
-        <div class="cover ratio-1-1" style="background-image: url(<?php $xthumb = wp_get_attachment_image_src(get_post_thumbnail_id($authorPage->ID), 'myAuthorThumbnail'); echo $xthumb[0] ?>)"></div>
-    </div>
-    <?php endif; ?>
-    <?php endif; ?>
-<?php endif; ?>
-				
-<div class="theExcerpt normal align-left small-bottom-margin font-size-1" style="display: flex; align-items: center; flex-direction: column; margin: 1em;">
-<?php myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false)); //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
-</div>
-<div class="myPostMeta  sans normal ">
-<p class="gray no-margin no-indent"><?php echo the_time('j. F Y');?> | 
-<?php $category = get_the_category(); ?>
-<?php foreach ($category as $ctg) : ?>
-    <a href="<?php echo esc_url(get_category_link($ctg->cat_ID)); ?>"><?php echo $ctg->cat_name; ?></a>
-<?php endforeach; ?>
-</p>
-*/
-
-        // end post loop
-
-
 
     endwhile;
 ?>
