@@ -122,8 +122,8 @@ if ($latest_posts->have_posts()) {
                 ));
                 if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
                     if (has_post_thumbnail($post->ID)) {
-                        //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
-                        $main_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
+                        $main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
+                        //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
                     }
                 endwhile; endif;
                 $latest_posts->reset_postdata();
@@ -146,8 +146,8 @@ if ($latest_posts->have_posts()) {
                 ));
                 if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
                     if (has_post_thumbnail($post->ID)) {
-                        //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
-                        $other_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
+                        $other_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
+                        //$other_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
                     }
                 endwhile; endif;
                 $latest_posts->reset_postdata();
@@ -162,15 +162,15 @@ if ($latest_posts->have_posts()) {
 <?php
 if (has_post_thumbnail($post->ID)) {
 ?>
-<div class="ludlit_wc ludlit_wc_product_image_wrapper"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
+<div class="ludlit_wc ludlit_wc_product_image_wrapper has_featured_image"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
 <?php
 } elseif (!empty($relatedContributorName) && !empty($other_author_imgs)) { 
 ?>
-<div class="ludlit_wc ludlit_wc_product_image_wrapper"><?php echo join('', $other_author_imgs); ?></div>
+<div class="ludlit_wc ludlit_wc_product_image_wrapper has_other_author_image"><?php echo join('', $other_author_imgs); ?></div>
 <?php
 } elseif (!empty($contributorName) && !empty($main_author_imgs)) {
 ?>
-<div class="ludlit_wc ludlit_wc_product_image_wrapper"><?php echo join('', $main_author_imgs);?></div>
+<div class="ludlit_wc ludlit_wc_product_image_wrapper has_main_author_image"><?php echo join('', $main_author_imgs);?></div>
 <?php
 }
 ?>
