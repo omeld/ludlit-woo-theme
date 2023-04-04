@@ -32,6 +32,9 @@ $args = array(
 $loop = new WP_Query($args);
 if ($loop->have_posts()) {
 ?>
+    <h2>Najnovejše knjige</h2>
+<?php
+?>
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
 <ul class='products ludlit_wc_custom_products'>
 <?php
@@ -67,6 +70,9 @@ $args = array(
 $loop = new WP_Query($args);
 if ($loop->have_posts()) {
 ?>
+    <h2>Najnovejše številke revije Literatura</h2>
+<?php
+?>
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
 <ul class='products ludlit_wc_custom_products'>
 <?php
@@ -82,19 +88,24 @@ wp_reset_postdata();
 
 ?>
 
+<?php block_template_part('books-featured-collection'); ?>
+
 <?php
 
 // latest posts
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 4,
+    'posts_per_page' => 12,
     'order' => 'DESC',
     'orderby' => 'date',
 );
 
 $latest_posts = new WP_Query($args);
 if ($latest_posts->have_posts()) {
+?>
+    <h2>Novejši prispevki</h2>
+<?php
 
 ?>
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
