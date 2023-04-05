@@ -1,3 +1,11 @@
-* {
-    color: red !important;
+.page-template-front-page-block-parts section {
+    border-bottom: 1px solid black;
+}
+
+.page-template-front-page-block-parts section:last-child {
+    border-bottom: none;
+}
+
+.page-template-front-page-block-parts .ludlit_wc_custom_products {
+    margin-bottom: 1rem;
 }
