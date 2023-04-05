@@ -1,12 +1,290 @@
 {
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
     "settings": {
 
     },
+    
+    "typography": {
+        "fontFamilies": [
+            {
+                "fontFamily": "\"Bassier Square\", sans-serif",
+                "name": "Bassier Square",
+                "slug": "bassier-square",
+                "fontFace": [
+                    {
+                        "fontFamily": "Bassier Square",
+                        "fontWeight": "400",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Bassier Square/basiersquare-regular-webfont.woff2"]
+                    },
+                    {
+                        "fontFamily": "Bassier Square",
+                        "fontWeight": "400",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Bassier Square/basiersquare-regularitalic-webfont.woff2"]
+                    },
+                    {
+                        "fontFamily": "Bassier Square",
+                        "fontWeight": "700",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Bassier Square/basiersquare-bold-webfont.woff2"]
+                    },
+                    {
+                        "fontFamily": "Bassier Square",
+                        "fontWeight": "700",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Bassier Square/basiersquare-bolditalic-webfont.woff2"]
+                    }
+                ]
+            },
+            {
+                "fontFamily": "\"Literata\", serif",
+                "name": "Literata",
+                "slug": "literata",
+                "fontFace": [
+                    {
+                        "fontFamily": "Literata",
+                        "fontWeight": "400",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": [ "file:./assets/fonts/Literata/LiterataTT-TextRegular.woff2" ]
+                    },
+                    {
+                        "fontFamily": "Literata",
+                        "fontWeight": "400",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": [ "file:./assets/fonts/Literata/LiterataTT-TextItalic.woff2" ]
+                    },
+                    {
+                        "fontFamily": "Literata",
+                        "fontWeight": "700",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": [ "file:./assets/fonts/Literata/LiterataTT-TextBold.woff2" ]
+                    },
+                    {
+                        "fontFamily": "Literata",
+                        "fontWeight": "700",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": [ "file:./assets/fonts/Literata/LiterataTT-TextBoldItalic.woff2" ]
+                    }
+                ]
+            },
+            {
+                "fontFamily": "\"Literata Display\", serif",
+                "name": "Literata Display",
+                "slug": "literata-display",
+                "fontFace": [
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "900",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayBlack.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "900",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayBlackItalic.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "800",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayExtrabold.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "800",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayExtraboldItalic.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "700",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayBold.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "700",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayBoldItalic.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "600",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplaySemibold.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "600",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplaySemiboldItalic.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "500",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayMedium.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "500",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayMediumItalic.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "400",
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayRegular.woff2"]
+                    },
+                    {
+                        "fontFamily": "Literata Display",
+                        "fontWeight": "400",
+                        "fontStyle": "italic",
+                        "fontStretch": "normal",
+                        "src": ["file:./assets/fonts/Literata/LiterataTT-DisplayItalic.woff2"]
+                    },
+                ]
+            }
+        ],
+        "fontSizes": [
+            {
+                "name": "Extra small",
+                "size": "0.5rem",
+                "slug": "x-small"
+            },
+            {
+                "name": "Small",
+                "size": "0.707rem",
+                "slug": "small"
+            },
+            {
+                "name": "Normal",
+                "size": "1rem",
+                "slug": "normal"
+            },
+            {
+                "name": "Medium",
+                "size": "1.414rem",
+                "slug": "medium"
+            },
+            {
+                "name": "Large",
+                "size": "1.999rem",
+                "slug": "large"
+            },
+            {
+                "name": "Extra Large",
+                "size": "2.827rem",
+                "slug": "x-large"
+            },
+            {
+                "name": "Huge",
+                "size": "3.998rem",
+                "slug": "huge"
+            }
+        ],
+        "customFontSize": false,
+        "dropCap": false,
+        "lineHeight": false
+    },
+    "custom": {
+        "line-height": {
+            "body": 1.6,
+            "heading": 1.2
+        }
+    }
+},
+"styles": {
+    "elements": {
+        "heading": {
+            "typography": {
+                "fontFamily": "var(--wp--preset--font-family--bassier-square)",
+                "lineHeight": "var(--wp--custom--line-height--heading)",
+                "fontWeight": "normal"
+            }
+        },
+        "h1": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--huge)"
+            }
+        },
+        "h2": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--large)"
+            }
+        },
+        "h3": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--medium)",
+                "fontWeight": "bold"
+            }
+        },
+        "h4": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--medium)"
+            }
+        },
+        "h5": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--medium)"
+            }
+        },
+        "h6": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--medium)"
+            }
+        }
+    },
+    "blocks": {
+        "core/paragraph": {
+            "typography": {
+            }
+        }
+    },
+    "typography": {
+        "fontFamily": "var(--wp--preset--font-family--literata)",
+        "fontSize": "var(--wp--preset--font-size--normal)",
+        "fontSize": "20px",
+        "lineHeight": "var(--wp--custom--line-height--body)"
+    }
+}
+
+
     "template-parts": [
         {
             "name": "books-featured-collection",
             "title": "Pasica za izpostavljen zbir knjig"
+        },
+        {
+            "name": "front-page-banner-top",
+            "title": "Pasica na vrhu prve strani"
+        },
+        {
+            "name": "front-page-banner-magazines",
+            "title": "Pasica pri revijah na prvi strani" 
         }
     ]
 }
