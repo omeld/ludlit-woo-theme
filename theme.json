@@ -269,8 +269,7 @@
         "fontSize": "var(--wp--preset--font-size--normal)",
         "fontSize": "20px",
         "lineHeight": "var(--wp--custom--line-height--body)"
-    }
-}
+    },
 
 
     "template-parts": [

@@ -9,9 +9,9 @@ Template name: front page w/ block template parts
 <!-- ...................................................... -->
 
 
-<?php block_template_part('books-featured-collection'); ?>
+<?php block_template_part('front-page-banner-top'); ?>
 
-
+<section>
 <?php 
 // latest books
 $args = array(
@@ -49,7 +49,8 @@ if ($loop->have_posts()) {
 wp_reset_postdata();
 
 ?>
-
+</section>
+<section>
 <?php 
 // latest magazines
 $args = array(
@@ -88,15 +89,17 @@ wp_reset_postdata();
 
 ?>
 
-<?php block_template_part('books-featured-collection'); ?>
+<?php block_template_part('front-page-banner-magazines'); ?>
 
+</section>
+<section>
 <?php
 
 // latest posts
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 12,
+    'posts_per_page' => 8,
     'order' => 'DESC',
     'orderby' => 'date',
 );
@@ -212,6 +215,7 @@ if (has_post_thumbnail($post->ID)) {
 wp_reset_postdata();
 
 ?>
+</section>
 
 <!-- ...................................................... -->
 </div>
