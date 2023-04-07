@@ -9,3 +9,39 @@
 .page-template-front-page-block-parts .ludlit_wc_custom_products {
     margin: 1rem 0;
 }
+
+
+.ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts, 
+.ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ludlit_wc_post_meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product > a:first-child, 
+.ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product > a:first-child {
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+}
+
+.ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product img, 
+.ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product img {
+    box-shadow: none;
+}
+
+
+.ludlit_wc_product_description .ludlit_wc_post_categories,
+.ludlit_wc_product_description .ludlit_wc_post_date
+{
+    color: var(--ludlit-wc-gray-3);
+}
+
+.ludlit_wc_product_description h4 {
+    font-size: var(--wp--preset--font-size--x-large);
+    line-height: var(--wp--custom--line-height--heading);
+    font-family: var(--wp--preset--font-family--literata);
+}

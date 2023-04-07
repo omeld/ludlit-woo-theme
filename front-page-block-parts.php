@@ -99,7 +99,7 @@ wp_reset_postdata();
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 8,
+    'posts_per_page' => 12,
     'order' => 'DESC',
     'orderby' => 'date',
 );
@@ -190,17 +190,27 @@ if (has_post_thumbnail($post->ID)) {
 ?>
     </a>
     <div class="ludlit_wc ludlit_wc_product_description">
+        <div class="ludlit_wc_post_meta">
+            <p class="ludlit_wc_post_date"><?php echo the_time('j. F Y');?></p>
+            <p class="ludlit_wc_post_categories">
+<?php 
+    $category = get_the_category(); 
+    $list_categories = array(); 
+    foreach ($category as $ctg) {
+        $list_categories[] = "<a href='" . esc_url(get_category_link($ctg->cat_ID)) . "'>$ctg->cat_name</a>";
+    }
+    echo join(' / ', $list_categories);
+?>
+            </p>    
+        </div>
         <h3 class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></h3>
-        <h4 class="ludlit_wc_book_info_title font-size-3 serif"><?php the_title(); ?></h4>
+        <h4 class="ludlit_wc_book_info_title"><?php the_title(); ?></h4>
         <p class="ludlit_wc_additional_book_info">
-<?php myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false)); //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
+<?php //myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false));  ?>
+<?php //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
+<?php the_excerpt(); ?>
         </p>
         <p><?php echo the_time('j. F Y');?></p>
-        <p>
-<?php $category = get_the_category(); foreach ($category as $ctg) : ?>
-            <a href="<?php echo esc_url(get_category_link($ctg->cat_ID)); ?>"><?php echo $ctg->cat_name; ?></a>
-<?php endforeach; ?>
-        </p>    
     </div>
 </li>
 
