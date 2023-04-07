@@ -112,7 +112,7 @@ if ($latest_posts->have_posts()) {
 
 ?>
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
-<ul class='products ludlit_wc_custom_products'>
+<ul class='products ludlit_wc_custom_products ludlit_wc_recent_posts'>
 
 <?php
     while ($latest_posts->have_posts()) : $latest_posts->the_post();
