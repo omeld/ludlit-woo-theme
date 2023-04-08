@@ -283,7 +283,7 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  
  .sans, .sans-dagny, .proxima-nova {
 	 /* font-family: "faricy-new-web", "proxima-nova", sans-serif; */
-	 font-family: var(--wp--preset--font-family--bassier-square);
+	 font-family: var(--wp--preset--font-family--basier-square);
  }
  
  .light {
