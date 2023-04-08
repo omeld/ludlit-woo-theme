@@ -136,8 +136,8 @@ if ($latest_posts->have_posts()) {
                 ));
                 if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
                     if (has_post_thumbnail($post->ID)) {
-                        $main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
-                        //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
+                        //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
+                        $main_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
                     }
                 endwhile; endif;
                 $latest_posts->reset_postdata();
@@ -160,8 +160,8 @@ if ($latest_posts->have_posts()) {
                 ));
                 if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
                     if (has_post_thumbnail($post->ID)) {
-                        $other_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
-                        //$other_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
+                        //$other_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
+                        $other_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
                     }
                 endwhile; endif;
                 $latest_posts->reset_postdata();

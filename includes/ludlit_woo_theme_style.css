@@ -35,6 +35,11 @@
     box-shadow: none;
 }
 
+.ludlit_wc.woocommerce ul.products li.product .ludlit_wc_product_image_wrapper.has_main_author_image img {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
 
 .ludlit_wc_product_description .ludlit_wc_post_categories,
 .ludlit_wc_product_description .ludlit_wc_post_date
