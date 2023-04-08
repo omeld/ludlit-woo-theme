@@ -118,7 +118,75 @@ if ($latest_posts->have_posts()) {
     while ($latest_posts->have_posts()) : $latest_posts->the_post();
         $main_author_imgs = array();
         $other_author_imgs = array();
+        $my_post_thumbnail = array();
+        $my_show_imgs = array();
+        $my_post_id = '';
 
+        $my_featured_image_options = array('featured image', 'other contributor', 'contributor');
+
+        foreach ($my_featured_image_options as $option) {
+            $my_taxonomy = '';
+            $my_classes = array();
+            if ($option == 'contributor') {
+                $my_taxonomy = 'ime_avtorja';
+                $my_classes[] = 'ludlit_wc_has_main_author_img';
+                $my_classes[] = 'has_main_author_image';
+            } elseif ($option == 'other contributor') {
+                $my_taxonomy = 'drugo_ime';
+                $my_classes[] = 'ludlit_wc_has_other_author_img';
+                $my_classes[] = 'has_other_author_image';
+            } else {
+                $my_classes[] = 'ludlit_wc_has_featured_img';
+                $my_classes[] = 'has_featured_image';
+            }
+            if (!empty($my_taxonomy)) {
+                if ($contributors = wp_get_post_terms($post->ID, $my_taxonomy)) {
+                    foreach ($contributors as $contributor) {
+                        $contributorName = $contributor->name;
+                        $author_page = new WP_Query(array(
+                            'post_type' => 'avtor',
+                            'posts_per_page' => 1,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => $my_taxonomy,
+                                    'terms' => $contributorName,
+                                    'field' => 'name',
+                                ),
+                            ),
+                        ));
+                        if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
+                            if (has_post_thumbnail($post->ID)) {
+                                //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
+                                $my_show_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
+                                $my_post_id = $post->ID;
+                            }
+                        endwhile; endif;
+                        $latest_posts->reset_postdata();
+                    }
+                }
+            } else {
+                if (has_post_thumbnail($post->ID)) {
+                    $my_show_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
+                    $my_post_id = $post->ID;
+                }
+            }
+            if (!empty($my_show_imgs)) {
+                if ($my_attachment_image_src = wp_get_attachment_image_src(get_post_thumbnail_id($my_post_id), 'medium')) {
+                    $my_img_width = $my_attachment_image_src[1];
+                    $my_img_height = $my_attachment_image_src[2];
+
+                    if ($my_img_width > $my_img_height) {
+                        $my_classes[] = "ludlit_wc_is_landscape_image";
+                    } elseif ($my_img_width < $my_img_height) {
+                        $my_classes[] ="ludlit_wc_is_portrait_image";
+                    } else {
+                        $my_classes[] = "ludlit_wc_is_square_image";
+                    }
+                }
+                break;
+            }
+        }
+/*
         if ($contributors = wp_get_post_terms($post->ID, 'ime_avtorja')) {
             foreach ($contributors as $contributor) {
                 $contributorName = $contributor->name;
@@ -167,12 +235,18 @@ if ($latest_posts->have_posts()) {
                 $latest_posts->reset_postdata();
             }
         }
-
+*/
         $mySubtitle = get_post_meta($post->ID, 'mysubtitle', true);
 ?>
 
 <li class="product but-actually-post">
     <a href="<?php the_permalink();?>" class="bare">
+
+    <div class="ludlit_wc ludlit_wc_product_image_wrapper <?php echo join(' ', $my_classes); ?>">
+        <?php echo join('', $my_show_imgs); ?>
+    </div>
+
+<!--
 <?php
 if (has_post_thumbnail($post->ID)) {
 ?>
@@ -188,6 +262,7 @@ if (has_post_thumbnail($post->ID)) {
 <?php
 }
 ?>
+-->
     </a>
     <div class="ludlit_wc ludlit_wc_product_description">
         <div class="ludlit_wc_post_meta">
