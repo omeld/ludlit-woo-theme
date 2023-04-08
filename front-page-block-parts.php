@@ -17,7 +17,7 @@ Template name: front page w/ block template parts
 $args = array(
     'post_type' => 'product',
     'post_status' => 'publish',
-    'posts_per_page' => 4,
+    'posts_per_page' => 8,
     'order' => 'DESC',
     'orderby' => 'date',
     'tax_query' => array(
@@ -205,11 +205,11 @@ if (has_post_thumbnail($post->ID)) {
         </div>
         <h3 class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></h3>
         <h4 class="ludlit_wc_book_info_title"><?php the_title(); ?></h4>
-        <p class="ludlit_wc_additional_book_info">
+        <div class="ludlit_wc_additional_book_info">
 <?php //myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false));  ?>
 <?php //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
 <?php the_excerpt(); ?>
-        </p>
+        </div>
         <p><?php echo the_time('j. F Y');?></p>
     </div>
 </li>
