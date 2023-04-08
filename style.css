@@ -282,7 +282,8 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  }
  
  .sans, .sans-dagny, .proxima-nova {
-	 font-family: "faricy-new-web", "proxima-nova", sans-serif;
+	 /* font-family: "faricy-new-web", "proxima-nova", sans-serif; */
+	 font-family: var(--wp--preset--font-family--bassier-square);
  }
  
  .light {
@@ -307,7 +308,8 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  }
  
  .display-font {
-	 font-family: "acta-display", serif;
+	 /*font-family: "acta-display", serif;*/
+	 font-family: var(--wp--preset--font-family--literata-display);
  }
  
  .reverse {
@@ -345,8 +347,9 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
  }
  
  .serif {
-	 font-family: "ff-tisa-web-pro", serif;
-	 line-height: 1.55;
+	 /*font-family: "ff-tisa-web-pro", serif;*/
+	 font-family: var(--wp--preset--font-family--literata);
+	 /*line-height: 1.55;*/
  }
  
  .asterism {
