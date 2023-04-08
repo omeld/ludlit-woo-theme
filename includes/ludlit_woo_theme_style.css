@@ -1,5 +1,6 @@
 .page-template-front-page-block-parts section {
     border-bottom: 1px solid black;
+    padding-bottom: var(--wp--preset--spacing--60);
 }
 
 .page-template-front-page-block-parts section:last-child {
