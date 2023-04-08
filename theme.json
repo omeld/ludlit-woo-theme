@@ -209,8 +209,8 @@
         },
         "custom": {
             "line-height": {
-                "body": 1.6,
-                "heading": 1.2
+                "body": "1.6",
+                "heading": "1.2"
             }
         }
     },
@@ -266,8 +266,6 @@
             "fontSize": "var(--wp--preset--font-size--normal)",
             "lineHeight": "var(--wp--custom--line-height--body)"
         },
-
-
         "template-parts": [
             {
                 "name": "books-featured-collection",
