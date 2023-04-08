@@ -217,6 +217,7 @@ $my_excerpt        = wp_trim_words(get_the_excerpt(), $my_excerpt_length, '&nbsp
 ?>
             <p><?php echo $my_excerpt; ?></p>
         </div>
+        <p class="ludlit_wc_read_more"><a href="<?php the_permalink(); ?>">&rarr; preberi</a></p>
     </div>
 </li>
 
