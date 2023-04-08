@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<script type="text/javascript" src="//use.typekit.net/rha7jnl.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		<!-- <script type="text/javascript" src="//use.typekit.net/rha7jnl.js"></script> -->
+		<!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 		<meta property="fb:admins" content="1092820016" />
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
 		<title><?php wp_title('&laquo;', true, 'right'); ?><?php bloginfo('name'); ?></title>
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.css?v=2" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/home.css?v=3.1" type="text/css" media="screen">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
 		<!-- <link href="<?php bloginfo('template_url'); ?>/js/flex/flexslider.css" rel="stylesheet" type="text/css" /> -->
 		<!-- <script src="<?php bloginfo('template_url'); ?>/js/flex/jquery.flexslider-min.js"></script> -->
@@ -49,12 +49,14 @@ if (is_home() || is_front_page()) {
 }
 
 /* za knjige? */
+/*
 $queryTax  = $wp_query->query_vars['taxonomy'];
 $queryTerm = $wp_query->query_vars['term'];
 
 if ($queryTax == "zbirka" and isset($queryTerm)) {
 	$series = $queryTerm;
 }
+*/
 /* za knjige? */
 ?>
 	<body <?php body_class("sans $bkg"); ?>>
