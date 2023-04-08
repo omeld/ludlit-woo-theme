@@ -5,37 +5,37 @@
         "typography": {
             "fontFamilies": [
                 {
-                    "fontFamily": "\"Bassier Square\", sans-serif",
-                    "name": "Bassier Square",
-                    "slug": "bassier-square",
+                    "fontFamily": "\"Basier Square\", sans-serif",
+                    "name": "Basier Square",
+                    "slug": "basier-square",
                     "fontFace": [
                         {
-                            "fontFamily": "Bassier Square",
+                            "fontFamily": "Basier Square",
                             "fontWeight": "400",
                             "fontStyle": "normal",
                             "fontStretch": "normal",
-                            "src": ["file:./assets/fonts/Bassier Square/basiersquare-regular-webfont.woff2"]
+                            "src": ["file:./assets/fonts/Basier Square/basiersquare-regular-webfont.woff2"]
                         },
                         {
-                            "fontFamily": "Bassier Square",
+                            "fontFamily": "Basier Square",
                             "fontWeight": "400",
                             "fontStyle": "italic",
                             "fontStretch": "normal",
-                            "src": ["file:./assets/fonts/Bassier Square/basiersquare-regularitalic-webfont.woff2"]
+                            "src": ["file:./assets/fonts/Basier Square/basiersquare-regularitalic-webfont.woff2"]
                         },
                         {
-                            "fontFamily": "Bassier Square",
+                            "fontFamily": "Basier Square",
                             "fontWeight": "700",
                             "fontStyle": "normal",
                             "fontStretch": "normal",
-                            "src": ["file:./assets/fonts/Bassier Square/basiersquare-bold-webfont.woff2"]
+                            "src": ["file:./assets/fonts/Basier Square/basiersquare-bold-webfont.woff2"]
                         },
                         {
-                            "fontFamily": "Bassier Square",
+                            "fontFamily": "Basier Square",
                             "fontWeight": "700",
                             "fontStyle": "italic",
                             "fontStretch": "normal",
-                            "src": ["file:./assets/fonts/Bassier Square/basiersquare-bolditalic-webfont.woff2"]
+                            "src": ["file:./assets/fonts/Basier Square/basiersquare-bolditalic-webfont.woff2"]
                         }
                     ]
                 },
@@ -218,7 +218,7 @@
         "elements": {
             "heading": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--bassier-square)",
+                    "fontFamily": "var(--wp--preset--font-family--basier-square)",
                     "lineHeight": "var(--wp--custom--line-height--heading)",
                     "fontWeight": "normal"
                 }
