@@ -205,10 +205,17 @@ if (has_post_thumbnail($post->ID)) {
         </div>
         <h3 class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></h3>
         <h4 class="ludlit_wc_book_info_title"><?php the_title(); ?></h4>
-        <div class="ludlit_wc_additional_book_info">
+        <div class="ludlit_wc_post_excerpt">
 <?php //myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false));  ?>
 <?php //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
-<?php the_excerpt(); ?>
+<?php //the_excerpt(); //too long! ?>
+<?php
+//$my_excerpt = get_the_excerpt();
+$my_excerpt_length = apply_filters('excerpt_length', 50);
+$my_excerpt_more   = apply_filters('excerpt_more', '&nbsp; &hellip;');
+$my_excerpt        = wp_trim_words(get_the_excerpt(), $my_excerpt_length, '&nbsp; &hellip;');
+?>
+            <p><?php echo $my_excerpt; ?></p>
         </div>
         <p><?php echo the_time('j. F Y');?></p>
     </div>
