@@ -21,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    margin-bottom: var(--wp--preset--spacing--30);
 }
 
 .ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product > a:first-child, 
@@ -42,7 +43,13 @@
 }
 
 .ludlit_wc_product_description h4 {
-    font-size: var(--wp--preset--font-size--x-large);
+    font-size: var(--wp--preset--font-size--large);
     line-height: var(--wp--custom--line-height--heading);
-    font-family: var(--wp--preset--font-family--literata);
+    margin-bottom: var(--wp--preset--spacing--50);
+}
+
+
+.ludlit_wc_post_excerpt {
+    margin-bottom: var(--wp--preset--spacing--30);
+    font-size: var(--wp--preset--font-size--medium);
 }
