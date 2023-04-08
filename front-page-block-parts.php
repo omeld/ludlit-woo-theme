@@ -213,11 +213,10 @@ if (has_post_thumbnail($post->ID)) {
 //$my_excerpt = get_the_excerpt();
 $my_excerpt_length = apply_filters('excerpt_length', 50);
 $my_excerpt_more   = apply_filters('excerpt_more', '&nbsp; &hellip;');
-$my_excerpt        = wp_trim_words(get_the_excerpt(), $my_excerpt_length, '&nbsp; &hellip;');
+$my_excerpt        = wp_trim_words(get_the_excerpt(), $my_excerpt_length, '&nbsp;&hellip;');
 ?>
             <p><?php echo $my_excerpt; ?></p>
         </div>
-        <p><?php echo the_time('j. F Y');?></p>
     </div>
 </li>
 
