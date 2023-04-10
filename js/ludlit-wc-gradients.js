@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", function () {
             + ')';
     }
 
+    /* make this async!
     // Make sure image is finished loading
     ludlit_wc_author_images.forEach(function(img) {
         if (img.complete) {
@@ -30,6 +31,34 @@ window.addEventListener("DOMContentLoaded", function () {
                 ludlit_wc_set_gradient(img, my_color_palette[0], my_color_palette[1]);
             });
         }
+    });
+    */
+    async function ludlit_wc_get_colors(img) {
+        return new Promise((resolve, reject) => {
+            if (img.complete) {
+                resolve({
+                    color: colorThief.getColor(img, 20),
+                    palette: colorThief.getPalette(img, 2, 20)
+                });
+            } else {
+                img.addEventListener('load', function() {
+                    resolve({
+                        color: colorThief.getColor(img, 20),
+                        palette: colorThief.getPalette(img, 2, 20)
+                    });
+                });
+            }
+        });
+    }
+
+    async function ludlit_wc_prepare_gradient(img) {
+        const {color, palette} = await ludlit_wc_get_colors(img);
+        ludlit_wc_set_gradient(img, palette[0], palette[1]);
+    }
+
+    //apply to all
+    ludlit_wc_author_images.forEach(function(img) {
+        ludlit_wc_prepare_gradient(img);
     });
 
 });
