@@ -38,13 +38,13 @@ window.addEventListener("DOMContentLoaded", function () {
             if (img.complete) {
                 resolve({
                     //color: colorThief.getColor(img, 20),
-                    palette: colorThief.getPalette(img, 2, 20)
+                    palette: colorThief.getPalette(img, 2, 10)
                 });
             } else {
                 img.addEventListener('load', function() {
                     resolve({
                         //color: colorThief.getColor(img, 20),
-                        palette: colorThief.getPalette(img, 2, 20)
+                        palette: colorThief.getPalette(img, 2, 10)
                     });
                 });
             }
