@@ -20,13 +20,13 @@ window.addEventListener("DOMContentLoaded", function () {
     // Make sure image is finished loading
     ludlit_wc_author_images.forEach(function(img) {
         if (img.complete) {
-            my_dominant_color = colorThief.getColor(img);
-            my_color_palette = colorThief.getPalette(img, 2);
+            my_dominant_color = colorThief.getColor(img, 20);
+            my_color_palette = colorThief.getPalette(img, 2, 20);
             ludlit_wc_set_gradient(img, my_color_palette[0], my_color_palette[1]);
         } else {
             img.addEventListener('load', function() {
-                my_dominant_color = colorThief.getColor(img);
-                my_color_palette = colorThief.getPalette(img, 2);
+                my_dominant_color = colorThief.getColor(img, 20);
+                my_color_palette = colorThief.getPalette(img, 2, 20);
                 ludlit_wc_set_gradient(img, my_color_palette[0], my_color_palette[1]);
             });
         }
