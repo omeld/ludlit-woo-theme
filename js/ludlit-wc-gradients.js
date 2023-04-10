@@ -48,6 +48,9 @@ window.addEventListener("DOMContentLoaded", function () {
                     });
                 });
             }
+        }).then(result => {
+            console.log('ludlit gradients:', result.palette);
+            return result;
         });
     }
 
