@@ -59,8 +59,32 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //apply to all
     ludlit_wc_author_images.forEach(function(img) {
-        ludlit_wc_prepare_gradient(img);
+        ludlit_wc_prepare_gradient(img)
+            .catch(error => console.error('ludlitwc gradients:', error));
     });
 
 });
 
+
+//todo: try this code
+/*
+window.onload = function() {
+    const ludlit_wc_author_images = document.querySelectorAll(
+      ".ludlit_wc_product_image_wrapper.ludlit_wc_has_main_author_img img"
+    );
+    
+    async function setGradientAsync(img) {
+      const colorThief = new ColorThief();
+      try {
+        const colorPalette = await getPaletteAsync(colorThief, img, 2, 20);
+        ludlit_wc_set_gradient(img, colorPalette[0], colorPalette[1]);
+      } catch (error) {
+        console.error('Error setting gradient:', error);
+      }
+    }
+  
+    ludlit_wc_author_images.forEach(function(img) {
+      setGradientAsync(img);
+    });
+  };
+  */
