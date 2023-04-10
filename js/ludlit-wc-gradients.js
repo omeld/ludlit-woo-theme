@@ -8,20 +8,11 @@ window.addEventListener("DOMContentLoaded", function () {
     );
     
     function ludlit_wc_set_gradient(element, color_start, color_end = 'var(--ludlit-wc-product-background-color)') {
-        /* was working, now try 1 color
         element.parentNode.style.background = 'radial-gradient('
             + 'circle, '
             + 'rgba(' + color_start.join(',') + ',0.5' + ')' 
             + ' 0%, ' 
             + 'rgba(' + color_end.join(',') + ',0.5' + ')' 
-            + ' 90%'
-            + ')';
-        */
-        element.parentNode.style.background = 'radial-gradient('
-            + 'circle, '
-            + 'rgba(' + color_start.join(',') + ',0.5' + ')' 
-            + ' 0%, ' 
-            + color_end
             + ' 90%'
             + ')';
     }
@@ -47,15 +38,13 @@ window.addEventListener("DOMContentLoaded", function () {
             if (img.complete) {
                 resolve({
                     //color: colorThief.getColor(img, 20),
-                    //palette: colorThief.getPalette(img, 2, 20)
-                    palette: colorThief.getColor(img, 20)
+                    palette: colorThief.getPalette(img, 2, 20)
                 });
             } else {
                 img.addEventListener('load', function() {
                     resolve({
                         //color: colorThief.getColor(img, 20),
-                        //palette: colorThief.getPalette(img, 2, 20)
-                        palette: colorThief.getColor(img, 20)
+                        palette: colorThief.getPalette(img, 2, 20)
                     });
                 });
             }
@@ -68,8 +57,7 @@ window.addEventListener("DOMContentLoaded", function () {
     async function ludlit_wc_prepare_gradient(img) {
         //const {color, palette} = await ludlit_wc_get_colors(img);
         const { palette } = await ludlit_wc_get_colors(img);
-        //ludlit_wc_set_gradient(img, palette[0], palette[1]);
-        ludlit_wc_set_gradient(img, palette);
+        ludlit_wc_set_gradient(img, palette[0], palette[1]);
     }
 
     //apply to all
