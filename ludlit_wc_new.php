@@ -22,5 +22,17 @@ function ludlit_woo_theme_enqueue_style() {
 	);
 }
 
+add_action('wp_enqueue_scripts', 'ludlit_wc_enqueue_gradient_scripts');
+function ludlit_wc_enqueue_gradient_scripts() {
+	if (basename(get_page_template()) == 'front-page-block-parts.php') {
+		wp_enqueue_script('colorthief','//cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js');
+		wp_enqueue_script('ludlit-wc-gradients', 
+			get_template_directory_uri() . '/js/ludlit-wc-gradients.js',
+			array('colorthief'),
+			filemtime(get_template_directory() . '/js/ludlit-wc-gradients.js')
+		);
+	}
+}
+
 
 ?>

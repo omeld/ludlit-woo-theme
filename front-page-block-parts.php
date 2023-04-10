@@ -94,7 +94,11 @@ wp_reset_postdata();
 </section>
 <section>
 <?php
-
+/**
+ * *******************************************************************
+ * novejši prispevki
+ * *******************************************************************
+ */
 // latest posts
 $args = array(
     'post_type' => 'post',
@@ -116,6 +120,17 @@ if ($latest_posts->have_posts()) {
 
 <?php
     while ($latest_posts->have_posts()) : $latest_posts->the_post();
+    
+        // categories
+        $category = get_the_category(); 
+        $list_categories = array(); 
+        $category_slugs = array();
+        foreach ($category as $ctg) {
+            $list_categories[] = "<a href='" . esc_url(get_category_link($ctg->cat_ID)) . "'>$ctg->cat_name</a>";
+            $category_slugs[] = $ctg->slug;
+        }
+        $mySubtitle = get_post_meta($post->ID, 'mysubtitle', true);
+
         $main_author_imgs = array();
         $other_author_imgs = array();
         $my_post_thumbnail = array();
@@ -124,6 +139,7 @@ if ($latest_posts->have_posts()) {
 
         $my_featured_image_options = array('featured image', 'other contributor', 'contributor');
 
+        // prepare all different options for cover img
         foreach ($my_featured_image_options as $option) {
             $my_taxonomy = '';
             $my_classes = array();
@@ -186,96 +202,21 @@ if ($latest_posts->have_posts()) {
                 break;
             }
         }
-/*
-        if ($contributors = wp_get_post_terms($post->ID, 'ime_avtorja')) {
-            foreach ($contributors as $contributor) {
-                $contributorName = $contributor->name;
-                $author_page = new WP_Query(array(
-                    //'title' => $contributorName,
-                    'post_type' => 'avtor',
-                    'posts_per_page' => 1,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'ime_avtorja',
-                            'terms' => $contributorName,
-                            'field' => 'name',
-                        ),
-                    ),
-                ));
-                if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
-                    if (has_post_thumbnail($post->ID)) {
-                        //$main_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
-                        $main_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
-                    }
-                endwhile; endif;
-                $latest_posts->reset_postdata();
-            }
-        }
-        if ($relatedContributors = wp_get_post_terms($post->ID, 'drugo_ime')) {
-            foreach ($contributors as $contributor) {
-                $contributorName = $contributor->name;
-                $author_page = new WP_Query(array(
-                    //'title' => $contributorName,
-                    'post_type' => 'avtor',
-                    'posts_per_page' => 1,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'drugo_ime',
-                            'terms' => $contributorName,
-                            'field' => 'name',
-                        ),
-                    ),
-                ));
-                if ($author_page->have_posts()): while ($author_page->have_posts()): $author_page->the_post();
-                    if (has_post_thumbnail($post->ID)) {
-                        //$other_author_imgs[] = get_the_post_thumbnail($post->ID, 'myAuthorThumbnail');
-                        $other_author_imgs[] = get_the_post_thumbnail($post->ID, 'medium');
-                    }
-                endwhile; endif;
-                $latest_posts->reset_postdata();
-            }
-        }
-*/
-        $mySubtitle = get_post_meta($post->ID, 'mysubtitle', true);
 ?>
 
-<li class="product but-actually-post">
+<li class="product but-actually-post <?php echo join(' ', array_map(function($r) { return 'ludlit_wc_post_is_cat_' . $r; }, $category_slugs));?>">
+        
     <a href="<?php the_permalink();?>" class="bare">
 
     <div class="ludlit_wc ludlit_wc_product_image_wrapper <?php echo join(' ', $my_classes); ?>">
         <?php echo join('', $my_show_imgs); ?>
     </div>
-
-<!--
-<?php
-if (has_post_thumbnail($post->ID)) {
-?>
-<div class="ludlit_wc ludlit_wc_product_image_wrapper has_featured_image"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
-<?php
-} elseif (!empty($relatedContributorName) && !empty($other_author_imgs)) { 
-?>
-<div class="ludlit_wc ludlit_wc_product_image_wrapper has_other_author_image"><?php echo join('', $other_author_imgs); ?></div>
-<?php
-} elseif (!empty($contributorName) && !empty($main_author_imgs)) {
-?>
-<div class="ludlit_wc ludlit_wc_product_image_wrapper has_main_author_image"><?php echo join('', $main_author_imgs);?></div>
-<?php
-}
-?>
--->
     </a>
     <div class="ludlit_wc ludlit_wc_product_description">
         <div class="ludlit_wc_post_meta">
             <p class="ludlit_wc_post_date"><?php echo the_time('j. F Y');?></p>
             <p class="ludlit_wc_post_categories">
-<?php 
-    $category = get_the_category(); 
-    $list_categories = array(); 
-    foreach ($category as $ctg) {
-        $list_categories[] = "<a href='" . esc_url(get_category_link($ctg->cat_ID)) . "'>$ctg->cat_name</a>";
-    }
-    echo join(' / ', $list_categories);
-?>
+<?php echo join(' / ', $list_categories); ?>
             </p>    
         </div>
         <h3 class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></h3>

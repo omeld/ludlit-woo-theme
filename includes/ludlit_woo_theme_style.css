@@ -36,6 +36,11 @@
     box-shadow: none;
 }
 
+.ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product.ludlit_wc_post_is_cat_kritika-komentar img, 
+.ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product.ludlit_wc_post_is_cat_kritika-komentar img {
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
 .ludlit_wc.woocommerce ul.products li.product .ludlit_wc_product_image_wrapper.has_main_author_image img {
     border-radius: 50%;
     aspect-ratio: 1/1;
@@ -72,7 +77,10 @@
     font-size: var(--wp--preset--font-size--medium);
 }
 
-
+.ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product a .ludlit_wc_product_image_wrapper,
+.ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product a .ludlit_wc_product_image_wrapper {
+    border-radius: 12px; /* repeat this because of added background for front */
+}
 
 /* media queries */
 @media (min-width: 1500px) {
