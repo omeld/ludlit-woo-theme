@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
     const colorThief = new ColorThief();
-    let my_dominant_color = '';
+    //let my_dominant_color = '';
     let my_color_palette = [];
     const ludlit_wc_author_images = document.querySelectorAll(
         ".ludlit_wc_product_image_wrapper.ludlit_wc_has_main_author_img img"
@@ -37,13 +37,13 @@ window.addEventListener("DOMContentLoaded", function () {
         return new Promise((resolve, reject) => {
             if (img.complete) {
                 resolve({
-                    color: colorThief.getColor(img, 20),
+                    //color: colorThief.getColor(img, 20),
                     palette: colorThief.getPalette(img, 2, 20)
                 });
             } else {
                 img.addEventListener('load', function() {
                     resolve({
-                        color: colorThief.getColor(img, 20),
+                        //color: colorThief.getColor(img, 20),
                         palette: colorThief.getPalette(img, 2, 20)
                     });
                 });
@@ -52,7 +52,8 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     async function ludlit_wc_prepare_gradient(img) {
-        const {color, palette} = await ludlit_wc_get_colors(img);
+        //const {color, palette} = await ludlit_wc_get_colors(img);
+        const { palette } = await ludlit_wc_get_colors(img);
         ludlit_wc_set_gradient(img, palette[0], palette[1]);
     }
 
