@@ -216,8 +216,7 @@
 
             ],
             "customFontSize": false,
-            "dropCap": false,
-            "lineHeight": false
+            "dropCap": false
         },
         "spacing": {
             "spacingSizes": [
