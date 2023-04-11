@@ -202,7 +202,18 @@
                     "name": "Huge",
                     "size": "3.998rem",
                     "slug": "huge"
+                },
+                {
+                    "name": "Extra Huge",
+                    "size": "5.653rem",
+                    "slug": "x-huge"
+                },
+                {
+                    "name": "Poster",
+                    "size": "7.993rem",
+                    "slug": "poster"
                 }
+
             ],
             "customFontSize": false,
             "dropCap": false,
