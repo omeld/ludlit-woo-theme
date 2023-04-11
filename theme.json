@@ -2,7 +2,6 @@
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
     "settings": {
-        "appearanceTools": true,
         "typography": {
             "fontFamilies": [
                 {
@@ -241,7 +240,9 @@
                     "name": "1"
                 }
             ],
-            "padding": true
+            "padding": true,
+            "margin": true,
+            "customSpacingSize": false
         },
         "custom": {
             "line-height": {
