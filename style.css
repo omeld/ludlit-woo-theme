@@ -65,7 +65,7 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 	 border-bottom: 0.33em solid;
 	 content: '';
  }
- 
+/* 
  .home h2 {
 	 font-weight: bold;
 	 margin-top: 8rem;
@@ -79,6 +79,7 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 	 border-bottom: 0.33em solid #2578D8;
 	 content: '';
  }
+ */
  
  .font-size-00 {
 	 font-size: 0.565em;
