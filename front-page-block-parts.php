@@ -145,6 +145,13 @@ if ($latest_posts->have_posts()) {
         }
         $mySubtitle = get_post_meta($post->ID, 'mysubtitle', true);
 
+        $show_contributor_names = wp_get_post_terms($post->ID, 'ime_avtorja');
+
+        $show_contributor_name = join(', ', array_map(function($object) {
+            return $object->name;
+        }, $show_contributor_names));
+        
+
         $main_author_imgs = array();
         $other_author_imgs = array();
         $my_post_thumbnail = array();
@@ -231,7 +238,7 @@ if ($latest_posts->have_posts()) {
 <?php echo join(' / ', $list_categories); ?>
             </p>    
         </div>
-        <h3 class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></h3>
+        <h3 class="ludlit_wc_book_info_author"><?php echo $show_contributor_name; ?></h3>
         <h4 class="ludlit_wc_book_info_title"><?php the_title(); ?></h4>
         <?php if (!empty($mySubtitle)) { echo "<p class='ludlit_wc_subtitle'>$mySubtitle</p>"; } ?>
         <div class="ludlit_wc_post_excerpt">
