@@ -303,24 +303,24 @@
             "fontFamily": "var(--wp--preset--font-family--literata)",
             "fontSize": "var(--wp--preset--font-size--normal)",
             "lineHeight": "var(--wp--custom--line-height--body)"
+        }
+    },
+    "templateParts": [
+        {
+            "name": "books-featured-collection",
+            "title": "Pasica za izpostavljen zbir knjig"
         },
-        "template-parts": [
-            {
-                "name": "books-featured-collection",
-                "title": "Pasica za izpostavljen zbir knjig"
-            },
-            {
-                "name": "front-page-banner-top",
-                "title": "Pasica na vrhu prve strani"
-            },
-            {
-                "name": "front-page-banner-magazines",
-                "title": "Pasica pri revijah na prvi strani" 
-            },
-            {
-                "name": "front-page-banner-quote",
-                "title": "Pasica s citatom"
-            }
-        ]
-    }
+        {
+            "name": "front-page-banner-top",
+            "title": "Pasica na vrhu prve strani"
+        },
+        {
+            "name": "front-page-banner-magazines",
+            "title": "Pasica pri revijah na prvi strani" 
+        },
+        {
+            "name": "front-page-banner-quote",
+            "title": "Pasica s citatom"
+        }
+    ]
 }
