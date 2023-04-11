@@ -99,7 +99,7 @@
 }
 
 .ludlit_wc_subtitle + .ludlit_wc_post_excerpt {
-    margin-top: var(--wp--preset--spacing--30);
+    margin-top: var(--wp--preset--spacing--50);
 }
 
 .ludlit_wc_subtitle {
