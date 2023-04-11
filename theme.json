@@ -308,19 +308,25 @@
     "templateParts": [
         {
             "name": "books-featured-collection",
-            "title": "Pasica za izpostavljen zbir knjig"
+            "title": "Pasica za izpostavljen zbir knjig",
+            "area": "uncategorized"
         },
         {
             "name": "front-page-banner-top",
-            "title": "Pasica na vrhu prve strani"
+            "title": "Pasica na vrhu prve strani",
+            "area": "uncategorized"
         },
         {
             "name": "front-page-banner-magazines",
-            "title": "Pasica pri revijah na prvi strani" 
+            "title": "Pasica pri revijah na prvi strani",
+            "area": "uncategorized"
+
         },
         {
             "name": "front-page-banner-quote",
-            "title": "Pasica s citatom"
+            "title": "Pasica s citatom",
+            "area": "uncategorized"
+
         }
     ]
 }
