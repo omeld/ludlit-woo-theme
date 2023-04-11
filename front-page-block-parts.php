@@ -219,12 +219,10 @@ if ($latest_posts->have_posts()) {
 ?>
 
 <li class="product but-actually-post <?php echo join(' ', array_map(function($r) { return 'ludlit_wc_post_is_cat_' . $r; }, $category_slugs));?>">
-        
     <a href="<?php the_permalink();?>" class="bare">
-
-    <div class="ludlit_wc ludlit_wc_product_image_wrapper <?php echo join(' ', $my_classes); ?>">
-        <?php echo join('', $my_show_imgs); ?>
-    </div>
+        <div class="ludlit_wc ludlit_wc_product_image_wrapper <?php echo join(' ', $my_classes); ?>">
+            <?php echo join('', $my_show_imgs); ?>
+        </div>
     </a>
     <div class="ludlit_wc ludlit_wc_product_description">
         <div class="ludlit_wc_post_meta">
