@@ -1,3 +1,14 @@
+/*
+ * new ludlit styles in addition to theme.json 
+ * and the styles from the ludlit-woo-plugin
+ */
+
+.ludlit_wc_is_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 .page-template-front-page-block-parts p + p,
 .page-template-front-page-block-parts p
  {
