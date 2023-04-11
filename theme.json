@@ -316,6 +316,10 @@
             {
                 "name": "front-page-banner-magazines",
                 "title": "Pasica pri revijah na prvi strani" 
+            },
+            {
+                "name": "front-page-banner-quote",
+                "title": "Pasica s citatom"
             }
         ]
     }
