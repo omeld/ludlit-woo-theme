@@ -141,5 +141,5 @@ if ($queryTax == "zbirka" and isset($queryTerm)) {
 				</div>
 			</div>
 		</div>
-		<hr style="height:2px; width:100%; border-width:0; color:grey;>
+		<hr style="height:2px; width:100%; border-width:0; color:grey;">
 		<div id="container" class="clearfix">
