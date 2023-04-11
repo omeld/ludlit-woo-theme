@@ -29,10 +29,18 @@ $args = array(
     ),
 );
 
+function ludlit_wc_get_term_link($tax, $term) {
+    $my_url = get_term_link(get_term_by('name', $term, $tax));
+    return $my_url ?: '';
+}
+
 $loop = new WP_Query($args);
 if ($loop->have_posts()) {
 ?>
-    <h2>Najnovejše knjige</h2>
+    <div class="ludlit_wc_is_flex">
+        <h2>Najnovejše knjige</h2>
+        <p><a href="<?php echo ludlit_wc_get_term_link('product_cat', 'knjige'); ?>">&rarr; vse knjige</a></p>
+    </div>
 <?php
 ?>
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
@@ -71,7 +79,10 @@ $args = array(
 $loop = new WP_Query($args);
 if ($loop->have_posts()) {
 ?>
-    <h2>Najnovejše številke revije Literatura</h2>
+    <div class="ludlit_wc_is_flex">
+        <h2>Najnovejše številke revije Literatura</h2>
+        <p><a href="<?php echo ludlit_wc_get_term_link('product_cat', 'revije') ?>">&rarr; vse revije</a></p>
+    </div>
 <?php
 ?>
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
@@ -111,7 +122,10 @@ $args = array(
 $latest_posts = new WP_Query($args);
 if ($latest_posts->have_posts()) {
 ?>
-    <h2>Novejši prispevki</h2>
+    <div class="ludlit_wc_is_flex">
+        <h2>Novejši prispevki</h2>
+        <p><a href="<?php echo get_post_type_archive_link('post'); ?>">&rarr; vsi prispevki</a></p>
+    </div>
 <?php
 
 ?>
