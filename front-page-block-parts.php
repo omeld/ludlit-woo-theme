@@ -126,9 +126,9 @@ if ($latest_posts->have_posts()) {
         <h2>Novejši prispevki</h2>
         <p><a href="<?php echo get_post_type_archive_link('post'); ?>">&rarr; vsi prispevki</a></p>
     </div>
-<?php
 
-?>
+<?php block_template_part('front-page-banner-quote'); ?>
+
 <div class='ludlit_wc woocommerce ludlit_wc_custom_products'>
 <ul class='products ludlit_wc_custom_products ludlit_wc_recent_posts'>
 
