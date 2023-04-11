@@ -240,8 +240,8 @@
                     "slug": "70",
                     "name": "1"
                 }
-            ]
-        "padding": true,
+            ],
+            "padding": true
         },
         "custom": {
             "line-height": {
