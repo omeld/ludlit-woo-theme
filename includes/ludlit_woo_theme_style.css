@@ -94,6 +94,12 @@
     font-size: var(--wp--preset--font-size--medium);
 }
 
+.ludlit_wc_subtitle {
+    font-size: var(--wp--preset--font-size--medium);
+    color: var(--ludlit-wc-gray-4);
+    font-style: italic;
+}
+
 .ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product a .ludlit_wc_product_image_wrapper,
 .ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product a .ludlit_wc_product_image_wrapper {
     border-radius: 12px; /* repeat this because of added background for front */

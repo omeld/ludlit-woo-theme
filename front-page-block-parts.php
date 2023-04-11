@@ -233,6 +233,7 @@ if ($latest_posts->have_posts()) {
         </div>
         <h3 class="ludlit_wc_book_info_author"><?php echo $contributorName; ?></h3>
         <h4 class="ludlit_wc_book_info_title"><?php the_title(); ?></h4>
+        <?php if (!empty($mySubtitle)) { echo "<p class='ludlit_wc_subtitle'>$mySubtitle</p>"; } ?>
         <div class="ludlit_wc_post_excerpt">
 <?php //myParagraphExcerpt($args = array('limitWords' => 75, 'add_utm' => false));  ?>
 <?php //$newlitTempCustomLength = 50; the_excerpt(); $newlitTempCustomLength = 20; ?>
