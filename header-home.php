@@ -143,9 +143,3 @@ if ($queryTax == "zbirka" and isset($queryTerm)) {
 		</div>
 		<hr style="height:2px; width:100%; border-width:0; color:grey;>
 		<div id="container" class="clearfix">
-<?php 
-if (is_home()) {
-//if (is_front_page() || is_home()) {
-	get_template_part('slide'); 
-}
-?>
