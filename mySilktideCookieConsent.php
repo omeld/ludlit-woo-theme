@@ -70,5 +70,5 @@ cc.initialise({
 // ]]>
 </script>
 	<!-- End Cookie Consent plugin -->
-	/*
+	*/
 ?>
