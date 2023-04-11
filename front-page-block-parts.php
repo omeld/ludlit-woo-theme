@@ -5,7 +5,7 @@ Template name: front page w/ block template parts
 ?>
 
 <?php get_header('home'); ?>
-<div id="main" class="clearfix levodesnopadding">
+<div id="main" class="clearfix levodesnopadding_not">
 <!-- ...................................................... -->
 
 
