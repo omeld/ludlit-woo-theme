@@ -273,9 +273,10 @@ wp_reset_postdata();
     <h2>
         Socialna omrežja
     </h2>
-    <div>
-        <?php dynamic_sidebar('newlit-social-widget')?>
-    </div>
+    
+    <ul style="list-style: none;">
+		<?php dynamic_sidebar('newlit-social-widget')?>  
+	</ul>
     
 </section>
 <!-- ...................................................... -->
