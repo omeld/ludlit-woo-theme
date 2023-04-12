@@ -6,6 +6,62 @@
         "typography": {
             "fontFamilies": [
                 {
+                    "fontFamily": "Borna, sans-serif",
+                    "name": "Borna",
+                    "slug": "borna",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Borna",
+                            "fontWeight": "500",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": ["file:./assets/fonts/Borna/borna-medium-webfont.woff2"]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "Scilla, serif",
+                    "name": "Scilla",
+                    "slug": "scilla",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Scilla",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": ["file:./assets/fonts/Scilla/scilla-regular-webfont.woff2"]
+                        },
+                        {
+                            "fontFamily": "Scilla",
+                            "fontWeight": "400",
+                            "fontStyle": "italic",
+                            "fontStretch": "normal",
+                            "src": ["file:./assets/fonts/Scilla/scilla-regularitalic-webfont.woff2"]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "\"Scilla Narrow\", serif",
+                    "name": "Scilla Narrow",
+                    "slug": "scilla-narrow",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Scilla Narrow",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "narrow",
+                            "src": ["file:./assets/fonts/Scilla/scillanarrow-regular-webfont.woff2"]
+                        },
+                        {
+                            "fontFamily": "Scilla Narrow",
+                            "fontWeight": "400",
+                            "fontStyle": "italic",
+                            "fontStretch": "narrow",
+                            "src": ["file:./assets/fonts/Scilla/scillanarrow-regularitalic-webfont.woff2"]
+                        }
+                    ]
+                },
+                {
                     "fontFamily": "\"Basier Square\", sans-serif",
                     "name": "Basier Square",
                     "slug": "basier-square",
