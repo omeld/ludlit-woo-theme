@@ -393,6 +393,11 @@
             "title": "Pasica s citatom",
             "area": "uncategorized"
 
+        },
+        {
+            "name": "ludlit-wc-footer",
+            "title": "Noga strani",
+            "area": "footer"
         }
     ]
 }
