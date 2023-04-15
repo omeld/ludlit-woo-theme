@@ -48,34 +48,7 @@ if (($myCustomStyle = get_post_meta($post->ID, 'my-custom-style', true)) != fals
 }
 
 ?>
-		
+	<?php wp_head(); ?>
 	</head>
-	<body <?php body_class("sans $bkg"); ?>>
-		<div id="myTopSocialContainer" class="relative text-outer" style="background-color: #648AAA;">
-			<div class="mySocialStripeMenu" style="display: flex; justify-content: space-between; align-items: center; height: 65px;">
-				<a class="font-size-3 hide-title" href="<?php echo home_url(); ?>" style="font-weight: bold;">LUD Literatura</a>
-
-				<div style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
-					<div style="list-style: none; position: sticky;">
-						<?php dynamic_sidebar('newlit-iskanjesitewide-widget'); ?>
-				 	</div>
-					<div style="display: inline-block;"> <!-- kličejo se podobne kot za true liquid block inner css class-->
-						<?php wp_nav_menu(array( 'container_class' => 'menu-social-container font-size-1', 'theme_location' => 'menu_social', 'menu_class' => 'menu za socialna omrezja social-icons' ) ); ?>
-					</div>
-				</div>
-			</div>
-		</div>		
-		
-		<div id="myTopStripeContainer" class="relative text-outer" style="background-color: white;">	
-			<div class="myTopStripeMenu">
-				<div id="myTopStripe" class="newlit-css-transition-hide show-when-touched font-size-3">
-					<div class="center center-margins show-only-on-small-screen font-size-3" style="line-height: 3em">
-						<a class="font-size-2 light" href="<?php echo home_url(); ?>">LUD Literatura</a>
-						<i class="touch-to-show fa fa-bars"></i>
-					</div>
-					<?php wp_nav_menu( array( 'container_class' => 'menu-menu-ena-container font-size-1', 'theme_location' => 'menu_one', 'menu_class' => 'menu clearfix' ) ); ?>
-				</div>
-			</div>
-		</div>
-		<hr style="height:2px; width:100%; border-width:0; color:grey;">
+	<body class="sans">
 		<div id="container" class="clearfix">
