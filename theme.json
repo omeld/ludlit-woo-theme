@@ -398,6 +398,11 @@
             "name": "ludlit-wc-footer",
             "title": "Noga strani",
             "area": "footer"
+        },
+        {
+            "name": "ludlit-wc-header",
+            "title": "glava strani",
+            "area": "header"
         }
     ]
 }
