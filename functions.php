@@ -14,7 +14,12 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
 add_action('after_setup_theme', 'newlit_remove_admin_bar');
-add_filter( 'wp_default_editor', create_function('', 'return "tinymce";') );
+//create_function is deprecated
+//add_filter( 'wp_default_editor', create_function('', 'return "tinymce";') );
+add_filter( 'wp_default_editor', function() {
+	return 'tinymce';
+});
+  
 
 //andrej2022
 //general style
@@ -315,10 +320,22 @@ function newlit_get_author_photo($args = '') {
 
 	//use other name if present (mostly for interviews?
 	//kratka verzija na ljudmili ne dela!!!
+	/*
 	$_slug = array_shift(wp_get_post_terms($pid, "drugo_ime", array('fields' => 'slugs')));
 	$nameSlug = (isset($args['name']) ? $args['name'] :
 		//(!empty($_slug = array_shift(wp_get_post_terms($pid, "drugo_ime", array('fields' => 'slugs')))) ? $_slug : array_shift(wp_get_post_terms($pid, "ime_avtorja", array('fields' => 'slugs')))));
 		(!empty($_slug) ? $_slug : array_shift(wp_get_post_terms($pid, "ime_avtorja", array('fields' => 'slugs')))));
+	*/
+
+	//fix only variables should be passed by reference error
+	$my_terms = wp_get_post_terms($pid, "ime_avtorja", array('fields' => 'slugs'));
+	$nameSlug = isset($args['name']) 
+		? $args['name'] 
+		: (!empty($_slug) 
+			? $_slug 
+			: array_shift($my_terms)
+		);
+		
 
 	$_args = array(
 		'post_status' => 'publish',
@@ -396,7 +413,15 @@ function newlitCustomOG() {
 		//$author_photo = newlit_get_author_photo();
 
 		if (! has_post_thumbnail($post->ID)) {
+			/*
+			//fix only variables should be passed by reference error
 			$intervieweeName = array_shift(wp_get_post_terms($post->ID, "drugo_ime", array('fields' => 'slugs')));
+			*/
+			$my_terms = wp_get_post_terms($post->ID, "drugo_ime", array('fields' => 'slugs'));
+			$intervieweeName = !empty($my_terms)
+  				? array_shift($my_terms)
+  				: '';
+
 			if (!empty($intervieweeName)) {
 				if (($interviewee_photo = newlit_get_author_photo(array('name' => $intervieweeName))) !== false) {
 					echo '<meta property="og:image" content="' . $interviewee_photo['src'] . '" />' . "\n";
@@ -406,7 +431,11 @@ function newlitCustomOG() {
 				echo '<meta property="og:image" content="' . $meta_featured_image . '" />' . "\n";
 
 			} elseif (($author_photo = newlit_get_author_photo()) !== false) {
-				echo '<meta property="og:image" content="' . $author_photo['src'] . '" />' . "\n";
+				// fix src not set?
+				//echo '<meta property="og:image" content="' . $author_photo['src'] . '" />' . "\n";
+				if (isset($author_photo['src'])) {
+					echo '<meta property="og:image" content="' . $author_photo['src'] . '" />' . "\n";
+				}
 				return;
 			} else {
 				//default
