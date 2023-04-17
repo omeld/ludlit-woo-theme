@@ -62,7 +62,9 @@
     border-radius: 50%;
     aspect-ratio: 1/1;
     object-fit: cover;
+    height: 100%;
 }
+
 
 .ludlit_wc.woocommerce ul.products li.product .ludlit_wc_product_image_wrapper.ludlit_wc_has_featured_img.ludlit_wc_is_landscape_image,
 .ludlit_wc.woocommerce ul.products li.product .ludlit_wc_product_image_wrapper.has_featured_image.ludlit_wc_is_landscape_image {
@@ -111,6 +113,11 @@
 .ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product a .ludlit_wc_product_image_wrapper {
     border-radius: 12px; /* repeat this because of added background for front */
 }
+
+
+
+
+
 
 /* media queries */
 @media (min-width: 1500px) {
