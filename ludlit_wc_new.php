@@ -48,7 +48,7 @@ function ludlit_wc_create_menus() {
 	wp_create_nav_menu('LudLit WC Search Menu');
 	wp_create_nav_menu('LudLit WC Icon Menu');
 }
-add_action('after_setup_theme', 'ludlit_wc_create_search_menu');
+add_action('after_setup_theme', 'ludlit_wc_create_menus');
 
 
 ?>
