@@ -115,8 +115,25 @@
 }
 
 
+/*
+new header menus
+*/
 
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container {
+    display: flex;
+    flex-direction: row;
+}
 
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container .wp-block-navigation__submenu-container
+{
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container .wp-block-navigation__submenu-container .wp-block-navigation-item {
+    margin: 1rem 0 0 0;
+}
+
+/* end header menus */
 
 
 /* media queries */
