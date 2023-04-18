@@ -135,6 +135,11 @@ new header menus
 
 /* end header menus */
 
+/* footer */
+.ludlit_wc_footer {
+    border-top: 1px solid;
+}
+/* end footer */
 
 /* media queries */
 @media (min-width: 1500px) {
