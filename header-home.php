@@ -37,6 +37,9 @@
 		</div>
 	</div>
 -->
-	<?php block_template_part('ludlit-wc-header'); ?>
+
+	<div class="ludlit_wc_header_template_part">
+		<?php block_template_part('ludlit-wc-header'); ?>
+	</div>
 	
 	<div id="container" class="clearfix">
