@@ -46,6 +46,7 @@
 .ludlit_wc .woocommerce ul.products.ludlit_wc_recent_posts li.product > a:first-child {
     aspect-ratio: 16 / 9;
     border-radius: 12px;
+    display: flex;
 }
 
 .ludlit_wc.woocommerce ul.products.ludlit_wc_recent_posts li.product img, 
