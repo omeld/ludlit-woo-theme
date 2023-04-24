@@ -29,14 +29,31 @@
 		<?php //require "mySilktideCookieConsent.php"; ?>
 	</head>
 	<body <?php body_class("sans"); ?>>
+
 	
-	<!--
-	<div style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
-		<div style="list-style: none; position: sticky;">
-			<?php //dynamic_sidebar('newlit-iskanjesitewide-widget'); ?>
+		<div class="ludlit_wc_manual_menu is-layout-flex">
+			<p><a href="<?php echo home_url(); ?>"><strong>LUD Literatura</strong></a></p>
+			<div class="is-layout-flex">
+				<div class="ludlit_wc_manual_search">
+					<?php echo do_shortcode('[ivory-search id="69895" title="Default Search Form"]'); ?>
+				</div>
+				<div class="ludlit_wc_manual_woocommerce_menu">
+					<ul class="is-layout-flex">
+						<li><a href="<?php echo wc_get_cart_url();?>"><i class="fa-solid fa-cart-shopping"></i></a></li>
+						<li><a href="<?php echo wc_get_page_permalink('myaccount');?>"><i class="fa-solid fa-user"></i></a></li>
+					</ul>
+				</div>
+				<div class="ludlit_wc_manual_social_menu">
+					<ul class="is-layout-flex">
+						<li><a href="https://facebook.com/ludliteraturazalozba"><i class="fa-brands fa-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/ludliteratura/"><i class="fa-brands fa-instagram"></i></a></li>
+						<li><a href="https://www.twitter.com/ludliteratura/"><i class="fa-brands fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	</div>
--->
+	
+
 
 	<div class="ludlit_wc_header_template_part">
 		<?php block_template_part('ludlit-wc-header'); ?>

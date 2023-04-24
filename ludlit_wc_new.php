@@ -34,10 +34,12 @@ function ludlit_wc_enqueue_gradient_scripts() {
 	}
 }
 
+/*
 add_action('wp_enqueue_scripts', 'ludlit_wc_enqueue_fontawesome');
 function ludlit_wc_enqueue_fontawesome() {
 	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/b24cd59385.js');
 }
+*/
 
 // register a custom menu to be replaced by custom search? TODO
 add_action('init', 'ludlit_wc_register_search_menu_location');
@@ -54,6 +56,8 @@ function ludlit_wc_create_menus() {
 	wp_create_nav_menu('LudLit WC Icon Menu');
 }
 add_action('after_setup_theme', 'ludlit_wc_create_menus');
+
+
 
 
 ?>

@@ -133,6 +133,21 @@ new header menus
     margin: 1rem 0 0 0;
 }
 
+.ludlit_wc_manual_menu .is-layout-flex > li {
+    display: block;
+}
+.ludlit_wc_manual_menu {
+    justify-content: space-between;
+}
+
+.ludlit_wc_manual_social_menu li {
+    background-color: black;
+    color: white;
+    border-radius: 999em;
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: var(--wp--preset--font-size--medium);
+    padding: 6px;
+}
 /* end header menus */
 
 /* footer */

@@ -270,12 +270,10 @@ wp_reset_postdata();
 ?>
 </section>
 <section>
-    <h2>
-        Socialna omrežja
-    </h2>
-    <ul>
-        <?php dynamic_sidebar('newlit-social-widget')?>
-    </ul>
+    <h2>Galerija</h2>
+    <div>
+        <?php echo do_shortcode('[insta-gallery id="0"]'); ?>
+    </div>
     
 </section>
 <!-- ...................................................... -->
