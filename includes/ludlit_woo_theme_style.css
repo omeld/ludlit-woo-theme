@@ -156,7 +156,7 @@ new header menus
 .ludlit_wc_mailchimp_form {
     border-radius: 24px;
     background-color: var(--ludlit-wc-gray-2);
-    padding: 2em;
+    padding: var(--wp--preset--spacing--60);
     margin-bottom: var(--wp--preset--spacing--80);
     /*
     display: flex;
@@ -172,9 +172,13 @@ new header menus
 .ludlit_wc_mailchimp_form input[type="text"],
 .ludlit_wc_mailchimp_form input[type="email"]
  {
-    padding: 2px;
-    border-radius: 4px;
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+    border-radius: 12px;
     border: 1px solid var(--ludlit-wc-gray-3);
+}
+
+.ludlit_wc_mailchimp_form input[type="checkbox"] {
+    margin: 0 0.5em 0.5em 0;
 }
 
 .ludlit_wc_mailchimp_form .mc_fieldset {
@@ -207,7 +211,7 @@ new header menus
 }
 
 .ludlit_wc_mailchimp_fields input {
-    font-size: var(--wp--preset--font-size--normal);
+    font-size: var(--wp--preset--font-size--medium);
 }
 
 /* footer */
