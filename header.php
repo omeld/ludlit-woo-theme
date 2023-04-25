@@ -32,7 +32,7 @@
 
 	
 		<div class="ludlit_wc_manual_menu is-layout-flex">
-			<p><a href="<?php echo home_url(); ?>"><strong>LUD Literatura</strong></a></p>
+			<p class="has-large-font-size"><a href="<?php echo home_url(); ?>"><strong>LUD Literatura</strong></a></p>
 			<div class="is-layout-flex">
 				<div class="ludlit_wc_manual_search">
 					<?php echo do_shortcode('[ivory-search id="69895" title="Default Search Form"]'); ?>
