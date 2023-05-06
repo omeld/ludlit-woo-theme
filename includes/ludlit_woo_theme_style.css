@@ -149,6 +149,12 @@ new header menus
     line-height: var(--wp--preset--font-size--medium);
     padding: 6px;
 }
+
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container {
+    justify-content: space-around;
+}
+
+
 /* end header menus */
 
 
