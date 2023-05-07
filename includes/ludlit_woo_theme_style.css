@@ -226,6 +226,8 @@ new header menus
 /* footer */
 .ludlit_wc_footer {
     border-top: 1px solid;
+    margin-top: var(--wp--preset--spacing--70);
+    padding-top: var(--wp--preset--spacing--70);
 }
 /* end footer */
 
