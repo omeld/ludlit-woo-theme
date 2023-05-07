@@ -31,7 +31,7 @@
 	<body <?php body_class("sans"); ?>>
 
 	
-		<div class="ludlit_wc_manual_menu is-layout-flex">
+		<div class="ludlit_wc_manual_menu is-layout-flex some-container">
 			<p class="has-large-font-size"><a href="<?php echo home_url(); ?>"><strong>LUD Literatura</strong></a></p>
 			<div class="is-layout-flex">
 				<div class="ludlit_wc_manual_search">
@@ -55,7 +55,7 @@
 	
 
 
-	<div class="ludlit_wc_header_template_part">
+	<div class="ludlit_wc_header_template_part some-container">
 		<?php block_template_part('ludlit-wc-header'); ?>
 	</div>
 	
