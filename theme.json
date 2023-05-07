@@ -3,6 +3,11 @@
     "version": 2,
     "settings": {
         "appearanceTools": true,
+        "useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "850px",
+			"wideSize": "1920px"
+		},
         "typography": {
             "fontFamilies": [
                 {
