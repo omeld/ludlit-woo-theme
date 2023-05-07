@@ -183,6 +183,7 @@ new header menus
     padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
     border-radius: 12px;
     border: 1px solid var(--ludlit-wc-gray-3);
+    box-sizing: border-box;
 }
 
 .ludlit_wc_mailchimp_form input[type="checkbox"] {
