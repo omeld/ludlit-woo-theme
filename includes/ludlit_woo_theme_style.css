@@ -141,6 +141,10 @@ new header menus
     justify-content: space-between;
 }
 
+.ludlit_wc_manual_menu {
+    padding-top: var(--wp--preset--spacing--70);
+}
+
 .ludlit_wc_manual_social_menu li {
     background-color: black;
     color: white;
