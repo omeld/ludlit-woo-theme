@@ -507,68 +507,6 @@ function newlitMailchimp() {
 <?php
 	}
 }
-add_action('wp_head', 'newlitGoogleAnalytics');
-function newlitGoogleAnalytics() {
-	if (
-		$_SERVER['SERVER_NAME'] != 'localhost'
-		and $_SERVER['SERVER_NAME'] != 'sonet'
-		and $_SERVER['SERVER_NAME'] != 'jezr'
-	) {
-		if (is_user_logged_in()) {
-			$userdata = get_userdata(get_current_user_id());
-			if (in_array('administrator', $userdata->roles))  {
-				return;
-			}
-		}
-?>
-<!--<script type="text/plain" class="cc-onconsent-analytics">-->
-<script type="text/javascript" class="not-cc-onconsent-analytics">
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-22395392-2', 'auto');
-	ga('send', 'pageview');
-
-</script>
-<?php
-	}
-}
-?>
-<?php
-		/*
-			OLD CODE
-
-		<script type="text/plain" class="cc-onconsent-analytics">
-
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-22395392-2']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-
-		</script>
-		 */
-?>
-<?php
-
-/*
-function newlitOGDefaultImage() {
-	global $post;
-	if (is_singular()) {
-		if (! has_post_thumbnail($post->ID)) {
-			echo '<meta property="og:image" content="http://www.ludliteratura.si/wp-content/uploads/2012/12/lud-literatura-logo.jpg" />' . "\n";
-		}
-	}
-}
- */
-
-
 
 function myAuthorsRecentPosts($off, $num, $nameSlug, $el="h4") {
 	global $post;
