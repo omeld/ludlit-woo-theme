@@ -116,9 +116,125 @@
 }
 
 
+/*
+new header menus
+*/
+
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container .wp-block-navigation__submenu-container
+{
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container .wp-block-navigation__submenu-container .wp-block-navigation-item {
+    margin: 1rem 0 0 0;
+}
+
+.ludlit_wc_manual_menu .is-layout-flex > li {
+    display: block;
+}
+.ludlit_wc_manual_menu {
+    justify-content: space-between;
+}
+
+.ludlit_wc_manual_menu {
+    padding-top: var(--wp--preset--spacing--70);
+}
+
+.ludlit_wc_manual_social_menu li {
+    background-color: black;
+    color: white;
+    border-radius: 999em;
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: var(--wp--preset--font-size--medium);
+    padding: 6px;
+}
+
+.theme-ludlit-woo-theme nav.sekundarni-meni .wp-block-navigation__responsive-container-content ul.wp-block-navigation__container {
+    justify-content: space-around;
+}
 
 
+/* end header menus */
 
+
+/* begin mailchimp signup */
+
+.ludlit_wc_mailchimp_form {
+    border-radius: 24px;
+    background-color: var(--ludlit-wc-gray-2);
+    padding: var(--wp--preset--spacing--60);
+    margin-bottom: var(--wp--preset--spacing--80);
+    margin-top: var(--wp--preset--spacing--60);
+    /*
+    display: flex;
+    justify-content: center;
+    */
+}
+
+.ludlit_wc_mailchimp_form .mc-field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.ludlit_wc_mailchimp_form input[type="text"],
+.ludlit_wc_mailchimp_form input[type="email"]
+ {
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+    border-radius: 12px;
+    border: 1px solid var(--ludlit-wc-gray-3);
+    box-sizing: border-box;
+}
+
+.ludlit_wc_mailchimp_form input[type="checkbox"] {
+    margin: 0 0.5em 0.5em 0;
+}
+
+.ludlit_wc_mailchimp_form .mc_fieldset {
+    border: none;
+}
+
+.ludlit_wc_mailchimp_form label,
+.ludlit_wc_mailchimp_navodilo {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--ludlit-wc-gray-4);
+    margin-bottom: 0.5em;
+    
+}
+
+.ludlit_wc_mailchimp_form .indicates-required {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--ludlit-wc-gray-4);
+    text-align: right;
+}
+.ludlit_wc_mailchimp_form label .asterisk {
+}
+
+.ludlit_wc_mailchimp_fields {
+    display: flex;
+    gap: 1em;
+}
+
+.ludlit_wc_mailchimp_fields > .mc-field-group {
+    flex: 1;
+}
+
+.ludlit_wc_mailchimp_fields input {
+    font-size: var(--wp--preset--font-size--medium);
+}
+
+/* footer */
+.ludlit_wc_footer {
+    border-top: 1px solid;
+    margin-top: var(--wp--preset--spacing--70);
+    padding-top: var(--wp--preset--spacing--70);
+    padding-bottom: var(--wp--preset--spacing--70);
+}
+/* end footer */
 
 /* media queries */
 @media (min-width: 1500px) {
