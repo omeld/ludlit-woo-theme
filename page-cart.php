@@ -7,7 +7,6 @@ Template Name: ludlit_wc cart
 
 
 <?php get_header('home'); ?>
-<!-- FOOBAR is page.php -->
 <?php 
 global $post;
 global $thisPostID;
@@ -25,15 +24,15 @@ $paged = get_query_var('paged');
 	} else {
 	}
 ?>
-<div class="oneArticle-not <?php echo implode(' ', get_post_class()); ?>">
+<div class="ludlit_wc oneArticle-not <?php echo implode(' ', get_post_class()); ?>">
 	<div class="">
-		<div class="articleText clearfix">
+		<div class="articleText-not clearfix">
 			<div id="article-title">
 				<h1 class="<?php echo $titleSize; ?> center small-top-padding tiny-bottom-padding leading-tight thin sans" style=""><?php the_title(); ?></h1>
 			</div>
-			<div class="content serif x-large-bottom-margin">
-				<div id="main-article-text" class="font-size-2">
-					<div class="main-article-text-body font-size-2">
+			<div class="content x-large-bottom-margin">
+				<div id="main-article-text-not" class="font-size-2">
+					<div class="main-article-text-body-not font-size-2 sans">
 						<?php the_content(); ?>
 					</div>
 				</div>

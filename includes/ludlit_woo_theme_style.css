@@ -161,6 +161,74 @@ new header menus
 
 /* end header menus */
 
+/* forms */
+
+form {
+    font-family: var(--ludlit-wc-sans-font-family);
+    text-indent: 0;
+}
+
+form input
+{
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+    border-radius: 6px;
+    border: 1px solid var(--ludlit-wc-gray-3) !important;
+    box-sizing: border-box;
+    font-size: var(--wp--preset--font-size--normal);
+}
+
+form label
+{
+    font-size: var(--wp--preset--font-size--normal);
+    color: var(--ludlit-wc-gray-4);
+    margin-bottom: 0.5em;   
+}
+
+form p {
+    text-indent: 0 !important;
+}
+
+
+/* end forms */
+
+
+/* begin woocommerce cart */
+
+.woocommerce-cart .ludlit_wc .woocommerce {
+    display: flex;
+    gap: var(--wp--preset--spacing--50);
+    flex-wrap: wrap;
+}
+
+
+.woocommerce-cart .ludlit_wc .woocommerce form {
+    flex: 3;
+}
+
+
+.woocommerce-cart .ludlit_wc .woocommerce .cart-collaterals {
+    background-color: var(--ludlit-wc-gray-2);
+    padding: var(--wp--preset--spacing--50);
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.woocommerce-cart .ludlit_wc .woocommerce .cart-collaterals .cart_totals {
+    width: unset;
+    float: none;
+}
+
+.woocommerce-cart .ludlit_wc .woocommerce .product-thumbnail img {
+    max-width: 75%;
+    width: 200px;
+}
+
+.woocommerce-cart .ludlit_wc .woocommerce .woocommerce-notices-wrapper {
+    flex: 0 0 100%;
+}
+
+/* end cart */
+
 
 /* begin mailchimp signup */
 
@@ -239,6 +307,26 @@ new header menus
     text-indent: 0;
 }
 /* end footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* media queries */
 @media (min-width: 1500px) {
