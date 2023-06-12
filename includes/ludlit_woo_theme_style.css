@@ -227,6 +227,12 @@ form p {
     flex: 0 0 100%;
 }
 
+
+.woocommerce-checkout .ludlit_wc #customer_details {
+    margin-bottom: var(--wp--preset--spacing--60);
+}
+
+
 /* end cart */
 
 
