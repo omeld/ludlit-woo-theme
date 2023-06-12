@@ -45,17 +45,10 @@ $paged = get_query_var('paged');
 						<?php the_content(); ?>
 					</div>
 				</div>
-				<?php if (is_page('ubezne-misli')) : ?>
-				<div class="x-large-top-margin x-large-bottom-margin x-large-top-padding x-large-bottom-padding myComments section font-size-1" style="">
-					<div class="text-inner">
-		<div id="disqus_thread"></div>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-					</div>
-				</div>
-				<?php endif; ?>
 			</div>
 		</div>
 	</div>
+</div>
 <?php endwhile; else: ?>
 <?php endif; ?>
 <?php get_footer(); ?>
