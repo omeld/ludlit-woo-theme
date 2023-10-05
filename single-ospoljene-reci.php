@@ -139,8 +139,10 @@ global	$post,
 $thisPostID = $post->ID;
 $contributor = wp_get_post_terms($post->ID, "ime_avtorja");
 
-$contributorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $contributor));
-$contributorSlug = array_map(create_function('$r', 'return $r->slug;'), $contributor);
+//$contributorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $contributor));
+//$contributorSlug = array_map(create_function('$r', 'return $r->slug;'), $contributor);
+$contributorName = implode(', ', array_map(fn($r) => $r->name, $contributor));
+$contributorSlug = array_map(fn($r) => $r->slug, $contributor);
 
 //$contributorName = $contributor[0]->name;
 //$contributorSlug = $contributor[0]->slug;

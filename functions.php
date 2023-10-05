@@ -353,11 +353,15 @@ function newlit_get_author_photo($args = '') {
 	if ($thisAuthor) :
 		foreach ($thisAuthor as $author_post) : setup_postdata($author_post);
 			if (has_post_thumbnail($author_post->ID)) :
-				$authorPhoto['src'] = array_shift(wp_get_attachment_image_src(get_post_thumbnail_id($author_post->ID), $size));
+				//$authorPhoto['src'] = array_shift(wp_get_attachment_image_src(get_post_thumbnail_id($author_post->ID), $size));
+				$attachment_image = wp_get_attachment_image_src(get_post_thumbnail_id($author_post->ID), $size);
+				$authorPhoto['src'] = array_shift($attachment_image);
 			else :
 				return false;
 			endif;
-			$authorPhoto['name'] = array_shift(wp_get_post_terms($author_post->ID, 'ime_avtorja', array('fields' => 'names')));
+			$attachment_image = wp_get_post_terms($author_post->ID, 'ime_avtorja', array('fields' => 'names'));
+			$authorPhoto['name'] = array_shift($attachment_image);
+			//$authorPhoto['name'] = array_shift(wp_get_post_terms($author_post->ID, 'ime_avtorja', array('fields' => 'names')));
 			$authorPhoto['file'] = get_attached_file(get_post_thumbnail_id($author_post->ID));
 			$authorPhoto['mime'] = get_post_mime_type(get_post_thumbnail_id($author_post->ID));
 		endforeach;

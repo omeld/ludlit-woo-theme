@@ -49,7 +49,8 @@ if ($featuredBooks->have_posts()) :
 $author = wp_get_post_terms($post->ID, "ime_avtorja", array('count' => 1));
 $translator = wp_get_post_terms($post->ID, "prevajalec");
 $translatorName = $translator[0]->name;
-$translatorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $translator));
+//$translatorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $translator));
+$translatorName = implode(', ', array_map(fn($r) => $r->name, $translator));
 $authorName = $author[0]->name;
 $bookCategory = wp_get_post_terms($post->ID, 'book_cat', array('parent' => 0, 'fields' => 'names'));
 $itemSize = 'one-two';

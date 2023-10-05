@@ -17,13 +17,16 @@ $this_post_master_id = $post->ID;
 //$useName = get_query_var('name');
 
 $useName = wp_get_post_terms($post->ID, "ime_avtorja");
-$authorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $useName));
-$authorSlug = array_map(create_function('$r', 'return $r->slug;'), $useName);
+//$authorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $useName));
+//$authorSlug = array_map(create_function('$r', 'return $r->slug;'), $useName);
+$authorName = implode(', ', array_map(fn($r) => $r->name, $useName));
+$authorSlug = array_map(fn($r) => $r->slug, $useName);
 
 $translator = "";
 $translator = wp_get_post_terms($post->ID, "prevajalec");
 //$translatorName = $translator[0]->name;
-$translatorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $translator));
+//$translatorName = implode(', ', array_map(create_function('$r', 'return $r->name;'), $translator));
+$translatorName = implode(', ', array_map(fn($r) => $r->name, $translator));
 
 //$authorSlug = $useName[0]->slug;
 //$authorName = $useName[0]->name;
