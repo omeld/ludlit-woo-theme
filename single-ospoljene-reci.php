@@ -333,7 +333,18 @@ $i = 0;
 	foreach($_myCurrentLoop->posts as $myPost) :
 		$names = get_the_terms($myPost, 'ime_avtorja');
 		if (!in_array($names[0]->name, array_column($authorThumbnailURL, 'name'))) :
-			$authorPage = get_page_by_title($names[0]->name, OBJECT, 'Avtor');
+			//$authorPage = get_page_by_title($names[0]->name, OBJECT, 'Avtor');
+			//update deprecated
+			$tmp_args = array('post_type' => 'avtor', 'post_status' => 'publish', 'name' => $names[0]->slug, 'posts_per_page' => 1);
+			$tmp_query = new WP_Query($tmp_args);
+			$tmp_page = null;
+			if ($tmp_query->have_posts()) { 
+				$tmp_page = $tmp_query->posts[0]; 
+				wp_reset_postdata(); 
+			}
+			$authorPage = $tmp_page;
+
+
 			if (!empty($authorPage)) {
 				if (has_post_thumbnail($authorPage->ID)) {
 					$url = wp_get_attachment_image_src(get_post_thumbnail_id($authorPage->ID), 'myAuthorThumbnail');

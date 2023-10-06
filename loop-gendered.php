@@ -99,9 +99,11 @@ $contributor = ""; $contributorName = ""; $relatedContributor = ""; $relatedCont
 
 $contributor = wp_get_post_terms($post->ID, "ime_avtorja", array("count" => 1));
 $contributorName = $contributor[0]->name;
+$contributorSlug = $contributor[0]->slug;
 
 $relatedContributor = wp_get_post_terms($post->ID, "drugo_ime", array("count" => 1));
 $relatedContributorName = $relatedContributor[0]->name;
+$relatedContributorSlug = $relatedContributor[0]->slug;
 
 $mySubtitle = get_post_meta($post->ID, 'mysubtitle', true);
 $paged = get_query_var('paged');
@@ -120,7 +122,15 @@ endforeach;
 
 
 if (!empty($relatedContributorName)) {
-	$relatedAuthorPage = get_page_by_title($relatedContributorName, OBJECT, 'Avtor');
+	//$relatedAuthorPage = get_page_by_title($relatedContributorName, OBJECT, 'Avtor');
+
+	//update deprecated
+	$tmp_args = array('post_type' => 'avtor', 'post_status' => 'publish', 'name' => $relatedContributorSlug, 'posts_per_page' => 1);
+	$tmp_query = new WP_Query($tmp_args);
+	$relatedAuthorPage = null;
+	if ($tmp_query->have_posts()) $relatedAuthorPage = $tmp_query->posts[0];
+
+
 	if (!empty($relatedAuthorPage)) {
 		if (has_post_thumbnail($relatedAuthorPage->ID)) {
 			$relatedAuthorThumbnailURL = wp_get_attachment_image_src(get_post_thumbnail_id($relatedAuthorPage->ID), 'medium');
@@ -170,7 +180,16 @@ if (!empty($relatedContributorName)) {
 <?php if (!empty($mySubtitle)) : ?><h5 class="article-subtitle one-two center-margins gray normal center font-size-1"><?php echo $mySubtitle ?></h5><?php endif; ?>
 <?php if (!is_tax('ime_avtorja')) : ?>
 <?php if (isset($contributorName) and !(empty($contributorName)) and ($showAuthorThumb !== false)) : ?>
-<?php $authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); ?>
+<?php 
+	//$authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); 
+	
+	//update deprecated
+	$tmp_args = array('post_type' => 'avtor', 'post_status' => 'publish', 'name' => $contributorSlug, 'posts_per_page' => 1);
+	$tmp_query = new WP_Query($tmp_args);
+	$authorPage = null;
+	if ($tmp_query->have_posts()) $authorPage = $tmp_query->posts[0];
+	
+	?>
 					<p class="bottom-margin no-indent contributorName serif italic center font-size-2 normal"><?php echo $contributorName; ?></p>
 <?php if (empty($thumbnailURL)) : ?>
 					<div class="this-author-photo one-eight center small-top-margin circle center-margins" style="margin-bottom: 2em">
@@ -217,7 +236,16 @@ if (!empty($relatedContributorName)) {
 <div style="display: inline-flex; width: 100%;">
 <?php if (!is_tax('ime_avtorja')) : ?>
 	<?php if (isset($contributorName) and !(empty($contributorName)) and ($showAuthorThumb !== false)) : ?>
-<?php $authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); ?>
+<?php 
+	//$authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor'); 
+	
+	//update deprecated
+	$tmp_args = array('post_type' => 'avtor', 'post_status' => 'publish', 'name' => $contributorSlug, 'posts_per_page' => 1);
+	$tmp_query = new WP_Query($tmp_args);
+	$authorPage = null;
+	if ($tmp_query->have_posts()) $authorPage = $tmp_query->posts[0];
+	
+	?>
 <?php if (empty($thumbnailURL)) : ?>
 					<div class="one-five border-box author-block" >
 					<div class="this-author-photo one-four-not center circle center-margins-not" style="margin-bottom: 2em">

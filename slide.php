@@ -74,8 +74,14 @@ $myShowcasePosts = new WP_Query($args);
 <?php
 $contributor = wp_get_post_terms($post->ID, "ime_avtorja", array("count" => 1));
 $contributorName = $contributor[0]->name;
+$contributorSlug = $contributor[0]->slug;
 if (isset($contributorName) and !(empty($contributorName))) :
-	$authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor');
+	//$authorPage = get_page_by_title($contributorName, OBJECT, 'Avtor');
+	//update deprecated
+	$tmp_args = array('post_type' => 'avtor', 'post_status' => 'publish', 'name' => $contributorSlug, 'posts_per_page' => 1);
+	$tmp_query = new WP_Query($tmp_args);
+	$authorPage = null;
+	if ($tmp_query->have_posts()) $authorPage = $tmp_query->posts[0];
 ?>
 		<p class="this-author one-two center center-margins serif italic font-size-2" ><?php echo $contributorName; ?></p>
 		<div class="this-author-photo center center-margins one-ten small-top-margin circle ">
