@@ -1,0 +1,6 @@
+.ludlit-woo-theme .tribe-events *,
+.ludlit-woo-theme .tribe-events-single *, 
+.ludlit-woo-theme .single-tribe_events *,
+.ludlit-woo-theme .post-type-archive-tribe_events * {
+    font-family: var(--ludlit-wc-sans-font-family);
+}
