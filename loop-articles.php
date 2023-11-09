@@ -54,20 +54,6 @@ $myCoverStoriesNum = 0;
 	$myListSwitch = 0;
 ?>
 
-<!-- LOOP INSTAGRAM
-<?php 
-$counterInstagram = 0;
-if ($counterinstagram == 0):
-	require('loop-instagram.php'); 
-	$counterInstagram++;
-endif 
-?> -->
-<!--TEGLE BI PRESTAVU NA KONC // NAJDU KJE PRIDE TALE ARHIV NA KONCU IN KJE GA UREJAM -->
-<!--<div>
-	<?php
-	require('loop-instagram.php'); 
-	?>
-</div>-->
 
 
 <div class="myMainPosts  clearfix levodesnopadding">
