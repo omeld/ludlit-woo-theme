@@ -257,7 +257,7 @@ if ($thisAuthor) :
 									<p class="light leading-tight article-data-item sans font-size-3"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
 	<?php
 	$contributor = wp_get_post_terms($post->ID, "ime_avtorja", array("count" => 1));
-	$contributorName = $contributor[0]->name;
+	$contributorName = $contributor[0]->name ?? '';
 	if (isset($contributorName) and !(empty($contributorName))) :
 	?>
 									<p class="tiny-top-margin center article-data-item contributorName uppercase font-size-1"><?php echo $contributorName; ?></p>

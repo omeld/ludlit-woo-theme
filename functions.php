@@ -1471,13 +1471,13 @@ function app_reading_time() {
 function _newlit_related_posts($num=3, $type='post', $id=false) {
 	global $thisPostID;
 	global $myNumberOfPosts;
+	global $post;
+	global $wpdb;
 	$myNumberOfPosts = $num;
 	//$id = $thisPostID;
 	if ($id === false)
 		$id = $thisPostID;
 	$origPost = $post;
-	global $post;
-	global $wpdb;
 	$tags = wp_get_post_tags($id);
 	$related_posts = new WP_Query();
 
